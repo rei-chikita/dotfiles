@@ -1,0 +1,194 @@
+[global]
+title = dunst
+class = dunst
+follow = keyboard
+show_age_threshold = 120
+stack_duplicates = true
+hide_duplicate_count = false
+show_indicators = yes
+indicate_hidden = yes
+browser = /usr/bin/firefox
+always_run_script = true
+force_xinerama = false
+idle_threshold = 0
+width = 230
+height = 200
+origin = top-right
+offset= 8x46
+notification_limit = 0
+corner_radius = 6
+transparency = 0
+separator_height = 3
+separator_color = "{color5}"
+font = Terminus (TTF) 10
+line_height = 1
+frame_width = 2
+frame_color = "{color5}"
+padding = 12
+horizontal_padding = 15
+sort = yes
+progress_bar = true
+progress_bar_height = 9
+progress_bar_frame_width = 0
+markup = full
+format = "<b>%a</b> | %s\n%b"
+alignment = center
+word_wrap = true
+ellipsize = end
+ignore_newline = no
+icon_position = left
+min_icon_size = 48
+max_icon_size = 64
+icon_path = ~/.config/dunst/icons/system:~/.config/dunst/icons/apps
+sticky_history = true
+history_length = 20
+mouse_left_click = do_action
+mouse_middle_click = close_all
+mouse_right_click = close_current
+
+
+[urgency_low]
+background = "{color0}"
+foreground = "{color5}"
+#"#F5E0DC"
+highlight = "#F2CDCD"
+timeout = 3
+icon = ~/.config/dunst/icons/system/info.svg
+
+[urgency_normal]
+background = "{color0}"
+#"#131020e6"
+foreground = "{color5}"
+highlight = "#F2CDCD"
+timeout = 4
+icon = ~/.config/dunst/icons/system/info.svg
+
+[urgency_critical]
+background = "{color0}"
+foreground = "{color5}"
+highlight = "#F2CDCD"
+timeout = 5
+icon = ~/.config/dunst/icons/system/urgent.svg
+
+# reglas
+[system]
+appname = System
+new_icon = ~/.config/dunst/icons/system/system.svg
+
+[updates_yes]
+appname = System
+summary = Updates
+body = Disponible*
+new_icon = ~/.config/dunst/icons/system/updates_yes.svg
+
+[updates_no]
+appname = System
+summary = Updates
+body = "Todos los paquetes sincronizados"
+new_icon = ~/.config/dunst/icons/system/updates_no.svg
+
+[bluetooth]
+appname = blueman
+new_icon = ~/.config/dunst/icons/system/bluetooth_on.svg
+
+[bluetooth_conn]
+appname = blueman
+body = *Connected
+new_icon = ~/.config/dunst/icons/system/bluetooth_paired.svg
+
+[bluetooth_disc]
+appname = blueman
+body = *Disconnected
+new_icon = ~/.config/dunst/icons/system/bluetooth_off.svg
+
+# •• Volume & Backlight
+
+[volume0]
+appname = System
+summary = Volume: [0-9]*
+new_icon = ~/.config/dunst/icons/system/volume1.svg
+
+[volume1]
+appname = System
+summary = Volume: [0-3][0-9]*
+new_icon = ~/.config/dunst/icons/system/volume1.svg
+
+[volume2]
+appname = System
+summary = Volume: [4-6][0-9]*
+new_icon = ~/.config/dunst/icons/system/volume2.svg
+
+[volume3]
+appname = System
+summary = Volume: [7-9][0-9]*
+new_icon = ~/.config/dunst/icons/system/volume3.svg
+
+[volume4]
+appname = System
+summary = Volume: 1[0-9][0-9]*
+new_icon = ~/.config/dunst/icons/system/volume3.svg
+
+[sound_off]
+appname = System
+summary = "Audio Muted"
+new_icon = ~/.config/dunst/icons/system/sound_off.svg
+[sound_on]
+appname = System
+summary = "Audio Unmuted"
+new_icon = ~/.config/dunst/icons/system/volume3.svg
+
+[backlight0]
+appname = System
+summary = Backlight: [0-9]*
+new_icon = ~/.config/dunst/icons/system/backlight1.svg
+
+[backlight1]
+appname = System
+summary = Backlight: [0-3][0-9]*
+new_icon = ~/.config/dunst/icons/system/backlight1.svg
+
+[backlight2]
+appname = System
+summary = Backlight: [4-6][0-9]*
+new_icon = ~/.config/dunst/icons/system/backlight2.svg
+
+[backlight3]
+appname = System
+summary = Backlight: [7-9][0-9]*
+new_icon = ~/.config/dunst/icons/system/backlight3.svg
+[backlight4]
+appname = System
+summary = Backlight: 1[0-9][0-9]*
+new_icon = ~/.config/dunst/icons/system/backlight3.svg
+
+# •• Keyboard Functions
+
+[capslock_on]
+appname = System
+summary = "Caps Lock Enabled"
+new_icon = ~/.config/dunst/icons/system/caps_on.svg
+
+[capslock_off]
+appname = System
+summary = "Caps Lock Disabled"
+new_icon = ~/.config/dunst/icons/system/caps_off.svg
+
+# •• Applications
+
+[firefox]
+desktop_entry = Firefox
+new_icon = ~/.config/dunst/icons/apps/firefox.svg
+
+[color_picker]
+appname = "Selector de color"
+format = "<b>%a</b>\n%s\n%b"
+new_icon = /tmp/preview.png
+
+[calendar_polybar]
+appname = calendar
+format = "<b>%s</b>\n%b"
+new_icon = ~/.config/dunst/icons/apps/calendario.png
+
+[fullscreen]
+fullscreen = show
+frame_color = #fff
