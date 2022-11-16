@@ -1,0 +1,139 @@
+format = """
+[](#818181)\
+[ ](fg:#000000 bg:#818181)\
+[\uE0BA](fg:#6f282e bg:#818181)\
+$directory\
+[\uE0BA](fg:#3a454e bg:#6f282e)\
+$git_branch\
+[](fg:#3a454e bg:#86BBD8)\
+$c\
+$elixir\
+$elm\
+$golang\
+$haskell\
+$java\
+$julia\
+$nodejs\
+$nim\
+$rust\
+[](fg:#86BBD8 bg:#06969A)\
+$docker_context\
+[](fg:#06969A bg:#2a3e63)\
+[\uE0C0 ](fg:#2a3e63)\
+$character\
+"""
+#$time\
+#$username\
+#[\uE0BA](fg:#6f282e bg:#3a454e)\
+#$git_status\
+
+add_newline = true
+right_format = "$cmd_duration"
+
+[character]
+success_symbol = "[](#395385)"
+error_symbol = " [](#df5b61)"
+vicmd_symbol = "[  ](#78b892)"
+
+[cmd_duration]
+min_time = 1
+format = """
+[](fg:#818181 bg:none)
+[$duration]($style)
+[](fg:#818181 bg:#818181)
+[](fg:#2a3e63 bg:#818181)
+[](fg:#000000 bg:#2a3e63)
+[](fg:#2a3e63 bg:none) """
+disabled = false
+style = "fg:#000000 bg:#818181"
+
+[username]
+show_always = true
+style_user = "bg:#3a454e"
+style_root = "bg:#3a454e"
+format = '[ $user ]($style)'
+
+[directory]
+style = "bg:#6f282e"
+format = "[ $path ]($style)"
+truncation_length = 2
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = " "
+"Documentos" = " "
+"Downloads" = " "
+"Descargas" = " "
+"Music" = " "
+"Pictures" = " "
+"Imágenes" = " "
+
+[c]
+symbol = " "
+style = "bg:#86BBD8 fg:#000000"
+format = '[ $symbol ]($style)'
+
+[docker_context]
+symbol = " "
+style = "bg:#06969A fg:#000000"
+format = '[ $symbol $context ]($style) $path'
+
+[elixir]
+symbol = " "
+style = "bg:#86BBD8 fg:#000000"
+format = '[ $symbol ]($style)'
+
+[elm]
+symbol = " "
+style = "bg:#86BBD8 fg:#000000"
+format = '[ $symbol ]($style)'
+
+[git_branch]
+symbol = ""
+style = "bg:#3a454e fg:#000000"
+format = '[ $symbol $branch ]($style)'
+
+#[git_status]
+#style = "bg:#FCA17D fg:#000000"
+#format = '[$all_status$ahead_behind ]($style)'
+
+[golang]
+symbol = " "
+style = "bg:#86BBD8 fg:#000000"
+format = '[ $symbol ($version) ]($style)'
+
+[haskell]
+symbol = " "
+style = "bg:#86BBD8 fg:#000000"
+format = '[ $symbol ($version) ]($style)'
+
+[java]
+symbol = " "
+style = "bg:#86BBD8 fg:#000000"
+format = '[ $symbol ]($style)'
+
+[julia]
+symbol = " "
+style = "bg:#86BBD8 fg:#000000"
+format = '[ $symbol ]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:#86BBD8 fg:#000000"
+format = '[ $symbol ]($style)'
+
+[nim]
+symbol = " "
+style = "bg:#86BBD8 fg:#000000"
+format = '[ $symbol ($version) ]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#86BBD8 fg:#000000"
+format = '[ $symbol ($version) ]($style)'
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:#2a3e63"
+format = '[ 羽HackNerdFont $time ]($style)'
