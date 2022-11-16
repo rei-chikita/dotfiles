@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+
+username=$(getent passwd | grep "$(whoami)" | cut -f 5 -d:)
+updates=$(checkupdates 2> /dev/null | wc -l)
+minutes=$(uptime | awk '{print $3}')
+timeunit=$(uptime | awk '{print $4}' | cut -c '1-3')
+
+function notify() {
+    if [ "$updates" -eq 0 ];
+    then
+        dunstify -a System -h string:x-dunst-stack-tag:welcome "Updates" "Todos los paquetes sincronizados"
+    else
+        dunstify -a System -h string:x-dunst-stack-tag:welcome "Updates" "Actualizaciones disponibles: $updates"
+    fi
+}
+
