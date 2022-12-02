@@ -1,3 +1,5 @@
 # dotfiles![2022-11-16_121124_146227080](https://user-images.githubusercontent.com/118377728/202247715-a408c215-49db-40ac-a3f4-cc5ec35c204f.jpg)
 ![2022-11-16_120700_591203348](https://user-images.githubusercontent.com/118377728/202247723-bc083b4e-080e-4708-b0f1-7c140464776c.jpg)
 ![2022-11-16_120500_381908738](https://user-images.githubusercontent.com/118377728/202247726-cd15c47c-10dc-4e18-bf06-f02b0bb7192d.jpg)
+![bardown](https://user-images.githubusercontent.com/118377728/205397552-9b18794e-0801-424c-8843-a0522cb61bc3.png)
+![barup](https://user-images.githubusercontent.com/118377728/205397553-5fe1e2f9-7602-41d3-936a-4e6139c0beb6.png)
