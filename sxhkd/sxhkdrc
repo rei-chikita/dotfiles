@@ -156,6 +156,7 @@ super + {_,shift +,alt + } Print
 	~/.config/bspwm/scripts/capture -{k,s,l}
 
 # Captura regular con imagemagick
+# + shift para capturar solo la ventana enfocada
 control + {_,shift + } Print 
 	~/.config/bspwm/scripts/capture -{t,a}
 
