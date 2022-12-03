@@ -34,6 +34,10 @@ Archivos de configuración personales
 
 ## Galería
 #### Escritorio
+![imagen](https://user-images.githubusercontent.com/118377728/205458745-882cd7d8-ce99-460e-8f9d-dff9b8102600.png)
+
+![imagen](https://user-images.githubusercontent.com/118377728/205458192-6fec39fd-3811-40af-b8c4-43ec9a19405c.png)
+
 ![2022-12-03_132926_148868337](https://user-images.githubusercontent.com/118377728/205457450-8c1e8200-d2bf-469d-a6bf-a8d50f3d5455.jpg)
 ![2022-12-03_133349_401584321](https://user-images.githubusercontent.com/118377728/205457451-7d66a4ec-07b9-4d10-ae71-cf18ef0251c1.jpg)
 
