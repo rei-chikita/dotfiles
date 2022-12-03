@@ -7,6 +7,30 @@ Archivos de configuración personales
 
 ## Tabla de contenidos
 * [Galería](#Galería)
+* [Ajustes generales](#Ajustes-generales)
+* [Consideraciones](#Consideraciones)
+* [Bspwm-Sxhkd](#Bspwm-Sxhkd)
+* [Polybar](#Polybar)
+* [Ranger](#Ranger)
+* [Rofi](#Rofi)
+* [Picom](#Picom)
+* [Pywal](#Pywal)
+* [Neofetch](#Neofetch)
+* [Pop report](#Pop-report)
+* [Dunst](#Dunst)
+* [Font manager](#Font-manager)
+* [Feh](#Feh)
+* [Thunar](#Thunar)
+* [Spicetify](#Spicetify)
+* [Spotify Adblock](#Spotify-Adblock)
+* [Betterlockscreen](#Betterlockscreen)
+* [Firefox](#Firefox)
+* [Lightdm](#Lightdm)
+* [ZSH](#ZSH)
+* [Bat, lsd, fzf](#Bat-lsd-fzf)
+* [GRUB](#GRUB)
+* [pacman-pb](#pacman-pb)
+* [Extras](#Extras)
 
 ## Galería
 #### Escritorio
@@ -16,7 +40,8 @@ Archivos de configuración personales
 #### Barras de Polybar
 ![barup](https://user-images.githubusercontent.com/118377728/205397553-5fe1e2f9-7602-41d3-936a-4e6139c0beb6.png)
 ![bardown](https://user-images.githubusercontent.com/118377728/205397552-9b18794e-0801-424c-8843-a0522cb61bc3.png)
-## Ajustes generales 
+
+## Ajustes-generales 
 1. Crear carpetas para algunas utilidades **para** seguir literalmente con copia y pega en cada apartado:
 ```
 mkdir -p ~/.config/{ranger,picom}
@@ -29,14 +54,14 @@ mkdir -p ~/.config/{ranger,picom}
 3. Ranger establece la previsualización de imágenes con el método "kitty" en rc.conf; puedes cambiarlo de ser necesario.
 4. Los temas para rofi ya están presentes en la carpeta de rofi que copiaras posteriormente a ~/.config
 5. No es necesario recargar bspwm para recargar picom, ya que lo hace al detectar una nueva configuración.
-6. Si presenta algún problema picom deberías revisar el backend glx que esta establecido en picom.conf por si tu hardware no lo admite; **sin embargo**, es necesario **para** poder usar el desenfoque
+6. Si Picom presenta algún problema deberías revisar el backend glx que esta establecido en picom.conf por si tu hardware no lo admite; **sin embargo**, es necesario **para** poder usar el desenfoque.
 7. Para el tema de neofetch debes tener en cuenta las fuentes necesarias para cargar los iconos de cada configuración, en mi caso elegí la siguiente: https://github.com/Chick2D/neofetch-themes/tree/main/normal/remfetch
-8. Neofetch deberá imprimir la misma imagen que tu fondo de pantalla actual, si deseas ese comportamiento simplemente comenta las lienas que hacen referencia a ello en ~/.config/bspwm/scripts/setup; ** ademas**  en el directorio neofetch se encuentran algunas imágenes PNG que puedes usar.
-9. Si desconfiguras algo en Firefox solamente prueba eliminar el directorio ~/.mozilla y al reabrir Firefox se creará de nuevo.
+8. Neofetch deberá imprimir la misma imagen que tu fondo de pantalla actual, si deseas ese comportamiento simplemente comenta las lineas que hacen referencia a ello en ~/.config/bspwm/scripts/setup; **ademas** en el directorio neofetch se encuentran algunas imágenes PNG que puedes usar.
+9. Si desconfiguras algo en Firefox solamente prueba eliminar el directorio ~/.mozilla y al  reabrir Firefox se creará de nuevo.
 10. Con el tema de Firefox usa Ctrl + l para acceder a la barra de URL o al pasar el cursor por la parte superior.
 11. Descomenta la linea 8 de firefox/chrome/userChrome.css para poner las barras en la parte inferior.
 
-## Bspwm y sxhkd
+## [Bspwm-Sxhkd](https://github.com/baskerville/bspwm)
 ```
 yay -S bspwm-git
 ```
@@ -81,12 +106,11 @@ sudo pacman -S rofi
 ```
 cp -rf rofi ~/.config
 ```
-
-<p align="left">
-<a href="https://github.com/adi1090x/rofi">Enlace de los temas usados para rofi</a>
+<p align=”left”>
+<a href=”https://github.com/adi1090x/rofi”>Enlace de los temas usados para rofi</a>
 </p>
-<p align="left">
-<a href="https://github.com/P3rf/rofi-network-manager">Enlace del administrador de red con rofi para polybar</a>
+<p align=”left”>
+<a href=”https://github.com/P3rf/rofi-network-manager”>Enlace del administrador de red con rofi para polybar</a>
 </p>
 
 ## Picom
@@ -113,6 +137,7 @@ cp -rf neofetch ~/.config
 ```
 
 [Enlace para temas de neofetch](https://github.com/Chick2D/neofetch-themes)
+
 ## Pop-report
 ```
 git clone https://github.com/ikz87/pop_report
@@ -134,7 +159,7 @@ sudo pacman -S font-manager
 
 ## Feh
 <p align="left">
-Debes instalarlo <b>porque</b> lo uso en lugar del comando wal de Pywal para establecer el fondo de pantalla
+Debes instalarlo <b>porque</b>  lo uso en lugar del comando wal de Pywal para establecer el fondo de pantalla
 </p>
 
 ```
@@ -167,7 +192,7 @@ Aplicar un tema:
 spicetify config current_theme (tema)
 ```
 ```
-spicetify apply (para aplicar la nueva configuración) 
+spicetify apply (para aplicar la nueva configuracion) 
 ```
 <p align="left">
 Algunos temas tienen 2 o más esquemas de color diferentes.  Después de seleccionar el tema, puede cambiar entre ellos con lo siguiente:
@@ -178,10 +203,10 @@ spicetify config color_scheme (esquema de color)
 ```
 
 <p align="left">
-Sin embargo puede variar dependiendo del tema por lo que debes revisar en las instrucciones en el README de cada tema: https://github.com/spicetify/spicetify-themes
+Sin embargo, puede variar dependiendo del tema por lo que debes revisar en las instrucciones en el README de cada tema: https://github.com/spicetify/spicetify-themes
 </p>
 
-## [Spotify Adblock](https://github.com/abba23/spotify-adblock)
+## [Spotify-Adblock](https://github.com/abba23/spotify-adblock)
 ```
 yay -S spotify-adblock-git
 ```
@@ -207,14 +232,14 @@ sudo systemctl enable betterlockscreen@$(whoami)
 ```
 
 <p align="left"> 
-Nota: puedes usar el comando: "systemctl suspend" para suspender su sistema y se activará el servicio betterlockscreen, de modo que cuando su sistema se active, su pantalla se bloqueará.
+Nota: Puedes usar el comando: "systemctl suspend" para suspender su sistema y se activará el servicio betterlockscreen, de modo que cuando su sistema se active, su pantalla se bloqueará.
 </p>
 
 # Firefox
 ```
 sudo pacman -S firefox
 ```
-[Enlace del tema para firefox](https://github.com/3r3bu5x9/Prismatic-Night#userchrome)
+[Enlace del tema para Firefox](https://github.com/3r3bu5x9/Prismatic-Night#userchrome)
 #### Instrucciones
 <p align="left">
 1. Mueve el directorio chrome del directorio firefox a ~/.mozilla/firefox/(directorio raíz)/. Puedes obtener la ubicación de tu directorio raíz en about:profiles al escribir eso en la barra de direcciones del navegador, usualmente el perfil es: default-release (el perfil que no esta usado actualmente se identifica por la opción disponible "Establecer como perfil predeterminado").
@@ -263,11 +288,16 @@ sudo pacman -S zsh zsh-syntax-highlighting zsh-autosuggestions
 Instala los siguientes plugins: 
 #### zsh-sudo
 ```
-cd /usr/share/zsh/plugins
-sudo su
-mkdir zsh-sudo
-cd zsh-sudo
+mkdir /usr/share/zsh/plugins/zsh-sudo
 ```
+<p align="left">
+Copia el siguiente archivo con el mismo nombre y muévelo al directorio creado anteriormente
+</p>
+
+```
+sudo cp sudo.plugin.zsh /usr/share/zsh/plugins/zsh-sudo 
+```
+
 #### [Starship](https://starship.rs/)
 ```
 cp .zshrc ~
@@ -276,12 +306,13 @@ cp .zshrc ~
 #### Utilidades incluidas en el archivo de configuración:
 1. https://github.com/callmezatiel/extract
 
-## Bat, lsd, fzf
+## Bat-lsd-fzf
 ```
 sudo pacman -S bat lsd fzf
 ```
+
 <p align="left">
-Nota: Deberás instalarlos <b>porque</b> en el archivo de configuración de ZSH se usan como alias
+Nota: Deberás instalarlos <b>porque</b> en el archivo de configuración de ZSH se usan como alias.
 </p>
 
 ## GRUB
@@ -301,10 +332,9 @@ En https://github.com/vinceliuice/grub2-themes para usar una imagen de fondo per
 git clone https://aur.archlinux.org/pacman-pb.git
 ```
 ```
-make
- -si
+make -si
 ```
-[Enlace para mas información](https://www.reddit.com/r/unixporn/comments/z89thg/oc_i_modified_pacman_to_allow_customizing_the/)
+[Mas información](https://www.reddit.com/r/unixporn/comments/z89thg/oc_i_modified_pacman_to_allow_customizing_the/)
 
 ## Extras
 1. https://github.com/acxz/pokeshell
