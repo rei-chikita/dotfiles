@@ -29,11 +29,12 @@ mkdir -p ~/.config/{ranger,picom}
 3. Ranger establece la previsualizacion de imagenes con el metodo "kitty" en rc.conf; puedes cambiarlo de ser necesario.
 4. Los temas para rofi ya estan presentes en la carpeta de rofi que copiaras posteriormente a ~/.config
 5. No es necesario recargar bspwm para recargar picom, ya que lo hace al detectar una nueva configuración.
-6. Si presenta algun problema picom deberias revisar el backend glx que esta establecido en picom.conf por si tu hardware no lo admite; **sin embargo**, es necesario **para** poder usar el desenfoque.
-7. Neofetch debera imprimir la misma imagen que tu fondo de pantalla actual, si deseas ese comportamiento simplemente comenta las lienas que hacen referencia a ello en ~/.config/bspwm/scripts/setup; **ademas** en el directorio neofetch se encuentran algunas imagenes PNG que puedes usar.
-8. Si desconfiguras algo en Firefox solamente prueba eliminar el directorio ~/.mozilla y al abrir firefox lo creará de nuevo
-9. Con el tema de Firefox usa Ctrl + l para acceder a la barra de URL o al pasar el cursor por la parte superior
-10. Descomenta la linea 8 de firefox/chrome/userChrome.css para poner las barras en la parte inferior
+6. Si presenta algun problema picom deberias revisar el backend glx que esta establecido en picom.conf por si tu hardware no lo admite; **sin embargo**, es necesario **para** poder usar el desenfoque
+7. Para el tema de neofetch debes tener en cuenta las fuentes necesarias para cargar los iconos de cada configuración, en mi caso elegí la siguiente: https://github.com/Chick2D/neofetch-themes/tree/main/normal/remfetch
+8. Neofetch debera imprimir la misma imagen que tu fondo de pantalla actual, si deseas ese comportamiento simplemente comenta las lienas que hacen referencia a ello en ~/.config/bspwm/scripts/setup; **ademas** en el directorio neofetch se encuentran algunas imagenes PNG que puedes usar.
+9. Si desconfiguras algo en Firefox solamente prueba eliminar el directorio ~/.mozilla y al abrir firefox lo creará de nuevo
+10. Con el tema de Firefox usa Ctrl + l para acceder a la barra de URL o al pasar el cursor por la parte superior
+11. Descomenta la linea 8 de firefox/chrome/userChrome.css para poner las barras en la parte inferior
 
 ## Bspwm y sxhkd
 ```
@@ -104,6 +105,8 @@ yay -S neofetch-git
 ```
 cp -rf neofetch ~/.config
 ```
+
+[Enlace para temas de neofetch](https://github.com/Chick2D/neofetch-themes)
 ## Pop-report
 ```
 git clone https://github.com/ikz87/pop_report
