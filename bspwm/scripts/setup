@@ -29,8 +29,6 @@ ln -sf ~/.cache/wal/betterlockscreenrc ~/.config/betterlockscreenrc
 dunstify -t 3500 -i ~/.config/dunst/icons/apps/kobeni-0.png "TODO RECARGADO!"
 
 if [ "$(xrandr -q | awk '/ connected / {print $1}' | wc -l)" -eq 2 ]; then
-# actualizar imagen para lockscreen
-	betterlockscreen -u $1
 	dunstify -t 6000 -i ~/.config/dunst/icons/apps/cat-0.png "A DOBLE MONITOR PIBE!"
 elif [ "$(xrandr -q | awk '/ connected / {print $1}' | wc -l)" -eq 1 ]; then
 	dunstify -t 6000 -i ~/.config/dunst/icons/apps/cat-0.png "A UN MONITOR PIBE!"
