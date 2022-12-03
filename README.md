@@ -34,12 +34,16 @@ Archivos de configuración personales
 
 ## Galería
 #### Escritorio
-![2022-11-16_121124_146227080](https://user-images.githubusercontent.com/118377728/202247715-a408c215-49db-40ac-a3f4-cc5ec35c204f.jpg)
-![2022-11-16_120700_591203348](https://user-images.githubusercontent.com/118377728/202247723-bc083b4e-080e-4708-b0f1-7c140464776c.jpg)
-![2022-11-16_120500_381908738](https://user-images.githubusercontent.com/118377728/202247726-cd15c47c-10dc-4e18-bf06-f02b0bb7192d.jpg)
+![2022-12-03_132926_148868337](https://user-images.githubusercontent.com/118377728/205457450-8c1e8200-d2bf-469d-a6bf-a8d50f3d5455.jpg)
+![2022-12-03_133349_401584321](https://user-images.githubusercontent.com/118377728/205457451-7d66a4ec-07b9-4d10-ae71-cf18ef0251c1.jpg)
+
+![2022-12-03_133656_492434217](https://user-images.githubusercontent.com/118377728/205457453-dc9f4691-ade8-4f3e-b15c-839b5244ea2a.jpg)
+![2022-12-03_135711_183093129](https://user-images.githubusercontent.com/118377728/205457454-7d3f8161-ed04-4e25-9265-02f2f5ae064c.jpg)
+
 #### Barras de Polybar
-![barup](https://user-images.githubusercontent.com/118377728/205397553-5fe1e2f9-7602-41d3-936a-4e6139c0beb6.png)
-![bardown](https://user-images.githubusercontent.com/118377728/205397552-9b18794e-0801-424c-8843-a0522cb61bc3.png)
+![barup](https://user-images.githubusercontent.com/118377728/205457442-dd78694b-ae58-4c30-a73b-f3b4e02293ad.png)
+![bardown](https://user-images.githubusercontent.com/118377728/205457444-b551b07e-3f13-42e8-b889-c9193e75a137.png)
+
 
 ## Ajustes-generales 
 1. Crear carpetas para algunas utilidades **para** seguir literalmente con copia y pega en cada apartado:
@@ -51,16 +55,9 @@ mkdir -p ~/.config/{ranger,picom}
 
 ## Consideraciones
 1. Para realizar un cambio en la configuración de dunst, betterlockscreen, o en los colores del menú de encendido de rofi, deberás hacerlo en las plantillas de usuario de Pywal en: ~/.config/wal/templates **porque** en el script ~/.config/bspwm/scripts/setup se define la creación de enlaces simbólicos como archivos de configuración desde ~/.cache/wal **por lo que** cada vez que recargues Bspwm se sobrescriben en base a las plantillas de usuario de Pywal **para** así poder usar Pywal ya que no esta por defecto en el mismo.
-2. El archivo: ~/.config/bspwm/bspwmrc debe tener permiso de ejecución de lo contrario no se reconoce y se usa el archivo predeterminado.
-3. Ranger establece la previsualización de imágenes con el método "kitty" en rc.conf; puedes cambiarlo de ser necesario.
-4. Los temas para rofi ya están presentes en la carpeta de rofi que copiaras posteriormente a ~/.config
-5. No es necesario recargar bspwm para recargar picom, ya que lo hace al detectar una nueva configuración.
-6. Si Picom presenta algún problema deberías revisar el backend glx que esta establecido en picom.conf por si tu hardware no lo admite; **sin embargo**, es necesario **para** poder usar el desenfoque.
-7. Para el tema de neofetch debes tener en cuenta las fuentes necesarias para cargar los iconos de cada configuración, en mi caso elegí la siguiente: https://github.com/Chick2D/neofetch-themes/tree/main/normal/remfetch
-8. Neofetch deberá imprimir la misma imagen que tu fondo de pantalla actual, si deseas ese comportamiento simplemente comenta las lineas que hacen referencia a ello en ~/.config/bspwm/scripts/setup; **ademas** en el directorio neofetch se encuentran algunas imágenes PNG que puedes usar.
-9. Si desconfiguras algo en Firefox solamente prueba eliminar el directorio ~/.mozilla y al  reabrir Firefox se creará de nuevo.
-10. Con el tema de Firefox usa Ctrl + l para acceder a la barra de URL o al pasar el cursor por la parte superior.
-11. Descomenta la linea 8 de firefox/chrome/userChrome.css para poner las barras en la parte inferior.
+3. No es necesario recargar bspwm para recargar picom, ya que lo hace al detectar una nueva configuración.
+4. Si Picom presenta algún problema deberías revisar el backend glx que esta establecido en picom.conf por si tu hardware no lo admite; **sin embargo**, es necesario **para** poder usar el desenfoque.
+5. Si desconfiguras algo en Firefox solamente prueba eliminar el directorio ~/.mozilla y al  reabrir Firefox se creará de nuevo.
 
 ## [Bspwm-Sxhkd](https://github.com/baskerville/bspwm)
 ```
@@ -85,6 +82,15 @@ Cambia el propietario a tu usuario (no root) de los archivos copiados anteriorme
 ```
 sudo chown (usuario) (ruta del archivo)
 ```
+
+<p align="left">
+Debes asignar permiso de ejecución de lo contrario Bspwm no lo reconoce y se usa el archivo predeterminado
+</p>
+
+```
+chmod +x ~/.config/bspwm/bspwmrc
+```
+
 ## Polybar
 ```
 yay -S polybar-git
@@ -93,6 +99,7 @@ yay -S polybar-git
 cp -rf polybar ~/.config
 ```
 [Cava para Polybar](https://github.com/ray-pH/polybar-cava)
+
 ## Ranger
 ```
 yay -S ranger-git
@@ -100,6 +107,11 @@ yay -S ranger-git
 ```
 cp rc.conf ~/ranger
 ```
+
+<p align=”left”>
+Nota: Ranger establece la previsualización de imágenes con el método "kitty" en rc.conf; puedes cambiarlo de ser necesario.
+</p>
+
 ## Rofi
 ```
 sudo pacman -S rofi
@@ -112,6 +124,10 @@ cp -rf rofi ~/.config
 </p>
 <p align=”left”>
 <a href=”https://github.com/P3rf/rofi-network-manager”>Enlace del administrador de red con rofi para polybar</a>
+</p>
+
+<p align=”left”>
+Nota: Los temas para rofi ya están presentes en la carpeta de rofi
 </p>
 
 ## Picom
@@ -138,6 +154,14 @@ cp -rf neofetch ~/.config
 ```
 
 [Enlace para temas de neofetch](https://github.com/Chick2D/neofetch-themes)
+
+<p align="left">
+Para el tema de neofetch debes tener en cuenta las fuentes necesarias para cargar los iconos de cada configuración, en mi caso elegí la siguiente: https://github.com/Chick2D/neofetch-themes/tree/main/normal/remfetch
+</p>
+
+<p align="left">
+Notas: Neofetch deberá imprimir la misma imagen que tu fondo de pantalla actual, si deseas ese comportamiento simplemente comenta las lineas que hacen referencia a ello en ~/.config/bspwm/scripts/setup; <b>ademas</b> en el directorio neofetch se encuentran algunas imágenes PNG que puedes usar.
+</p>
 
 ## Pop-report
 ```
@@ -204,7 +228,7 @@ spicetify config color_scheme (esquema de color)
 ```
 
 <p align="left">
-Sin embargo, puede variar dependiendo del tema por lo que debes revisar en las instrucciones en el README de cada tema: https://github.com/spicetify/spicetify-themes
+Nota: Puede variar dependiendo del tema por lo que debes revisar en las instrucciones en el README de cada tema: https://github.com/spicetify/spicetify-themes
 </p>
 
 ## [Spotify-Adblock](https://github.com/abba23/spotify-adblock)
@@ -266,6 +290,10 @@ browser.compactmode.show
   <p align="left">
 6. Ve al directorio  del directorio firefox/newtab y edita mozilla.cfg al cambiar en la linea 7  la dirección de tu página de inicio.
     </p>
+ 
+  <p align="left">
+Notas: Con el tema de Firefox usa Ctrl + l para acceder a la barra de URL o al pasar el cursor por la parte superior. Descomenta la linea 8 de firefox/chrome/userChrome.css para poner las barras en la parte inferior.
+  </p>  
     
 # Lightdm
 ```
