@@ -1,14 +1,14 @@
 <p align="center">
-<img alt="Imagen generica de anime" src="https://i.pinimg.com/originals/6a/c8/d0/6ac8d0b73727224f00fd288d97a95601.jpg">
+<img alt="Imagen genérica de anime" src="https://i.pinimg.com/originals/6a/c8/d0/6ac8d0b73727224f00fd288d97a95601.jpg">
 </p>
 <p align="center">
-Archivos de configuracion personales
+Archivos de configuración personales
 </p>
 
 ## Tabla de contenidos
-* [Galeria](#Galeria)
+* [Galería](#Galería)
 
-## Galeria
+## Galería
 #### Escritorio
 ![2022-11-16_121124_146227080](https://user-images.githubusercontent.com/118377728/202247715-a408c215-49db-40ac-a3f4-cc5ec35c204f.jpg)
 ![2022-11-16_120700_591203348](https://user-images.githubusercontent.com/118377728/202247723-bc083b4e-080e-4708-b0f1-7c140464776c.jpg)
@@ -24,17 +24,17 @@ mkdir -p ~/.config/{ranger,picom}
 2. Instala yay del siguiente repositorio: https://github.com/Jguer/yay
 
 ## Consideraciones
-1. Para realizar un cambio en la configuracion de Dunst, betterlockscreen, o en los colores del menu de encendido de rofi, deberas hacerlo en las plantillas de usuario de Pywal en: ~/.config/wal/templates **porque** en el script ~/.config/bspwm/scripts/setup se define la creacion de enlaces simbolicos como archivos de configuracion desde ~/.cache/wal **por lo que** cada vez que recargues Bspwm se sobreescriben en base a las plantillas de usuario de Pywal **para** asi poder usar Pywal ya que no esta por defecto en el mismo.
+1. Para realizar un cambio en la configuración de dunst, betterlockscreen, o en los colores del menú de encendido de rofi, deberás hacerlo en las plantillas de usuario de Pywal en: ~/.config/wal/templates **porque** en el script ~/.config/bspwm/scripts/setup se define la creación de enlaces simbólicos como archivos de configuración desde ~/.cache/wal **por lo que** cada vez que recargues Bspwm se sobrescriben en base a las plantillas de usuario de Pywal **para** así poder usar Pywal ya que no esta por defecto en el mismo.
 2. El archivo: ~/.config/bspwm/bspwmrc debe tener permiso de ejecución de lo contrario no se reconoce y se usa el archivo predeterminado.
-3. Ranger establece la previsualizacion de imagenes con el metodo "kitty" en rc.conf; puedes cambiarlo de ser necesario.
-4. Los temas para rofi ya estan presentes en la carpeta de rofi que copiaras posteriormente a ~/.config
+3. Ranger establece la previsualización de imágenes con el método "kitty" en rc.conf; puedes cambiarlo de ser necesario.
+4. Los temas para rofi ya están presentes en la carpeta de rofi que copiaras posteriormente a ~/.config
 5. No es necesario recargar bspwm para recargar picom, ya que lo hace al detectar una nueva configuración.
-6. Si presenta algun problema picom deberias revisar el backend glx que esta establecido en picom.conf por si tu hardware no lo admite; **sin embargo**, es necesario **para** poder usar el desenfoque
+6. Si presenta algún problema picom deberías revisar el backend glx que esta establecido en picom.conf por si tu hardware no lo admite; **sin embargo**, es necesario **para** poder usar el desenfoque
 7. Para el tema de neofetch debes tener en cuenta las fuentes necesarias para cargar los iconos de cada configuración, en mi caso elegí la siguiente: https://github.com/Chick2D/neofetch-themes/tree/main/normal/remfetch
-8. Neofetch debera imprimir la misma imagen que tu fondo de pantalla actual, si deseas ese comportamiento simplemente comenta las lienas que hacen referencia a ello en ~/.config/bspwm/scripts/setup; **ademas** en el directorio neofetch se encuentran algunas imagenes PNG que puedes usar.
-9. Si desconfiguras algo en Firefox solamente prueba eliminar el directorio ~/.mozilla y al abrir firefox lo creará de nuevo
-10. Con el tema de Firefox usa Ctrl + l para acceder a la barra de URL o al pasar el cursor por la parte superior
-11. Descomenta la linea 8 de firefox/chrome/userChrome.css para poner las barras en la parte inferior
+8. Neofetch deberá imprimir la misma imagen que tu fondo de pantalla actual, si deseas ese comportamiento simplemente comenta las lienas que hacen referencia a ello en ~/.config/bspwm/scripts/setup; ** ademas**  en el directorio neofetch se encuentran algunas imágenes PNG que puedes usar.
+9. Si desconfiguras algo en Firefox solamente prueba eliminar el directorio ~/.mozilla y al reabrir Firefox se creará de nuevo.
+10. Con el tema de Firefox usa Ctrl + l para acceder a la barra de URL o al pasar el cursor por la parte superior.
+11. Descomenta la linea 8 de firefox/chrome/userChrome.css para poner las barras en la parte inferior.
 
 ## Bspwm y sxhkd
 ```
@@ -66,7 +66,7 @@ yay -S polybar-git
 ```
 cp -rf polybar ~/.config
 ```
-[Modulo Cava para Polybar](https://github.com/ray-pH/polybar-cava)
+[Cava para Polybar](https://github.com/ray-pH/polybar-cava)
 ## Ranger
 ```
 yay -S ranger-git
@@ -81,11 +81,17 @@ sudo pacman -S rofi
 ```
 cp -rf rofi ~/.config
 ```
-[Enlace de los temas usados para rofi](https://github.com/adi1090x/rofi)
-[Enlace del administrador de red con rofi para polybar](https://github.com/P3rf/rofi-network-manager)
+
+<p align="left">
+<a href="https://github.com/adi1090x/rofi">Enlace de los temas usados para rofi</a>
+</p>
+<p align="left">
+<a href="https://github.com/P3rf/rofi-network-manager">Enlace del administrador de red con rofi para polybar</a>
+</p>
+
 ## Picom
 <p align="left">
-  Instala el siguiente fork de picom <b>para</b> poder usar el metodo de difuminado "dual_kawase" y a la vez bordes redondeados (a diferencia de picom original): https://github.com/Arian8j2/picom-jonaburg-fix
+  Instala el siguiente fork de picom <b>para</b> poder usar el método de difuminado "dual_kawase" y a la vez bordes redondeados (a diferencia de picom original): https://github.com/Arian8j2/picom-jonaburg-fix
 </p>
   
 ```
@@ -114,7 +120,7 @@ git clone https://github.com/ikz87/pop_report
 ```
 pip install PyQt5 argparse inotify
 ```
-[Mas informacion](https://www.reddit.com/r/unixporn/comments/wph3ef/oc_pop_report_a_simple_popup_notification_tool/)
+[Mas información](https://www.reddit.com/r/unixporn/comments/wph3ef/oc_pop_report_a_simple_popup_notification_tool/)
 
 ## Dunst
 ```
@@ -128,7 +134,7 @@ sudo pacman -S font-manager
 
 ## Feh
 <p align="left">
-Instalalo porque lo uso en lugar del comando wal de Pywal para establecer el fondo de pantalla
+Debes instalarlo <b>porque</b> lo uso en lugar del comando wal de Pywal para establecer el fondo de pantalla
 </p>
 
 ```
@@ -151,7 +157,7 @@ cp -rf settings.ini ~/.config/gtk-3.0
 ```
 
 ## Spicetify
-[Instalacion](https://spicetify.app/docs/advanced-usage/installation#note-for-linux-users)
+[Instalación](https://spicetify.app/docs/advanced-usage/installation#note-for-linux-users)
 
 <p align="left">
 Aplicar un tema:
@@ -161,7 +167,7 @@ Aplicar un tema:
 spicetify config current_theme (tema)
 ```
 ```
-spicetify apply (para aplicar la nueva configuracion) 
+spicetify apply (para aplicar la nueva configuración) 
 ```
 <p align="left">
 Algunos temas tienen 2 o más esquemas de color diferentes.  Después de seleccionar el tema, puede cambiar entre ellos con lo siguiente:
@@ -184,6 +190,26 @@ yay -S spotify-adblock-git
 ```
 yay -S betterlockscreen-git
 ```
+<p align="left">
+Mover el archivo de servicio al directorio apropiado, AUR hace esto por usted (al instalar por ejemplo con yay)
+</p>
+
+```
+cp betterlockscreen@.service /usr/lib/systemd/system/
+```
+
+<p align="left">
+Habilita el systemd service
+</p>
+
+```
+sudo systemctl enable betterlockscreen@$(whoami)
+```
+
+<p align="left"> 
+Nota: puedes usar el comando: "systemctl suspend" para suspender su sistema y se activará el servicio betterlockscreen, de modo que cuando su sistema se active, su pantalla se bloqueará.
+</p>
+
 # Firefox
 ```
 sudo pacman -S firefox
@@ -230,13 +256,37 @@ systemctl enable lightdm
 Edita en: /etc/lightdm/lightdm.conf la linea greeter-session, estableciendo el recibidor instalado; en este caso: greeter-session=lightdm-webkit2-greeter 
 </p>
 
+## ZSH
+```
+sudo pacman -S zsh zsh-syntax-highlighting zsh-autosuggestions
+```
+Instala los siguientes plugins: 
+#### zsh-sudo
+```
+cd /usr/share/zsh/plugins
+sudo su
+mkdir zsh-sudo
+cd zsh-sudo
+```
+#### [Starship](https://starship.rs/)
+```
+cp .zshrc ~
+```
+
+#### Utilidades incluidas en el archivo de configuración:
+1. https://github.com/callmezatiel/extract
+
 ## Bat, lsd, fzf
 ```
 sudo pacman -S bat lsd fzf
 ```
+<p align="left">
+Nota: Deberás instalarlos <b>porque</b> en el archivo de configuración de ZSH se usan como alias
+</p>
+
 ## GRUB
 <p align="left">
-Elige un tema del siguiente repositorio: https://github.com/jacksaur/Gorgeous-GRUB; en este caso uso el tema: https://github.com/vinceliuice/grub2-themes con la siguiente configuracion:
+Elige un tema del siguiente repositorio: https://github.com/jacksaur/Gorgeous-GRUB; en este caso uso el tema: https://github.com/vinceliuice/grub2-themes con la siguiente configuración:
   </p>
   
 ```
@@ -251,9 +301,10 @@ En https://github.com/vinceliuice/grub2-themes para usar una imagen de fondo per
 git clone https://aur.archlinux.org/pacman-pb.git
 ```
 ```
-make -si
+make
+ -si
 ```
-[Enlace para mas informacion](https://www.reddit.com/r/unixporn/comments/z89thg/oc_i_modified_pacman_to_allow_customizing_the/)
+[Enlace para mas información](https://www.reddit.com/r/unixporn/comments/z89thg/oc_i_modified_pacman_to_allow_customizing_the/)
 
 ## Extras
 1. https://github.com/acxz/pokeshell
