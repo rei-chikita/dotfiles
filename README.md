@@ -28,6 +28,7 @@ Archivos de configuración personales
 * [Lightdm](#Lightdm)
 * [ZSH](#ZSH)
 * [Bat, lsd, fzf](#Bat-lsd-fzf)
+* [Translate Shell](#Translate-shell)
 * [GRUB](#GRUB)
 * [pacman-pb](#pacman-pb)
 * [Extras](#Extras)
@@ -347,6 +348,9 @@ sudo pacman -S bat lsd fzf
 <p align="left">
 Nota: Deberás instalarlos <b>porque</b> en el archivo de configuración de ZSH se usan como alias.
 </p>
+
+## Translate-shell
+[Instalación](https://github.com/soimort/translate-shell#installation)
 
 ## GRUB
 <p align="left">
