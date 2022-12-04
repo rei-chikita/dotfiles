@@ -56,15 +56,15 @@ Archivos de configuración personales
 mkdir -p ~/.config/{ranger,picom}
 ```
 2. Instala yay del siguiente repositorio: https://github.com/Jguer/yay
-3. Debes crear un directorio llamado "screenshots" **para que** se guarden las diferentes capturas de pantalla; puedes revisar los atajos de teclado para ello en sxhkd/sxhkdr. **Si** deseas usar una ruta diferente simplemente edita: bspwm/scripts/capture
-4. La ejecucion de xrandr esta establecida en polybar/scripts/launch.sh; deberias cambiarla a tu gusto
-5. Para la configuración de monitores duales **en VMware en Windows 11**  no es necesario usar los parametros --left-of ni --right-of para xrandr; solo si usas Arch Linux en una partición de disco **porque** al parecer esto lo haces en la configuración de pantalla de Windows 11.
+3. Debes crear un directorio llamado "screenshots" **para que** se guarden las diferentes capturas de pantalla; **si** deseas usar una ruta diferente simplemente edita: `bspwm/scripts/capture`. Puedes revisar los diferentes atajos de teclado en `sxhkd/sxhkdr`.
+4. La ejecución de `xrandr` esta establecida en `polybar/scripts/launch.sh`; deberías cambiarla según tus necesidades.
+5. Para la configuración de monitores duales **en VMware en Windows 11**  no es necesario usar los parametros `--left-of` ni `--right-of` para `xrandr` sino solo si usas Arch Linux en una partición de disco **porque** al parecer en el caso de VMware aquello lo haces en la configuración de pantalla de Windows 11.
 
 ## Consideraciones
-1. Para realizar un cambio en la configuración de dunst, betterlockscreen, o en los colores del menú de encendido de rofi, deberás hacerlo en las plantillas de usuario de Pywal en: ~/.config/wal/templates **porque** en el script ~/.config/bspwm/scripts/setup se define la creación de enlaces simbólicos como archivos de configuración desde ~/.cache/wal **por lo que** cada vez que recargues Bspwm se sobrescriben en base a las plantillas de usuario de Pywal **para** así poder usar Pywal ya que no esta por defecto en el mismo.
-3. No es necesario recargar bspwm para recargar picom, ya que lo hace al detectar una nueva configuración.
-4. Si Picom presenta algún problema deberías revisar el backend glx que esta establecido en picom.conf por si tu hardware no lo admite; **sin embargo**, es necesario **para** poder usar el desenfoque.
-5. Si desconfiguras algo en Firefox solamente prueba eliminar el directorio ~/.mozilla y al  reabrir Firefox se creará de nuevo.
+1. Para realizar un cambio en la configuración de dunst, betterlockscreen, o en los colores del menú de encendido de rofi, deberás hacerlo en las plantillas de usuario de Pywal en: `~/.config/wal/templates` **porque** en el script `~/.config/bspwm/scripts/setup` se define la creación de enlaces simbólicos como archivos de configuración desde `~/.cache/wal` **por lo que** cada vez que recargues Bspwm se sobrescriben en base a las plantillas de usuario de Pywal **para** así poder usar Pywal ya que no esta por defecto en el mismo.
+3. No es necesario recargar bspwm para recargar picom, **ya que** lo hace al detectar una nueva configuración.
+4. Si Picom presenta algún problema deberías revisar el backend glx que esta establecido en `picom.conf` por si tu hardware no lo admite; **sin embargo**, es necesario **para** poder usar el desenfoque.
+5. Si desconfiguras algo en Firefox solamente prueba eliminar el directorio `~/.mozilla` y al  reabrir Firefox se creará de nuevo.
 
 ## [Bspwm-Sxhkd](https://github.com/baskerville/bspwm)
 ```
@@ -105,7 +105,7 @@ yay -S polybar-git
 ```
 cp -rf polybar ~/.config
 ```
-[Cava para Polybar](https://github.com/ray-pH/polybar-cava)
+[Cava para Polybar](https://github.com/ray-pH/polybar-cava) ya esta incluido en la configuración en: `polybar/modules.ini`
 
 ## Ranger
 ```
@@ -115,9 +115,7 @@ yay -S ranger-git
 cp rc.conf ~/ranger
 ```
 
-<p align=”left”>
-Nota: Ranger establece la previsualización de imágenes con el método "kitty" en rc.conf; puedes cambiarlo de ser necesario.
-</p>
+Nota: Ranger establece la previsualización de imágenes con el método "kitty" en `rc.conf`; puedes cambiarlo de ser necesario.
 
 ## Rofi
 ```
@@ -126,15 +124,11 @@ sudo pacman -S rofi
 ```
 cp -rf rofi ~/.config
 ```
-<p align=”left”>
-<a href=”https://github.com/adi1090x/rofi”>Enlace de los temas usados para rofi</a>
-</p>
-<p align=”left”>
-<a href=”https://github.com/P3rf/rofi-network-manager”>Enlace del administrador de red con rofi para polybar</a>
-</p>
+
+[Enlace de los temas usados para rofi](https://github.com/adi1090x/rofi) que ya están presentes en la carpeta de rofi
 
 <p align=”left”>
-Nota: Los temas para rofi ya están presentes en la carpeta de rofi
+<a href=”https://github.com/P3rf/rofi-network-manager”>Enlace del administrador de red con rofi para polybar</a>
 </p>
 
 ## Picom
@@ -160,15 +154,13 @@ yay -S neofetch-git
 cp -rf neofetch ~/.config
 ```
 
-[Enlace para temas de neofetch](https://github.com/Chick2D/neofetch-themes)
+[Enlace para temas de neofetch](https://github.com/Chick2D/neofetch-themes) que ya esta incluido en la configuración en: `neofetch/config.conf`
 
 <p align="left">
-Para el tema de neofetch debes tener en cuenta las fuentes necesarias para cargar los iconos de cada configuración, en mi caso elegí la siguiente: https://github.com/Chick2D/neofetch-themes/tree/main/normal/remfetch
+Nota: Para el tema de neofetch debes tener en cuenta las fuentes necesarias para cargar los iconos de cada configuración, en mi caso elegí la siguiente: https://github.com/Chick2D/neofetch-themes/tree/main/normal/remfetch
 </p>
 
-<p align="left">
-Notas: Neofetch deberá imprimir la misma imagen que tu fondo de pantalla actual, si deseas ese comportamiento simplemente comenta las lineas que hacen referencia a ello en ~/.config/bspwm/scripts/setup; <b>ademas</b> en el directorio neofetch se encuentran algunas imágenes PNG que puedes usar.
-</p>
+Nota: Neofetch deberá imprimir la misma imagen que tu fondo de pantalla actual, si deseas ese comportamiento simplemente comenta las lineas que hacen referencia a ello en `~/.config/bspwm/scripts/setup`; <b>ademas</b> en el directorio `neofetch` se encuentran algunas imágenes PNG que puedes usar.
 
 ## Pop-report
 ```
@@ -227,7 +219,7 @@ spicetify config current_theme (tema)
 spicetify apply (para aplicar la nueva configuracion) 
 ```
 <p align="left">
-Algunos temas tienen 2 o más esquemas de color diferentes.  Después de seleccionar el tema, puede cambiar entre ellos con lo siguiente:
+Algunos temas tienen dos o más esquemas de color diferentes.  Después de seleccionar el tema, puede cambiar entre ellos con lo siguiente:
 </p>  
 
 ```
@@ -263,9 +255,11 @@ Habilita el systemd service
 sudo systemctl enable betterlockscreen@$(whoami)
 ```
 
-<p align="left"> 
-Nota: Puedes usar el comando: "systemctl suspend" para suspender su sistema y se activará el servicio betterlockscreen, de modo que cuando su sistema se active, su pantalla se bloqueará.
-</p>
+Nota: Puedes usar el comando: `systemctl suspend` para suspender su sistema y se activará el servicio betterlockscreen, de modo que cuando su sistema se active, su pantalla se bloqueará.
+
+```
+cp betterlockscreenrc ~/.config
+```
 
 # Firefox
 ```
@@ -273,34 +267,22 @@ sudo pacman -S firefox
 ```
 [Enlace del tema para Firefox](https://github.com/3r3bu5x9/Prismatic-Night#userchrome)
 #### Instrucciones
-<p align="left">
-1. Mueve el directorio chrome del directorio firefox a ~/.mozilla/firefox/(directorio raíz)/. Puedes obtener la ubicación de tu directorio raíz en about:profiles al escribir eso en la barra de direcciones del navegador, usualmente el perfil es: default-release (el perfil que no esta usado actualmente se identifica por la opción disponible "Establecer como perfil predeterminado").
-  </p>
-  <p align="left">
-2. Ve a about:config al escribir eso en la barra de direcciones del navegador y establece a <b>true</b> lo siguiente: 
-  </p>
+1. Mueve el directorio `chrome` del directorio `firefox` a `~/.mozilla/firefox/(directorio raíz)`. Puedes obtener la ubicación de tu directorio raíz en `about:profiles` al escribir eso en la barra de direcciones del navegador, usualmente el perfil es: `default-release` (el perfil que no esta usado actualmente se identifica por la siguiente opción disponible: "Establecer como perfil predeterminado").
+2. Ve a `about:config` al escribir eso en la barra de direcciones del navegador y establece a <b>true</b> lo siguiente: 
 <p align="center">
 toolkit.legacyUserProfileCustomizations.stylesheets 
 </p>
 <p align="center">
 browser.compactmode.show 
   </p>
-  <p align="left">
+  
 3. Click derecho en la barra de herramientas ⇒ Personalizar la barra de herramientas ⇒ Densidad (parte inferior izquierda) ⇒ Compacto 
-  </p>
-  <p align="left">
-4. Para aplicar el tema ve a about:profiles ⇒ "Reiniciar normalmente" 
-  </p>
-  <p align="left">
-5. Mover el directorio startpage del directorio firefox a ~/.mozilla/firefox/(directorio raíz)/. La idea es que tienes una pagina de inicio (startpage) alojada, la cual puedes ver al escribir su ruta en la barra de URL: file:///home/rei_chikita/.mozilla/firefox/(directorio raíz)/startpage/index.html y esa ruta la estableces en Ajustes ⇒ Inicio ⇒ Pagina de inicio y nuevas ventanas (nombre de usuario manual).
-  </p>
-  <p align="left">
-6. Ve al directorio  del directorio firefox/newtab y edita mozilla.cfg al cambiar en la linea 7  la dirección de tu página de inicio.
-    </p>
- 
-  <p align="left">
-Notas: Con el tema de Firefox usa Ctrl + l para acceder a la barra de URL o al pasar el cursor por la parte superior. Descomenta la linea 8 de firefox/chrome/userChrome.css para poner las barras en la parte inferior.
-  </p>  
+4. Para aplicar el tema ve a `about:profiles` ⇒ "Reiniciar normalmente" 
+5. Mover el directorio `startpage` del directorio `firefox` a `~/.mozilla/firefox/(directorio raíz)/`. La idea es que tienes una pagina de inicio (startpage) alojada, la cual puedes ver al escribir su ruta en la barra de URL: `file:///home/rei_chikita/.mozilla/firefox/(directorio raíz)/startpage/index.html` y esa ruta la estableces en Ajustes ⇒ Inicio ⇒ Pagina de inicio y nuevas ventanas (nombre de usuario manual).
+6. Ve al directorio `firefox/newtab` y edita `mozilla.cfg` al cambiar en la linea 7  la dirección de tu página de inicio.
+
+
+Notas: Con el tema de Firefox usa `Ctrl + l` para acceder a la barra de URL o al pasar el cursor por la parte superior. Descomenta la linea 8 de `firefox/chrome/userChrome.css` **para** poner las barras en la parte inferior.
     
 # Lightdm
 ```
@@ -313,9 +295,8 @@ yay -S  lightdm-webkit2-greeter
 systemctl enable lightdm
 ```
 [Enlace del tema para lightdm-webkit2-greeter de Lightdm](https://github.com/manilarome/lightdm-webkit2-theme-glorious)
-<p align="left">
-Edita en: /etc/lightdm/lightdm.conf la linea greeter-session, estableciendo el recibidor instalado; en este caso: greeter-session=lightdm-webkit2-greeter 
-</p>
+
+Edita en: `/etc/lightdm/lightdm.conf` la linea `greeter-session`, estableciendo el recibidor instalado; en este caso: `greeter-session=lightdm-webkit2-greeter` 
 
 ## ZSH
 ```
