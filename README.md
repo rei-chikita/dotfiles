@@ -57,6 +57,8 @@ mkdir -p ~/.config/{ranger,picom}
 ```
 2. Instala yay del siguiente repositorio: https://github.com/Jguer/yay
 3. Debes crear un directorio llamado "screenshots" **para que** se guarden las diferentes capturas de pantalla; puedes revisar los atajos de teclado para ello en sxhkd/sxhkdr. **Si** deseas usar una ruta diferente simplemente edita: bspwm/scripts/capture
+4. La ejecucion de xrandr esta establecida en polybar/scripts/launch.sh; deberias cambiarla a tu gusto
+5. Para la configuración de monitores duales **en VMware en Windows 11**  no es necesario usar los parametros --left-of ni --right-of para xrandr; solo si usas Arch Linux en una partición de disco **porque** al parecer esto lo haces en la configuración de pantalla de Windows 11.
 
 ## Consideraciones
 1. Para realizar un cambio en la configuración de dunst, betterlockscreen, o en los colores del menú de encendido de rofi, deberás hacerlo en las plantillas de usuario de Pywal en: ~/.config/wal/templates **porque** en el script ~/.config/bspwm/scripts/setup se define la creación de enlaces simbólicos como archivos de configuración desde ~/.cache/wal **por lo que** cada vez que recargues Bspwm se sobrescriben en base a las plantillas de usuario de Pywal **para** así poder usar Pywal ya que no esta por defecto en el mismo.
