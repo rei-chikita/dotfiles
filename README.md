@@ -176,6 +176,29 @@ pip install PyQt5 argparse inotify
 yay -S dunst-git
 ```
 
+#### Brillo y audio
+```
+sudo pacman -S pulseaudio pamixer xbacklight
+```
+
+Nota: Debes configurar los atajos de teclado en: `~/.config/sxhkd/sxhkdrc` para llamar a scripts para control de audio y brillo en: `~/.config/sxhkd/scripts/` los cuales deben tener permiso de ejecución
+
+#### Captura de pantalla con flameshot
+```
+sudo pacman -S flameshot sxiv
+```
+
+Instala flameshot-lens del siguiente repositorio: https://github.com/knight-byte/flameshot-lens (sirve para buscar tus capturas de pantalla directamente con Google, es decir, es Google Lens)
+
+Nota: El script flameshot-lens no funciona si no detecta la imagen en la ruta establecida (debe ser la misma en `~/.config/flameshot/flameshot.ini`) por lo que se debe borrar el parámetro `‒raw` o `-r` que usa el script flameshot-lens por defecto **para que** así guarde la captura de pantalla.
+
+#### Captura de color
+```
+sudo pacman -S xcolor xclip
+```
+
+Nota final: El archivo de configuración de flameshot esta en: `~/.config/flameshot/flameshot.ini`, allí puedes entre otras cosas: establecer el color para dibujar, la ruta para guardar capturas de pantalla, etc...
+
 ## Font manager
 ```
 sudo pacman -S font-manager
