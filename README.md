@@ -9,6 +9,8 @@ Archivos de configuración personales
 * [Galería](#Galería)
 * [Ajustes generales](#Ajustes-generales)
 * [Consideraciones](#Consideraciones)
+* [Xserver](#Xserver)
+* [Controladores e interfaz de audio](#Controladores-e-interfaz-de-audio)
 * [Bspwm-Sxhkd](#Bspwm-Sxhkd)
 * [Polybar](#Polybar)
 * [Ranger](#Ranger)
@@ -65,6 +67,47 @@ mkdir -p ~/.config/{ranger,picom}
 3. No es necesario recargar bspwm para recargar picom, **ya que** lo hace al detectar una nueva configuración.
 4. Si Picom presenta algún problema deberías revisar el backend glx que esta establecido en `picom.conf` por si tu hardware no lo admite; **sin embargo**, es necesario **para** poder usar el desenfoque.
 5. Si desconfiguras algo en Firefox solamente prueba eliminar el directorio `~/.mozilla` y al  reabrir Firefox se creará de nuevo.
+
+## Xserver
+```
+sudo pacman -S xorg-xsetroot xorg-server xorg-xinit xorg-xrdb   
+```
+
+Copiar el archivo de configuración por defecto:
+
+```
+sudo cp /etc/X11/xinit/xinitrc ~/.xinitrc
+```
+
+Incluye las siguientes líneas en `~/.xinitrc` (reemplazando la ejecución de Twm, xorg-xclock y Xterm):
+
+```
+sxhkd &
+(tu terminal de preferencia) &
+exec bspwm
+```
+
+#### Inicio automático 
+Sirve **para** evitar usar `startx` cada vez que quieras iniciar un **WM**. 
+
+Coloque lo siguiente en su archivo de inicialización de shell de inicio de sesión (por ejemplo, `~/.bash_profile` para Bash o `~/.zprofile` para ZSH):
+
+```
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+  exec startx
+fi
+```
+
+## Controladores-e-interfaz-de-audio
+
+Pulseaudio
+
+```
+sudo pacman -S pulseaudio 
+```
+Lo recomiendo en lugar de alsa para evitar configuraciones con cava
+
+Nota: Al parecer Systemd de Arch Linux hace que Pulseaudio inicie automáticamente, **por lo que** si no inicia solo reinicia la PC
 
 ## [Bspwm-Sxhkd](https://github.com/baskerville/bspwm)
 ```
