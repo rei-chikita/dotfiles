@@ -182,7 +182,7 @@ yay -S picom-jonaburg-git
 ```
   
 ```
-cp -rf picom ~/.config/
+cp -rf picom.conf ~/.config/picom
 ```
 ## Pywal
 ```
