@@ -92,7 +92,7 @@ sxhkd &
 (tu terminal de preferencia) &
 exec bspwm
 ```
-Nota: No olvides instalar aquella terminal de tu preferencia
+Nota: No olvides instalar aquella terminal de tu preferencia **porque** dada la configuración anterior en `~/.xinitrc`, al iniciar Bspwm la terminal se ejecutará automáticamente.
 
 #### Inicio automático 
 Sirve **para** evitar usar `startx` cada vez que quieras iniciar un **WM**. 
