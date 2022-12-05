@@ -226,7 +226,7 @@ yay -S dunst-git
 sudo pacman -S pulseaudio pamixer xbacklight
 ```
 
-Nota: Debes configurar los atajos de teclado en: `~/.config/sxhkd/sxhkdrc` para llamar a scripts para control de audio y brillo en: `~/.config/sxhkd/scripts/` los cuales deben tener permiso de ejecución
+Nota: Debes configurar los atajos de teclado en: `~/.config/sxhkd/sxhkdrc` para llamar a scripts para control de audio y brillo en: `~/.config/bspwm/scripts/` los cuales deben tener permiso de ejecución
 
 #### Captura de pantalla con flameshot
 ```
