@@ -55,7 +55,7 @@ Archivos de configuración personales
 ## Ajustes-generales 
 1. Crear carpetas para algunas utilidades **para** seguir literalmente con copia y pega en cada apartado:
 ```
-mkdir -p ~/.config/{ranger,picom}
+mkdir -p ~/.config/{ranger,picom,wal,flameshot}
 ```
 2. Instala yay del siguiente repositorio: https://github.com/Jguer/yay
 3. Debes crear un directorio llamado "screenshots" **para que** se guarden las diferentes capturas de pantalla; **si** deseas usar una ruta diferente simplemente edita: `bspwm/scripts/capture`. Puedes revisar los diferentes atajos de teclado en `sxhkd/sxhkdr`.
@@ -70,13 +70,19 @@ mkdir -p ~/.config/{ranger,picom}
 
 ## Xserver
 ```
-sudo pacman -S xorg-xsetroot xorg-server xorg-xinit xorg-xrdb   
+sudo pacman -S xorg-xsetroot xorg-xset xorg-server xorg-xinit xorg-xrdb   
 ```
 
-Copiar el archivo de configuración por defecto:
+Copiar el archivo de configuración por defecto y renombrarlo (con un punto delante):
 
 ```
 sudo cp /etc/X11/xinit/xinitrc ~/.xinitrc
+```
+
+Cambia el propietario a tu usuario (no root) del archivo copiado anteriormente
+
+```
+sudo chown (usuario) (ruta del archivo)
 ```
 
 Incluye las siguientes líneas en `~/.xinitrc` (reemplazando la ejecución de Twm, xorg-xclock y Xterm):
@@ -121,11 +127,12 @@ yay -S sxhkd-git
 mkdir -p ~/.config/{bspwm,sxhkd}
 ```
 ```
-sudo cp /usr/share/doc/bspwm/examples/bspwmrc  ~/.config/bspwm/
+cp -rf bspwm  ~/.config
 ```
 ```
-sudo cp /usr/share/doc/bspwm/examples/sxhkdrc  ~/.config/sxhkd/ 
+cp -rf sxhkd ~/.config
 ```
+
 <p align="left">
 Cambia el propietario a tu usuario (no root) de los archivos copiados anteriormente
 </p>
@@ -202,7 +209,7 @@ cp -rf neofetch ~/.config
 [Enlace para temas de neofetch](https://github.com/Chick2D/neofetch-themes) que ya esta incluido en la configuración en: `neofetch/config.conf`
 
 <p align="left">
-Nota: Para el tema de neofetch debes tener en cuenta las fuentes necesarias para cargar los iconos de cada configuración, en mi caso elegí la siguiente: https://github.com/Chick2D/neofetch-themes/tree/main/normal/remfetch
+Nota: Para el tema de neofetch debes tener en cuenta las fuentes necesarias para cargar los iconos de cada configuración, en mi caso elegí el siguiente tema: <b>insert name 2 electric boogaloo</b>
 </p>
 
 Nota: Neofetch deberá imprimir la misma imagen que tu fondo de pantalla actual, si deseas ese comportamiento simplemente comenta las lineas que hacen referencia a ello en `~/.config/bspwm/scripts/setup`; <b>ademas</b> en el directorio `neofetch` se encuentran algunas imágenes PNG que puedes usar.
@@ -223,7 +230,7 @@ yay -S dunst-git
 
 #### Brillo y audio
 ```
-sudo pacman -S pulseaudio pamixer xbacklight
+sudo pacman -S pulseaudio pamixer xorg-xbacklight 
 ```
 
 Nota: Debes configurar los atajos de teclado en: `~/.config/sxhkd/sxhkdrc` para llamar a scripts para control de audio y brillo en: `~/.config/bspwm/scripts/` los cuales deben tener permiso de ejecución
@@ -231,6 +238,9 @@ Nota: Debes configurar los atajos de teclado en: `~/.config/sxhkd/sxhkdrc` para 
 #### Captura de pantalla con flameshot
 ```
 sudo pacman -S flameshot sxiv
+```
+```
+cp flameshot.ini ~/.config/flameshot
 ```
 
 Instala flameshot-lens del siguiente repositorio: https://github.com/knight-byte/flameshot-lens (sirve para buscar tus capturas de pantalla directamente con Google, es decir, es Google Lens)
