@@ -86,6 +86,7 @@ sxhkd &
 (tu terminal de preferencia) &
 exec bspwm
 ```
+Nota: No olvides instalar aquella terminal de tu preferencia
 
 #### Inicio automático 
 Sirve **para** evitar usar `startx` cada vez que quieras iniciar un **WM**. 
@@ -155,7 +156,7 @@ cp -rf polybar ~/.config
 yay -S ranger-git
 ```
 ```
-cp rc.conf ~/ranger
+cp rc.conf ~/.config/ranger
 ```
 
 Nota: Ranger establece la previsualización de imágenes con el método "kitty" en `rc.conf`; puedes cambiarlo de ser necesario.
@@ -170,14 +171,15 @@ cp -rf rofi ~/.config
 
 [Enlace de los temas usados para rofi](https://github.com/adi1090x/rofi) que ya están presentes en la carpeta de rofi
 
-<p align=”left”>
-<a href=”https://github.com/P3rf/rofi-network-manager”>Enlace del administrador de red con rofi para polybar</a>
-</p>
+[Enlace del administrador de red con rofi para polybar](https://github.com/P3rf/rofi-network-manager)
 
 ## Picom
-<p align="left">
-  Instala el siguiente fork de picom <b>para</b> poder usar el método de difuminado "dual_kawase" y a la vez bordes redondeados (a diferencia de picom original): https://github.com/Arian8j2/picom-jonaburg-fix
-</p>
+
+Instala el siguiente fork de picom <b>para</b> poder usar el método de difuminado "dual_kawase" y a la vez bordes redondeados (a diferencia de picom original): https://github.com/Arian8j2/picom-jonaburg-fix o desde AUR:
+
+```
+yay -S picom-jonaburg-git
+```
   
 ```
 cp -rf picom ~/.config/
