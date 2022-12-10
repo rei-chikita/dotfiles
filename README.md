@@ -63,7 +63,7 @@ mkdir -p ~/.config/{ranger,picom,wal,flameshot}
 5. Para la configuración de monitores duales **en VMware en Windows 11**  no es necesario usar los parametros `--left-of` ni `--right-of` para `xrandr` sino solo si usas Arch Linux en una partición de disco **porque** al parecer en el caso de VMware aquello lo haces en la configuración de pantalla de Windows 11.
 
 ## Consideraciones
-1. Para realizar un cambio en la configuración de dunst, betterlockscreen, o en los colores del menú de encendido de rofi, deberás hacerlo en las plantillas de usuario de Pywal en: `~/.config/wal/templates` **porque** en el script `~/.config/bspwm/scripts/setup` se define la creación de enlaces simbólicos como archivos de configuración desde `~/.cache/wal` **por lo que** cada vez que recargues Bspwm se sobrescriben en base a las plantillas de usuario de Pywal **para** así poder usar Pywal ya que no esta por defecto en el mismo.
+1. Para realizar un cambio en la configuración de dunst, betterlockscreen, o en los colores del menú de encendido de rofi, deberás hacerlo en las plantillas de usuario de Pywal en: `~/.config/wal/templates` **porque** en el script `~/.config/bspwm/scripts/setup` se define la creación de enlaces simbólicos como archivos de configuración desde `~/.cache/wal` **por lo que** cada vez que recargues Bspwm si ya existen se sobrescriben en base a las plantillas de usuario de Pywal, sino existen se crean los archivos de configuración (por ello en esta guía no hay necesidad de copiar archivos de configuración) **para** así poder usar Pywal ya que no esta por defecto en el mismo.
 3. No es necesario recargar bspwm para recargar picom, **ya que** lo hace al detectar una nueva configuración.
 4. Si Picom presenta algún problema deberías revisar el backend glx que esta establecido en `picom.conf` por si tu hardware no lo admite; **sin embargo**, es necesario **para** poder usar el desenfoque.
 5. Si desconfiguras algo en Firefox solamente prueba eliminar el directorio `~/.mozilla` y al  reabrir Firefox se creará de nuevo.
@@ -335,9 +335,6 @@ sudo systemctl enable betterlockscreen@$(whoami)
 
 Nota: Puedes usar el comando: `systemctl suspend` para suspender su sistema y se activará el servicio betterlockscreen, de modo que cuando su sistema se active, su pantalla se bloqueará.
 
-```
-cp betterlockscreenrc ~/.config
-```
 
 # Firefox
 ```
