@@ -156,7 +156,62 @@ yay -S polybar-git
 ```
 cp -rf polybar ~/.config
 ```
-[Cava para Polybar](https://github.com/ray-pH/polybar-cava) ya esta incluido en la configuración en: `polybar/modules.ini`
+
+#### Descargar fuentes
+
+Terminus: `sudo pacman -S terminus-font`
+
+Font Awesome 6: `sudo pacman -S ttf-font-awesome`
+
+Material Icons: `yay -S ttf-material-icons-git`
+
+Font Awesome 5: `yay -S ttf-font-awesome-5`
+
+[Symbols Nerd Font](https://www.nerdfonts.com/font-downloads)
+
+[Iosevka Nerd Font](https://www.nerdfonts.com/font-downloads)
+
+[Hack Nerd Font](https://www.nerdfonts.com/font-downloads)
+
+Nota: También son necesarias para cargar los iconos del tema para neofetch de esta guía
+
+#### Descomprimir fuentes
+ 
+Para instalar fuentes en todo el sistema (disponible para todos los usuarios), mueve la carpeta al directorio: `/usr/share/fonts` (Si tu fuente tiene la extensión .ttf deveras moverla a la carpeta TTF...).
+
+Para instalar las fuentes para un único usuario, utilice la ruta: `~/.local/share/fonts/`. 
+
+```
+sudo pacman -S unzip
+```
+
+```
+cd /usr/share/fonts
+```
+
+```
+sudo cp ~/Descargas/*.zip .
+```
+
+```
+sudo unzip (nombre de cada zip).zip
+```
+
+```
+sudo rm *.zip
+```
+
+#### Utilidades para módulos de polybar
+
+[zscroll](https://github.com/noctuid/zscroll)
+
+[cava para Polybar](https://github.com/ray-pH/polybar-cava) ya esta incluido en la configuración en: `polybar/modules.ini`
+
+[]()
+
+[]()
+
+[]()
 
 ## Ranger
 ```
