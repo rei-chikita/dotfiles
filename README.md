@@ -64,7 +64,7 @@ mkdir -p ~/.config/{ranger,picom,wal,flameshot}
 
 ## Consideraciones
 1. Para realizar un cambio en la configuración de dunst, betterlockscreen, o en los colores del menú de encendido de rofi, deberás hacerlo en las plantillas de usuario de Pywal en: `~/.config/wal/templates` **porque** en el script `~/.config/bspwm/scripts/setup` se define la creación de enlaces simbólicos como archivos de configuración desde `~/.cache/wal` **por lo que** cada vez que recargues Bspwm si ya existen se sobrescriben en base a las plantillas de usuario de Pywal, sino existen se crean los archivos de configuración (por ello en esta guía no hay necesidad de copiar archivos de configuración) **para** así poder usar Pywal ya que no esta por defecto en el mismo.
-3. No es necesario recargar bspwm para recargar picom, **ya que** lo hace al detectar una nueva configuración.
+3. No es necesario recargar bspwm para recargar picom **ya que** lo hace al detectar una nueva configuración.
 4. Si Picom presenta algún problema deberías revisar el backend glx que esta establecido en `picom.conf` por si tu hardware no lo admite; **sin embargo**, es necesario **para** poder usar el desenfoque.
 5. Si desconfiguras algo en Firefox solamente prueba eliminar el directorio `~/.mozilla` y al  reabrir Firefox se creará de nuevo.
 
@@ -477,7 +477,7 @@ sudo ./install.sh -t vimix -i white -s 1080p
 En https://github.com/vinceliuice/grub2-themes para usar una imagen de fondo personalizada solamente mueve dentro del repositorio la imagen deseada con el nombre de "background.jpg"
   </p>
   
-## pacman-pb (no recomendado aun por entrar en conflicto con pacman)
+## pacman-pb (no recomendado aún por entrar en conflicto con pacman)
 ```
 git clone https://aur.archlinux.org/pacman-pb.git
 ```
