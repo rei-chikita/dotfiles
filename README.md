@@ -73,7 +73,7 @@ mkdir -p ~/.config/{ranger,picom,wal,flameshot}
 sudo pacman -S xorg-xsetroot xorg-xset xorg-server xorg-xinit xorg-xrdb   
 ```
 
-Copiar el archivo de configuración por defecto y renombrarlo (con un punto delante):
+Copiar el archivo de configuración por defecto y renombralo con un punto delante:
 
 ```
 sudo cp /etc/X11/xinit/xinitrc ~/.xinitrc
@@ -131,14 +131,6 @@ cp -rf bspwm  ~/.config
 ```
 ```
 cp -rf sxhkd ~/.config
-```
-
-<p align="left">
-Cambia el propietario a tu usuario (no root) de los archivos copiados anteriormente
-</p>
-
-```
-sudo chown (usuario) (ruta del archivo)
 ```
 
 <p align="left">
