@@ -254,6 +254,8 @@ Luego comenta el otro `@import` con `/**` al inicio y con `**/` al final de la l
 
 [Enlace del administrador de red con rofi para polybar](https://github.com/P3rf/rofi-network-manager) ya presente en `polybar/scripts`
 
+Nota: Se mostrará automáticamente tu nombre de usuario en el menú de encendido con rofi debido a la configuración en `rofi/powermenu.sh`.
+
 ## Picom
 
 Instala el siguiente fork de picom <b>para</b> poder usar el método de difuminado "dual_kawase" y a la vez bordes redondeados (a diferencia de picom original): https://github.com/Arian8j2/picom-jonaburg-fix o desde AUR:
@@ -355,7 +357,7 @@ cp -rf settings.ini ~/.config/gtk-3.0
 ```
 
 ## Spicetify
-[Instalación](https://spicetify.app/docs/advanced-usage/installation#note-for-linux-users)
+[Instalación](https://spicetify.app/docs/advanced-usage/installation#note-for-linux-users) (No olvides leer la nota para usuarios de Linux!)
 
 <p align="left">
 Aplicar un tema:
@@ -368,7 +370,7 @@ spicetify config current_theme (tema)
 spicetify apply (para aplicar la nueva configuracion) 
 ```
 <p align="left">
-Algunos temas tienen dos o más esquemas de color diferentes.  Después de seleccionar el tema, puede cambiar entre ellos con lo siguiente:
+Algunos temas tienen dos o más esquemas de color diferentes. Después de seleccionar el tema puedes cambiar entre ellos con lo siguiente:
 </p>  
 
 ```
@@ -376,7 +378,7 @@ spicetify config color_scheme (esquema de color)
 ```
 
 <p align="left">
-Nota: Puede variar dependiendo del tema por lo que debes revisar en las instrucciones en el README de cada tema: https://github.com/spicetify/spicetify-themes
+Nota: La forma de aplicar un tema puede variar por lo que debes revisar las instrucciones del README de cada tema: https://github.com/spicetify/spicetify-themes
 </p>
 
 ## [Spotify-Adblock](https://github.com/abba23/spotify-adblock)
