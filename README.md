@@ -318,9 +318,9 @@ sudo pacman -S flameshot sxiv
 cp flameshot.ini ~/.config/flameshot
 ```
 
-[Instala flameshot-lens](https://github.com/knight-byte/flameshot-lens) **para** buscar tus capturas de pantalla directamente con Google, es decir, es Google Lens)
+[Instala flameshot-lens como en la opción 1](https://github.com/knight-byte/flameshot-lens) **para** buscar tus capturas de pantalla directamente con Google, es decir, es Google Lens)
 
-Nota: El script flameshot-lens no funciona si no detecta la imagen en la ruta establecida (debe ser la misma en `~/.config/flameshot/flameshot.ini`) por lo que se debe borrar el parámetro `‒raw` o `-r` que usa el script flameshot-lens por defecto **para que** así guarde la captura de pantalla.
+Nota: El script flameshot-lens no funciona si no detecta la imagen en la ruta establecida **por lo que** debes editarlo al borrar el parámetro `‒raw` o `-r` y revisar que use la misma que `~/.config/flameshot/flameshot.ini` 
 
 #### Captura de color
 ```
@@ -342,6 +342,7 @@ Debes instalarlo <b>porque</b>  lo uso en lugar del comando wal de Pywal para es
 ```
 sudo pacman -S feh
 ```
+
 ## Thunar
 ```
 sudo pacman -s thunar
@@ -393,12 +394,8 @@ yay -S spotify-adblock-git
 yay -S betterlockscreen-git
 ```
 <p align="left">
-Mover el archivo de servicio al directorio apropiado, AUR hace esto por usted (al instalar por ejemplo con yay)
+Mover el archivo de servicio al directorio apropiado, AUR hace esto por usted al instalar por ejemplo con yay
 </p>
-
-```
-cp betterlockscreen@.service /usr/lib/systemd/system/
-```
 
 <p align="left">
 Habilita el systemd service
@@ -408,14 +405,16 @@ Habilita el systemd service
 sudo systemctl enable betterlockscreen@$(whoami)
 ```
 
-Nota: Puedes usar el comando: `systemctl suspend` para suspender su sistema y se activará el servicio betterlockscreen, de modo que cuando su sistema se active, su pantalla se bloqueará.
+Nota: Puedes usar el comando: `systemctl suspend` para suspender su sistema y se activará el servicio betterlockscreen, de modo que cuando tu sistema se active, tu pantalla se bloqueará.
 
 
 # Firefox
 ```
 sudo pacman -S firefox
 ```
+
 [Enlace del tema para Firefox](https://github.com/3r3bu5x9/Prismatic-Night#userchrome)
+
 #### Instrucciones
 1. Mueve el directorio `chrome` del directorio `firefox` a `~/.mozilla/firefox/(directorio raíz)`. Puedes obtener la ubicación de tu directorio raíz en `about:profiles` al escribir eso en la barra de direcciones del navegador, usualmente el perfil es: `default-release` (el perfil que no esta usado actualmente se identifica por la siguiente opción disponible: "Establecer como perfil predeterminado").
 2. Ve a `about:config` al escribir eso en la barra de direcciones del navegador y establece a <b>true</b> lo siguiente: 
@@ -446,7 +445,7 @@ systemctl enable lightdm
 ```
 [Enlace del tema para lightdm-webkit2-greeter de Lightdm](https://github.com/manilarome/lightdm-webkit2-theme-glorious)
 
-Edita en: `/etc/lightdm/lightdm.conf` la linea `greeter-session`, estableciendo el recibidor instalado; en este caso: `greeter-session=lightdm-webkit2-greeter` 
+Edita `/etc/lightdm/lightdm.conf` en la linea `greeter-session`, estableciendo el recibidor instalado anteriormente; es decir: `greeter-session=lightdm-webkit2-greeter` 
 
 ## ZSH
 ```
