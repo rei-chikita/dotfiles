@@ -491,7 +491,7 @@ sudo ./install.sh -t vimix -i white -s 1080p
 En https://github.com/vinceliuice/grub2-themes para usar una imagen de fondo personalizada solamente mueve dentro del repositorio la imagen deseada con el nombre de "background.jpg"
   </p>
   
-## pacman-pb (no recomendado aún por entrar en conflicto con pacman)
+## pacman-pb 
 ```
 git clone https://aur.archlinux.org/pacman-pb.git
 ```
@@ -500,15 +500,15 @@ make -si
 ```
 [Mas información](https://www.reddit.com/r/unixporn/comments/z89thg/oc_i_modified_pacman_to_allow_customizing_the/)
 
+Nota: No recomendado aún por entrar en conflicto con pacman
+
 # komorebi
 ```
 yay -S komorebi
 ```
-
 ```
 sudo pacman -S gnome-desktop-4 gst-plugins-base-libs gst-plugins-bad-libs webkit2gtk lightdm-webkit2-greeter gtk4 libportal-gtk4 libadwaita webkit2gtk font-manager tracker3-miners gupnp-dlna clutter-gst
 ```
-
 ```
 sudo pacman -S gst-libav gstreamer
 ```
@@ -516,9 +516,11 @@ La dependencia `gst-libav` es necesaria para poder usar videos como Wallpapers
 
 Nota: Instala antes komorebi que el tema para Lightdm **por que** sino existen conflictos por versiones de algunas dependencias.
 
-Nota: Al parecer despues de ejecutar komorebi debo recargar bspwm para que se muestre su menu al dar click derecho; sin embargo, luego no se muestran las barras de polybar **si no** matas el proceso de komorebi.
+Nota: Al parecer después de ejecutar komorebi debo recargar bspwm para que se muestre su menú al dar click derecho; sin embargo, luego no se muestran las barras de polybar **por lo que** debes matar el proceso de komorebi.
 
-Nota: Al quitar la configuracion de polybar `wm-restack` se soluciona; sin embargo, al hacerlo existe el problema de que se muestran las barras de polybar en el modo de pantalla completa.
+Nota: Al quitar `wm-restack` de la configuración de polybar se soluciona, sin embargo, al hacerlo existe el problema de que se muestran las barras de polybar en el modo de pantalla completa.
+
+**Conclusión:** No recomendado aún.
 
 # Lightdm
 ```
