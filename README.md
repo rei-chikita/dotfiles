@@ -22,6 +22,7 @@ Archivos de configuración personales
 * [Font manager](#Font-manager)
 * [Feh](#Feh)
 * [Thunar](#Thunar)
+* [GTK](#GTK)
 * [Spicetify](#Spicetify)
 * [Spotify Adblock](#Spotify-Adblock)
 * [Betterlockscreen](#Betterlockscreen)
@@ -32,8 +33,8 @@ Archivos de configuración personales
 * [Pop report](#Pop-report)
 * [GRUB](#GRUB)
 * [pacman-pb](#pacman-pb)
-* [Lightdm](#Lightdm)
 * [komorebi](#komorebi)
+* [Lightdm](#Lightdm)
 * [Extras](#Extras)
 
 ## Galería
