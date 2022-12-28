@@ -27,12 +27,12 @@ Archivos de configuración personales
 * [Spotify Adblock](#Spotify-Adblock)
 * [Betterlockscreen](#Betterlockscreen)
 * [Firefox](#Firefox)
-* [Lightdm](#Lightdm)
 * [ZSH](#ZSH)
 * [Bat, lsd, fzf](#Bat-lsd-fzf)
 * [Translate Shell](#Translate-shell)
 * [GRUB](#GRUB)
 * [pacman-pb](#pacman-pb)
+* [Lightdm](#Lightdm)
 * [Extras](#Extras)
 
 ## Galería
