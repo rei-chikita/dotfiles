@@ -503,7 +503,7 @@ yay -S komorebi
 ```
 
 ```
-sudo pacman -S
+sudo pacman -S gnome-desktop-4 gst-plugins-base-libs gst-plugins-bad-libs webkit2gtk lightdm-webkit2-greeter gtk4 libportal-gtk4 libadwaita webkit2gtk font-manager tracker3-miners gupnp-dlna clutter-gst
 ```
 
 ```
