@@ -433,20 +433,6 @@ browser.compactmode.show
 
 Notas: Con el tema de Firefox usa `Ctrl + l` para acceder a la barra de URL o al pasar el cursor por la parte superior. Descomenta la linea 8 de `firefox/chrome/userChrome.css` **para** poner las barras en la parte inferior.
     
-# Lightdm
-```
-yay -S lightdm 
-```
-```
-yay -S  lightdm-webkit2-greeter
-```
-```
-systemctl enable lightdm
-```
-[Enlace del tema para lightdm-webkit2-greeter de Lightdm](https://github.com/manilarome/lightdm-webkit2-theme-glorious)
-
-Edita `/etc/lightdm/lightdm.conf` en la linea `greeter-session`, estableciendo el recibidor instalado anteriormente; es decir: `greeter-session=lightdm-webkit2-greeter` 
-
 ## ZSH
 ```
 sudo pacman -S zsh zsh-syntax-highlighting zsh-autosuggestions
@@ -504,6 +490,21 @@ git clone https://aur.archlinux.org/pacman-pb.git
 make -si
 ```
 [Mas información](https://www.reddit.com/r/unixporn/comments/z89thg/oc_i_modified_pacman_to_allow_customizing_the/)
+
+# Lightdm
+```
+yay -S lightdm 
+```
+```
+yay -S  lightdm-webkit2-greeter
+```
+```
+systemctl enable lightdm
+```
+[Enlace del tema para lightdm-webkit2-greeter de Lightdm](https://github.com/manilarome/lightdm-webkit2-theme-glorious)
+
+Edita `/etc/lightdm/lightdm.conf` en la linea `greeter-session`, estableciendo el recibidor instalado anteriormente; es decir: `greeter-session=lightdm-webkit2-greeter` 
+
 
 ## Extras
 1. https://github.com/acxz/pokeshell
