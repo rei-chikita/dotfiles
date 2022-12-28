@@ -18,7 +18,6 @@ Archivos de configuración personales
 * [Picom](#Picom)
 * [Pywal](#Pywal)
 * [Neofetch](#Neofetch)
-* [Pop report](#Pop-report)
 * [Dunst](#Dunst)
 * [Font manager](#Font-manager)
 * [Feh](#Feh)
@@ -30,6 +29,7 @@ Archivos de configuración personales
 * [ZSH](#ZSH)
 * [Bat, lsd, fzf](#Bat-lsd-fzf)
 * [Translate Shell](#Translate-shell)
+* [Pop report](#Pop-report)
 * [GRUB](#GRUB)
 * [pacman-pb](#pacman-pb)
 * [Lightdm](#Lightdm)
@@ -66,12 +66,13 @@ sudo pacman -Syu
 mkdir -p ~/.config/{ranger,picom,wal,flameshot}
 ```
 3. Instala yay del siguiente repositorio: https://github.com/Jguer/yay
-4. Debes crear un directorio llamado "screenshots" **para que** se guarden las diferentes capturas de pantalla; **si** deseas usar una ruta diferente simplemente edita: `bspwm/scripts/capture`. Puedes revisar los diferentes atajos de teclado en `sxhkd/sxhkdr`.
-5. La ejecución de `xrandr` esta establecida en `polybar/scripts/launch.sh`; deberías cambiarla según tus necesidades.
-6. Para la configuración de monitores duales **en VMware en Windows 11**  no es necesario usar los parametros `--left-of` ni `--right-of` para `xrandr` sino solo si usas Arch Linux en una partición de disco **porque** al parecer en el caso de VMware aquello lo haces en la configuración de pantalla de Windows 11.
+4. Debes crear un directorio llamado "screenshots" **para que** se guarden las diferentes capturas de pantalla; **si** deseas usar una ruta diferente simplemente edita: `bspwm/scripts/capture`. 
+5. Puedes revisar los diferentes atajos de teclado en `sxhkd/sxhkdr`.
+6. La ejecución de `xrandr` esta establecida en `polybar/scripts/launch.sh`; deberías cambiarla según tus necesidades.
+7. Para la configuración de monitores duales **en VMware en Windows 11**  no es necesario usar los parametros `--left-of` ni `--right-of` para `xrandr` sino solo si usas Arch Linux en una partición de disco **porque** al parecer en el caso de VMware aquello lo haces en la configuración de pantalla de Windows 11.
 
 ## Consideraciones
-1. Para realizar un cambio en la configuración de dunst, betterlockscreen, o en los colores del menú de encendido de rofi, deberás hacerlo en las plantillas de usuario de Pywal en: `~/.config/wal/templates` **porque** en el script `~/.config/bspwm/scripts/setup` se define la creación de enlaces simbólicos como archivos de configuración desde `~/.cache/wal` **por lo que** cada vez que recargues Bspwm si ya existen se sobrescriben en base a las plantillas de usuario de Pywal, sino existen se crean los archivos de configuración (por ello en esta guía no hay necesidad de copiar archivos de configuración) **para** así poder usar Pywal ya que no esta por defecto en el mismo.
+1. Si deseas hacer un cambio en la configuración de dunst, betterlockscreen o en los colores del menú de encendido de rofi deberás hacerlo en las plantillas de usuario de Pywal en: `~/.config/wal/templates` **porque** Pywal genera archivos en `~/.cache/wal` en base a las plantillas de usuario **cada vez** que cambias tu fondo de pantalla, archivos que serán usados para crear enlaces simbólicos para ser archivos de configuración de cada utilidad, por ello en esta guía no hay necesidad de copiar archivos de configuración directamente.
 3. No es necesario recargar bspwm para recargar picom **ya que** lo hace al detectar una nueva configuración.
 4. Si Picom presenta algún problema deberías revisar el backend glx que esta establecido en `picom.conf` por si tu hardware no lo admite; **sin embargo**, es necesario **para** poder usar el desenfoque.
 5. Si desconfiguras algo en Firefox solamente prueba eliminar el directorio `~/.mozilla` y al  reabrir Firefox se creará de nuevo.
@@ -81,7 +82,7 @@ mkdir -p ~/.config/{ranger,picom,wal,flameshot}
 sudo pacman -S xorg-xsetroot xorg-xset xorg-server xorg-xinit xorg-xrdb   
 ```
 
-Copiar el archivo de configuración por defecto y renombralo con un punto delante:
+Copiar el archivo de configuración por defecto y renómbralo con un punto delante:
 
 ```
 sudo cp /etc/X11/xinit/xinitrc ~/.xinitrc
@@ -126,11 +127,11 @@ mkdir -p ~/.config/{bspwm,sxhkd}
 ```
 cp -rf bspwm  ~/.config
 ```
-
-Nota: Si no copias los archivos que se ejecutan en el `bspwmrc` de este repositorio no podrás abrir una terminal debido al estado de error y tal vez tengas que formatear **por lo que** no deberias configurar el [Inicio automático](#Inicio-automático) hasta reiniciar, usar `startx` y asi comprobar los atajos
-
 ```
-cp -rf sxhkd ~/.config
+cp sxhkdrc ~/.config/sxhkd
+```
+```
+chmod +x ~/.config/bspwm/scripts/*
 ```
 
 <p align="left">
@@ -140,6 +141,8 @@ Debes asignar permiso de ejecución de lo contrario Bspwm no lo reconoce y se us
 ```
 chmod +x ~/.config/bspwm/bspwmrc
 ```
+
+Nota: Si no tienes los archivos que se ejecutan en el archivo `bspwmrc` de este repositorio no deberías configurar el [Inicio automático](#Inicio-automático) sino solo usar `startx` **porque** ocurrirá un estado de error y usará los archivos predeterminados de `sxhkd` y `bspwm`, **por lo que** sino editaste antes la terminal a abrir en el archivo predeterminado de `sxhkd`, al reiniciar o salir de `bspwm` no podrás abrir una terminal y tal vez tengas que formatear.
 
 #### Inicio-automático 
 Sirve **para** evitar usar `startx` cada vez que quieras iniciar un **WM**. 
@@ -162,9 +165,7 @@ cp -rf polybar ~/.config
 ```
 chmod +x ~/.config/polybar/scripts/*
 ```
-```
 
-```
 #### Descargar fuentes
 
 Terminus: `sudo pacman -S terminus-font`
@@ -181,7 +182,7 @@ Font Awesome 5: `yay -S ttf-font-awesome-5`
 
 [Hack Nerd Font](https://www.nerdfonts.com/font-downloads)
 
-Nota: También son necesarias para cargar los iconos del tema para neofetch de esta guía
+Nota: También son necesarias para cargar los iconos del tema para neofetch de esta guía.
 
 #### Descomprimir fuentes
  
@@ -216,7 +217,7 @@ sudo rm *.zip
 yay -S zscroll-git
 ```
 
-[cava para Polybar](https://github.com/ray-pH/polybar-cava) ya esta incluido en la configuración en: `polybar/modules.ini`
+[cava para Polybar](https://github.com/ray-pH/polybar-cava) ya esta incluido en la configuración: `polybar/modules.ini`
 
 
 ## Ranger
@@ -251,7 +252,7 @@ Agrega al archivo `~/.config/rofi/powermenu/type-1/shared/colors.rasi` la siguie
 
 Luego comenta el otro `@import` con `/**` al inicio y con `**/` al final de la linea
 
-[Enlace del administrador de red con rofi para polybar](https://github.com/P3rf/rofi-network-manager) ya presente en polybar/scripts
+[Enlace del administrador de red con rofi para polybar](https://github.com/P3rf/rofi-network-manager) ya presente en `polybar/scripts`
 
 ## Picom
 
@@ -262,7 +263,7 @@ yay -S picom-jonaburg-git
 ```
   
 ```
-cp -rf picom.conf ~/.config/picom
+cp picom.conf ~/.config/picom
 ```
 
 ## Pywal
@@ -289,29 +290,17 @@ Nota: Para el tema de neofetch debes tener en cuenta las fuentes necesarias para
 
 Nota: Neofetch deberá imprimir la misma imagen que tu fondo de pantalla actual, si no deseas este comportamiento simplemente comenta las lineas que hacen referencia a ello en `~/.config/bspwm/scripts/setup`; <b>además</b> en el directorio `neofetch` se encuentran algunas imágenes PNG que puedes usar.
 
-## Pop-report
-```
-git clone https://github.com/ikz87/pop_report
-```
-```
-sudo pacman -S python-pip
-```
-```
-pip install PyQt5 argparse inotify
-```
-[Mas información](https://www.reddit.com/r/unixporn/comments/wph3ef/oc_pop_report_a_simple_popup_notification_tool/)
-
 ## Dunst
 ```
 yay -S dunst-git
+```
+```
+cp -rf dunst ~/.config
 ```
 
 #### Brillo y audio
 ```
 sudo pacman -S pulseaudio pamixer xorg-xbacklight 
-```
-```
-sudo chmod +x ~/.config/bspwm/scripts/*
 ```
 
 Nota: Para llamar los scripts de control de audio y brillo debes configurar los atajos de teclado en: `~/.config/sxhkd/sxhkdrc` 
@@ -326,7 +315,7 @@ cp flameshot.ini ~/.config/flameshot
 
 [Instala flameshot-lens como en la opción 1](https://github.com/knight-byte/flameshot-lens) **para** buscar tus capturas de pantalla directamente con Google, es decir, es Google Lens)
 
-Nota: El script flameshot-lens no funciona si no detecta la imagen en la ruta establecida **por lo que** debes editarlo al borrar el parámetro `‒raw` o `-r` y revisar que use la misma que `~/.config/flameshot/flameshot.ini` 
+Nota: El script flameshot-lens no funciona si no detecta la imagen en la ruta establecida **por lo que** debes editarlo al borrar el parámetro `‒raw` o `-r` y revisa que use la misma ruta que el archivo `~/.config/flameshot/flameshot.ini` 
 
 #### Captura de color
 ```
@@ -413,7 +402,6 @@ sudo systemctl enable betterlockscreen@$(whoami)
 
 Nota: Puedes usar el comando: `systemctl suspend` para suspender su sistema y se activará el servicio betterlockscreen, de modo que cuando tu sistema se active, tu pantalla se bloqueará.
 
-
 # Firefox
 ```
 sudo pacman -S firefox
@@ -475,6 +463,18 @@ Nota: Deberás instalarlos <b>porque</b> en el archivo de configuración de ZSH 
 
 ## Translate-shell
 [Instalación](https://github.com/soimort/translate-shell#installation)
+
+## Pop-report
+```
+git clone https://github.com/ikz87/pop_report
+```
+```
+sudo pacman -S python-pip
+```
+```
+pip install PyQt5 argparse inotify
+```
+[Mas información](https://www.reddit.com/r/unixporn/comments/wph3ef/oc_pop_report_a_simple_popup_notification_tool/)
 
 ## GRUB
 <p align="left">
