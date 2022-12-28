@@ -158,7 +158,12 @@ yay -S polybar-git
 ```
 cp -rf polybar ~/.config
 ```
+```
+chmod +x ~/.config/polybar/scripts/*
+```
+```
 
+```
 #### Descargar fuentes
 
 Terminus: `sudo pacman -S terminus-font`
@@ -206,14 +211,12 @@ sudo rm *.zip
 #### Utilidades para módulos de polybar
 
 [zscroll](https://github.com/noctuid/zscroll)
+```
+yay -S zscroll-git
+```
 
 [cava para Polybar](https://github.com/ray-pH/polybar-cava) ya esta incluido en la configuración en: `polybar/modules.ini`
 
-[]()
-
-[]()
-
-[]()
 
 ## Ranger
 ```
@@ -227,15 +230,22 @@ Nota: Ranger establece la previsualización de imágenes con el método "kitty" 
 
 ## Rofi
 ```
-sudo pacman -S rofi
+yay -S rofi-git
 ```
 ```
 cp -rf rofi ~/.config
 ```
 
-[Enlace de los temas usados para rofi](https://github.com/adi1090x/rofi) que ya están presentes en la carpeta de rofi
+[Instalar temas para rofi](https://github.com/adi1090x/rofi); una vez instalado:
 
-[Enlace del administrador de red con rofi para polybar](https://github.com/P3rf/rofi-network-manager)
+```
+cp 
+```
+```
+cp 
+```
+
+[Enlace del administrador de red con rofi para polybar](https://github.com/P3rf/rofi-network-manager) ya presente en polybar/scripts
 
 ## Picom
 
@@ -248,6 +258,7 @@ yay -S picom-jonaburg-git
 ```
 cp -rf picom.conf ~/.config/picom
 ```
+
 ## Pywal
 ```
 yay -S pywal-git
@@ -255,9 +266,10 @@ yay -S pywal-git
 ```
 cp -rf templates ~/.config/wal
 ```
+
 ## Neofetch
 ```
-yay -S neofetch-git
+sudo pacman -S neofetch
 ```
 ```
 cp -rf neofetch ~/.config
@@ -269,11 +281,14 @@ cp -rf neofetch ~/.config
 Nota: Para el tema de neofetch debes tener en cuenta las fuentes necesarias para cargar los iconos de cada configuración, en mi caso elegí el siguiente tema: <b>insert name 2 electric boogaloo</b>
 </p>
 
-Nota: Neofetch deberá imprimir la misma imagen que tu fondo de pantalla actual, si deseas ese comportamiento simplemente comenta las lineas que hacen referencia a ello en `~/.config/bspwm/scripts/setup`; <b>ademas</b> en el directorio `neofetch` se encuentran algunas imágenes PNG que puedes usar.
+Nota: Neofetch deberá imprimir la misma imagen que tu fondo de pantalla actual, si no deseas este comportamiento simplemente comenta las lineas que hacen referencia a ello en `~/.config/bspwm/scripts/setup`; <b>además</b> en el directorio `neofetch` se encuentran algunas imágenes PNG que puedes usar.
 
 ## Pop-report
 ```
 git clone https://github.com/ikz87/pop_report
+```
+```
+sudo pacman -S python-pip
 ```
 ```
 pip install PyQt5 argparse inotify
@@ -289,8 +304,11 @@ yay -S dunst-git
 ```
 sudo pacman -S pulseaudio pamixer xorg-xbacklight 
 ```
+```
+sudo chmod +x ~/.config/bspwm/scripts/*
+```
 
-Nota: Debes configurar los atajos de teclado en: `~/.config/sxhkd/sxhkdrc` para llamar a scripts para control de audio y brillo en: `~/.config/bspwm/scripts/` los cuales deben tener permiso de ejecución
+Nota: Para llamar los scripts de control de audio y brillo debes configurar los atajos de teclado en: `~/.config/sxhkd/sxhkdrc` 
 
 #### Captura de pantalla con flameshot
 ```
@@ -300,7 +318,7 @@ sudo pacman -S flameshot sxiv
 cp flameshot.ini ~/.config/flameshot
 ```
 
-Instala flameshot-lens del siguiente repositorio: https://github.com/knight-byte/flameshot-lens (sirve para buscar tus capturas de pantalla directamente con Google, es decir, es Google Lens)
+[Instala flameshot-lens](https://github.com/knight-byte/flameshot-lens) **para** buscar tus capturas de pantalla directamente con Google, es decir, es Google Lens)
 
 Nota: El script flameshot-lens no funciona si no detecta la imagen en la ruta establecida (debe ser la misma en `~/.config/flameshot/flameshot.ini`) por lo que se debe borrar el parámetro `‒raw` o `-r` que usa el script flameshot-lens por defecto **para que** así guarde la captura de pantalla.
 
