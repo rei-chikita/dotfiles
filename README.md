@@ -33,6 +33,7 @@ Archivos de configuración personales
 * [GRUB](#GRUB)
 * [pacman-pb](#pacman-pb)
 * [Lightdm](#Lightdm)
+* [komorebi](#komorebi)
 * [Extras](#Extras)
 
 ## Galería
@@ -232,18 +233,23 @@ Nota: Ranger establece la previsualización de imágenes con el método "kitty" 
 ```
 yay -S rofi-git
 ```
-```
-cp -rf rofi ~/.config
-```
 
-[Instalar temas para rofi](https://github.com/adi1090x/rofi); una vez instalado:
+[Instalar temas para rofi](https://github.com/adi1090x/rofi); una vez instalado: 
 
 ```
-cp 
+cp rofi/powermenu.sh ~/.config/rofi/powermenu/type-1/
 ```
 ```
-cp 
+chmod +x ~/.config/rofi/powermenu/type-1/powermenu.sh 
 ```
+
+Agrega al archivo `~/.config/rofi/powermenu/type-1/shared/colors.rasi` la siguiente linea:
+
+```
+@import "~/.cache/wal/colors-power.rasi"
+```
+
+Luego comenta el otro `@import` con `/**` al inicio y con `**/` al final de la linea
 
 [Enlace del administrador de red con rofi para polybar](https://github.com/P3rf/rofi-network-manager) ya presente en polybar/scripts
 
@@ -491,6 +497,26 @@ make -si
 ```
 [Mas información](https://www.reddit.com/r/unixporn/comments/z89thg/oc_i_modified_pacman_to_allow_customizing_the/)
 
+# komorebi
+```
+yay -S komorebi
+```
+
+```
+sudo pacman -S
+```
+
+```
+sudo pacman -S gst-libav gstreamer
+```
+La dependencia `gst-libav` es necesaria para poder usar videos como Wallpapers
+
+Nota: Instala antes komorebi que el tema para Lightdm **por que** sino existen conflictos por versiones de algunas dependencias.
+
+Nota: Al parecer despues de ejecutar komorebi debo recargar bspwm para que se muestre su menu al dar click derecho; sin embargo, luego no se muestran las barras de polybar **si no** matas el proceso de komorebi.
+
+Nota: Al quitar la configuracion de polybar `wm-restack` se soluciona; sin embargo, al hacerlo existe el problema de que se muestran las barras de polybar en el modo de pantalla completa.
+
 # Lightdm
 ```
 yay -S lightdm 
@@ -501,10 +527,12 @@ yay -S  lightdm-webkit2-greeter
 ```
 systemctl enable lightdm
 ```
-[Enlace del tema para lightdm-webkit2-greeter de Lightdm](https://github.com/manilarome/lightdm-webkit2-theme-glorious)
 
 Edita `/etc/lightdm/lightdm.conf` en la linea `greeter-session`, estableciendo el recibidor instalado anteriormente; es decir: `greeter-session=lightdm-webkit2-greeter` 
 
+Edita `/etc/lightdm/lightdm-webkit2-greeter.conf`, habilíta `debug_mode` al establecerlo en `true` y establece `webkit_theme` a `glorious`
+
+[Enlace del tema para lightdm-webkit2-greeter de Lightdm](https://github.com/manilarome/lightdm-webkit2-theme-glorious)
 
 ## Extras
 1. https://github.com/acxz/pokeshell
