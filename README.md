@@ -446,7 +446,7 @@ sudo pacman -S zsh zsh-syntax-highlighting zsh-autosuggestions
 Instala los siguientes plugins: 
 #### zsh-sudo
 ```
-mkdir /usr/share/zsh/plugins/zsh-sudo
+sudo mkdir /usr/share/zsh/plugins/zsh-sudo
 ```
 <p align="left">
 Copia el siguiente archivo con el mismo nombre y muévelo al directorio creado anteriormente
@@ -455,10 +455,13 @@ Copia el siguiente archivo con el mismo nombre y muévelo al directorio creado a
 ```
 sudo cp sudo.plugin.zsh /usr/share/zsh/plugins/zsh-sudo 
 ```
+```
+cp .zshrc ~
+```
 
 #### [Starship](https://starship.rs/)
 ```
-cp .zshrc ~
+cp -rf starship ~/.config
 ```
 
 #### Utilidades incluidas en el archivo de configuración:
@@ -473,8 +476,10 @@ sudo pacman -S bat lsd fzf
 Nota: Deberás instalarlos <b>porque</b> en el archivo de configuración de ZSH se usan como alias.
 </p>
 
-## Translate-shell
-[Instalación](https://github.com/soimort/translate-shell#installation)
+## [Translate-shell](https://github.com/soimort/translate-shell)
+```
+sudo pacman -S translate-shell
+```
 
 ## Pop-report
 ```
@@ -496,10 +501,9 @@ Elige un tema del siguiente repositorio: https://github.com/jacksaur/Gorgeous-GR
 ```
 sudo ./install.sh -t vimix -i white -s 1080p
 ```
-<p align="left">
-En https://github.com/vinceliuice/grub2-themes para usar una imagen de fondo personalizada solamente mueve dentro del repositorio la imagen deseada con el nombre de "background.jpg"
-  </p>
-  
+
+Nota: En el tema https://github.com/vinceliuice/grub2-themes para usar una imagen de fondo personalizada solamente mueve dentro del repositorio la imagen deseada con el nombre de `background.jpg`.
+ 
 ## pacman-pb 
 ```
 git clone https://aur.archlinux.org/pacman-pb.git
