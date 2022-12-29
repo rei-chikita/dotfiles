@@ -1,0 +1,40 @@
+#!/bin/bash
+~/.config/polybar/scripts/launch.sh &
+
+timeunit=$(uptime | awk '{print $4}' | cut -c '1-3')
+minutes=$(uptime | awk '{print $3}')
+# esperar que carguen ambas barras antes de recargarlas con pywal (pywal solo recarga bardown)
+sleep 0.1
+wal -n -i "$1" --backend colorz 
+feh --bg-fill "$(< "${HOME}/.cache/wal/wal")" 
+
+# usar variables de color actualizadas
+. "${HOME}/.cache/wal/colors.sh"
+
+# cambiar img de neofetch en funcion del wallpaper
+cat ~/.config/neofetch/backup-config.conf > ~/.config/neofetch/config.conf
+sd Walls $1 ~/.config/neofetch/config.conf
+
+# pywal con dunst actualizado
+pkill dunst
+ln -sf ~/.cache/wal/dunstrc ~/.config/dunst/dunstrc
+
+# pywal con betterlockscreen actualizado
+betterlockscreen -u $1   
+ln -sf ~/.cache/wal/betterlockscreenrc ~/.config/betterlockscreenrc
+
+# pop_report actualizado
+~/.config/bspwm/scripts/pop_report -d 1000 -o "backeground-color: $background" "border: 5px solid $color5" "font-family: 'Terminus (TTF)'" -m "BSPWM RECARGADO"
+~/.config/bspwm/scripts/pop_report -d 1000 -o "backeground-color: $background" "border: 5px solid $color5" "font-family: 'Terminus (TTF)'" -m "DUNST RECARGADO"
+dunstify -t 3500 -i ~/.config/dunst/icons/apps/kobeni-0.png "TODO RECARGADO!"
+
+if [ "$(xrandr -q | awk '/ connected / {print $1}' | wc -l)" -eq 2 ]; then
+	dunstify -t 600 -i ~/.config/dunst/icons/apps/cat-0.png "A DOBLE MONITOR PIBE!"
+elif [ "$(xrandr -q | awk '/ connected / {print $1}' | wc -l)" -eq 1 ]; then
+	dunstify -t 600 -i ~/.config/dunst/icons/apps/cat-0.png "A UN MONITOR PIBE!"
+else
+	echo
+fi
+
+# Notificar actualizaciones
+sleep 1 &&  ~/.config/bspwm/scripts/update &
