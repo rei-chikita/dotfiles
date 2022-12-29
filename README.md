@@ -308,6 +308,15 @@ sudo pacman -S pulseaudio pamixer xorg-xbacklight
 
 Nota: Para llamar los scripts de control de audio y brillo debes configurar los atajos de teclado en: `~/.config/sxhkd/sxhkdrc` 
 
+#### Notificación de actualizaciones 
+```
+yay -S checkupdates+aur
+```
+
+Nota: Para esto se usa el script `~/.config/bspwm/scripts/update` que se ejecuta en segundo plano en el script `~/.config/bspwm/scripts/setup`. 
+
+Nota: La notificación de actualizaciones siempre aparecerá después de la notificación de bienvenida (definida tambien en `~/.config/bspwm/scripts/update`) la cual solo aparece si tu tiempo de actividad es menor a 1 minuto **por lo que** no esperes que aparezca la notificación de actualizaciones cada vez que recargues bspwm.
+
 #### Captura de pantalla con flameshot
 ```
 sudo pacman -S flameshot sxiv
