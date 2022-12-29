@@ -16,7 +16,7 @@ function notify() {
 }
 
 
-if [ "$minutes" -lt 1 ] && [ "$timeunit" == 'min' ]; then
+if [ "$minutes" -lt 2 ] && [ "$timeunit" == 'min' ]; then
 	dunstify -h string:x-dunst-stack-tag:welcome "Bienvenida" "$username" -t 10000 -i ~/.config/dunst/icons/apps/arch.png
 	notify
 fi
