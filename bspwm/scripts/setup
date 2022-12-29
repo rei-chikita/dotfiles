@@ -37,4 +37,4 @@ else
 fi
 
 # Notificar actualizaciones
-sleep 1 &&  ~/.config/bspwm/scripts/update &
+~/.config/bspwm/scripts/update &
