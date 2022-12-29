@@ -64,7 +64,7 @@ sudo pacman -Syu
 ```
 2. Crear carpetas para algunas utilidades **para** seguir literalmente con copia y pega en cada apartado:
 ```
-mkdir -p ~/.config/{ranger,picom,wal,flameshot}
+mkdir -p ~/.config/{ranger,picom,wal,flameshot,gtk-3.0}
 ```
 3. Instala yay del siguiente repositorio: https://github.com/Jguer/yay
 4. Debes crear un directorio llamado "screenshots" **para que** se guarden las diferentes capturas de pantalla; **si** deseas usar una ruta diferente simplemente edita: `bspwm/scripts/capture`. 
@@ -354,7 +354,7 @@ sudo pacman -s thunar
 </p>
 
 ```
-cp -rf settings.ini ~/.config/gtk-3.0
+cp settings.ini ~/.config/gtk-3.0
 ```
 
 ## Spicetify
