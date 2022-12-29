@@ -495,14 +495,14 @@ pip install PyQt5 argparse inotify
 
 ## GRUB
 <p align="left">
-Elige un tema del siguiente repositorio: https://github.com/jacksaur/Gorgeous-GRUB; en este caso uso el tema: https://github.com/vinceliuice/grub2-themes con la siguiente configuración:
+Elige un tema de https://github.com/jacksaur/Gorgeous-GRUB, en este caso uso el tema https://github.com/vinceliuice/grub2-themes con la siguiente configuración:
   </p>
   
 ```
 sudo ./install.sh -t vimix -i white -s 1080p
 ```
 
-Nota: En el tema https://github.com/vinceliuice/grub2-themes para usar una imagen de fondo personalizada solamente mueve dentro del repositorio la imagen deseada con el nombre de `background.jpg`.
+Nota: Para usar una imagen de fondo personalizada con el tema https://github.com/vinceliuice/grub2-themes mueve dentro del repositorio la imagen deseada con el nombre de `background.jpg` y ejecuta de nuevo el script `install.sh`.
  
 ## pacman-pb 
 ```
