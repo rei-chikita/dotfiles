@@ -315,7 +315,7 @@ yay -S checkupdates+aur
 
 Nota: Para esto se usa el script `~/.config/bspwm/scripts/update` que se ejecuta en segundo plano en el script `~/.config/bspwm/scripts/setup`. 
 
-Nota: La notificación de actualizaciones siempre aparecerá después de la notificación de bienvenida (definida tambien en `~/.config/bspwm/scripts/update`) la cual solo aparece si tu tiempo de actividad es menor a 1 minuto **por lo que** no esperes que aparezca la notificación de actualizaciones cada vez que recargues bspwm.
+Nota: La notificación de actualizaciones siempre aparecerá después de la notificación de bienvenida (definida tambien en `~/.config/bspwm/scripts/update`) la cual solo aparece si tu tiempo de actividad es menor a 2 minutos **por lo que** no esperes que aparezca la notificación de actualizaciones cada vez que recargues bspwm si superas ese tiempo.
 
 #### Captura de pantalla con flameshot
 ```
