@@ -223,7 +223,7 @@ yay -S zscroll-git
 
 ## Ranger
 ```
-yay -S ranger-git
+sudo pacman -S ranger
 ```
 ```
 cp rc.conf ~/.config/ranger
