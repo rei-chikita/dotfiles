@@ -84,7 +84,7 @@ new_icon = ~/.config/dunst/icons/system/system.svg
 [updates_yes]
 appname = System
 summary = Updates
-body = Disponible*
+body = Disponibles*
 new_icon = ~/.config/dunst/icons/system/updates_yes.svg
 
 [updates_no]
