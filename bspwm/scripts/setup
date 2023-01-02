@@ -26,7 +26,7 @@ ln -sf ~/.cache/wal/betterlockscreenrc ~/.config/betterlockscreenrc
 # pop_report actualizado
 ~/.config/bspwm/scripts/pop_report -d 1000 -o "backeground-color: $background" "border: 5px solid $color5" "font-family: 'Terminus (TTF)'" -m "BSPWM RECARGADO"
 ~/.config/bspwm/scripts/pop_report -d 1000 -o "backeground-color: $background" "border: 5px solid $color5" "font-family: 'Terminus (TTF)'" -m "DUNST RECARGADO"
-dunstify -t 4000 -i ~/.config/dunst/icons/apps/kobeni-0.png "TODO RECARGADO!"
+dunstify -t 3500 -i ~/.config/dunst/icons/apps/kobeni-0.png "TODO RECARGADO!"
 
 if [ "$(xrandr -q | awk '/ connected / {print $1}' | wc -l)" -eq 2 ]; then
 	dunstify -t 4000 -i ~/.config/dunst/icons/apps/cat-0.png "A DOBLE MONITOR PIBE!"
