@@ -17,7 +17,6 @@ Archivos de configuración personales
 * [Picom](#Picom)
 * [Pywal](#Pywal)
 * [Fondos de pantalla](#Fondos-de-pantalla)
-* [Neofetch](#Neofetch)
 * [Dunst](#Dunst)
 * [Font manager](#Font-manager)
 * [Feh](#Feh)
@@ -26,8 +25,9 @@ Archivos de configuración personales
 * [Thunar](#Thunar)
 * [Firefox](#Firefox)
 * [Polybar](#Polybar)
-* [ZSH](#ZSH)
 * [Bat, lsd, fzf](#Bat-lsd-fzf)
+* [ZSH](#ZSH)
+* [Neofetch](#Neofetch)
 * [Translate Shell](#Translate-shell)
 * [Spicetify](#Spicetify)
 * [Spotify Adblock](#Spotify-Adblock)
@@ -69,15 +69,16 @@ mkdir -p ~/.config/{ranger,picom,wal,flameshot,gtk-3.0}
 ```
 3. Instala yay del siguiente repositorio: https://github.com/Jguer/yay
 4. Debes crear un directorio llamado "screenshots" **para que** se guarden las diferentes capturas de pantalla; **si** deseas usar una ruta diferente simplemente edita: `bspwm/scripts/capture`. 
-5. Puedes revisar los diferentes atajos de teclado en `sxhkd/sxhkdr`.
-6. La ejecución de `xrandr` esta establecida en `polybar/scripts/launch.sh`; deberías cambiarla según tus necesidades.
-7. Para la configuración de monitores duales **en VMware en Windows 11**  no es necesario usar los parametros `--left-of` ni `--right-of` para `xrandr` sino solo si usas Arch Linux en una partición de disco **porque** al parecer en el caso de VMware aquello lo haces en la configuración de pantalla de Windows 11.
+5. Debes instalar `sd` **porque** es un sustituto para `sed` que se usa en algunos de los scripts de este repositorio. 
 
 ## Consideraciones
 1. Si deseas hacer un cambio en la configuración de dunst, betterlockscreen o en los colores del menú de encendido de rofi deberás hacerlo en las plantillas de usuario de Pywal en: `~/.config/wal/templates` **porque** Pywal genera archivos en `~/.cache/wal` en base a las plantillas de usuario **cada vez** que cambias tu fondo de pantalla, archivos que serán usados para crear enlaces simbólicos para ser archivos de configuración de cada utilidad, por ello en esta guía no hay necesidad de copiar archivos de configuración directamente.
 3. No es necesario recargar bspwm para recargar picom **ya que** lo hace al detectar una nueva configuración.
 4. Si Picom presenta algún problema deberías revisar el backend glx que esta establecido en `picom.conf` por si tu hardware no lo admite; **sin embargo**, es necesario **para** poder usar el desenfoque.
 5. Si desconfiguras algo en Firefox solamente prueba eliminar el directorio `~/.mozilla` y al  reabrir Firefox se creará de nuevo.
+6. Puedes revisar los diferentes atajos de teclado en `sxhkd/sxhkdr`.
+7. La ejecución de `xrandr` esta establecida en `polybar/scripts/launch.sh`; deberías cambiarla según tus necesidades.
+8. Para la configuración de monitores duales **en VMware en Windows 11**  no es necesario usar los parametros `--left-of` ni `--right-of` para `xrandr` sino solo si usas Arch Linux en una partición de disco **porque** al parecer en el caso de VMware aquello lo haces en la configuración de pantalla de Windows 11.
 
 ## Xserver
 ```
@@ -224,22 +225,6 @@ pip3 install --user colorz
 ```
 cp -rf Walls ~
 ```
-
-## Neofetch
-```
-sudo pacman -S neofetch
-```
-```
-cp -rf neofetch ~/.config
-```
-
-[Enlace para temas de neofetch](https://github.com/Chick2D/neofetch-themes) que ya esta incluido en la configuración en: `neofetch/config.conf`
-
-<p align="left">
-Nota: Para el tema de neofetch debes tener en cuenta las fuentes necesarias para cargar los iconos de cada configuración, en mi caso elegí el siguiente tema: <b>insert name 2 electric boogaloo</b>
-</p>
-
-Nota: Neofetch deberá imprimir la misma imagen que tu fondo de pantalla actual, si no deseas este comportamiento simplemente comenta las lineas que hacen referencia a ello en `~/.config/bspwm/scripts/setup`; <b>además</b> en el directorio `neofetch` se encuentran algunas imágenes PNG que puedes usar.
 
 ## Dunst
 ```
@@ -420,6 +405,15 @@ yay -S cava
 ```
 [cava para Polybar](https://github.com/ray-pH/polybar-cava) ya esta incluido en la configuración: `polybar/modules.ini`
 
+## Bat-lsd-fzf
+```
+sudo pacman -S bat lsd fzf
+```
+
+<p align="left">
+Nota: Deberás instalarlos <b>porque</b> en el archivo de configuración de ZSH se usan como alias.
+</p>
+
 ## ZSH
 ```
 sudo pacman -S zsh zsh-syntax-highlighting zsh-autosuggestions
@@ -430,10 +424,10 @@ Instala los siguientes plugins:
 sudo mkdir /usr/share/zsh/plugins/zsh-sudo
 ```
 
-[Descarga el plugin](https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/sudo/sudo.plugin.zsh) y muévelo al directorio creado anteriormente
+[Copia el raw del plugin](https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/sudo/sudo.plugin.zsh) a un archivo con el nombre "sudo.plugin.zsh" y muévelo al directorio creado anteriormente
 
 ```
-sudo cp sudo.plugin.zsh /usr/share/zsh/plugins/zsh-sudo 
+sudo mv sudo.plugin.zsh /usr/share/zsh/plugins/zsh-sudo 
 ```
 ```
 cp .zshrc ~
@@ -442,13 +436,16 @@ cp .zshrc ~
 Cambia el tipo de shell por defecto (bash) tanto para root como para el usuario con bajos privilegios:
 
 ```
-usermod --shell /usr/bin/zsh (tu usuario)
+sudo usermod --shell /usr/bin/zsh (tu usuario)
 ```
 ```
-usermod --shell /usr/bin/zsh root
+sudo usermod --shell /usr/bin/zsh root
 ```
 
 #### [Starship](https://starship.rs/)
+```
+sudo pacman -S starshhip
+```
 ```
 cp -rf starship ~/.config
 ```
@@ -456,14 +453,22 @@ cp -rf starship ~/.config
 #### Utilidades incluidas en el archivo de configuración:
 1. https://github.com/callmezatiel/extract
 
-## Bat-lsd-fzf
+## Neofetch
 ```
-sudo pacman -S bat lsd fzf
+sudo pacman -S neofetch
+```
+```
+cp -rf neofetch ~/.config
 ```
 
+[Enlace para temas de neofetch](https://github.com/Chick2D/neofetch-themes) que ya esta incluido en la configuración en: `neofetch/config.conf`
+
 <p align="left">
-Nota: Deberás instalarlos <b>porque</b> en el archivo de configuración de ZSH se usan como alias.
+Nota: Para el tema de neofetch debes tener en cuenta las fuentes necesarias para cargar los iconos de cada configuración, en mi caso elegí el siguiente tema: <b>insert name 2 electric boogaloo</b>
 </p>
+
+Nota: Neofetch deberá imprimir la misma imagen que tu fondo de pantalla actual, si no deseas este comportamiento simplemente comenta las lineas que hacen referencia a ello en `~/.config/bspwm/scripts/setup`; <b>además</b> en el directorio `neofetch` se encuentran algunas imágenes PNG que puedes usar.
+
 
 ## [Translate-shell](https://github.com/soimort/translate-shell)
 ```
