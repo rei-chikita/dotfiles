@@ -181,15 +181,15 @@ cp rofi/powermenu.sh ~/.config/rofi/powermenu/type-1/
 chmod +x ~/.config/rofi/powermenu/type-1/powermenu.sh 
 ```
 
-Agrega a los archivos `~/.config/rofi/powermenu/type-1/shared/colors.rasi` y `~/.config/rofi/launchers/type-1/colors.rasi` la siguiente linea:
+Agrega a los archivos `~/.config/rofi/powermenu/type-1/shared/colors.rasi` y `~/.config/rofi/launchers/type-1/shared/colors.rasi` la siguiente linea:
 
 ```
 @import "~/.cache/wal/colors-power.rasi"
 ```
 
-Luego comenta el otro `@import` con `/**` al inicio y con `**/` al final de la linea en cada archivo
+Luego en cada archivo comenta el otro `@import` con `/**` al inicio y con `**/` al final de la linea
 
-Para cambiar estilo del launcher edita el script `~/.config/rofi/launchers/type-1/launcher.sh` y establece `theme='style-5'`
+Cambia el estilo del launcher al editar el script `~/.config/rofi/launchers/type-1/launcher.sh` y establece `theme='style-5'`
 
 Nota: Se mostrará automáticamente tu nombre de usuario en el menú de encendido con rofi debido a la configuración en `rofi/powermenu.sh`.
 
@@ -218,6 +218,11 @@ cp -rf templates ~/.config/wal
 Instala el backend `colorz`, si no deseas este cambia la configuración en: `~/.config/bspwm/scripts/setup`
 ```
 pip3 install --user colorz
+```
+
+# Fondos-de-pantalla
+```
+cp -rf Walls ~
 ```
 
 ## Neofetch
@@ -292,64 +297,7 @@ Debes instalarlo <b>porque</b>  lo uso en lugar del comando wal de Pywal para es
 ```
 sudo pacman -S feh
 ```
-
-## Thunar
-```
-sudo pacman -s thunar
-```
-
-## GTK
-<p align="left">
-<a href="https://www.gnome-look.org/p/1681315/)">Enlace al tema para GTK</a>
-<p align="left">
-<a href="https://www.gnome-look.org/p/1533590/">Enlace al tema de iconos para GTK</a>
-</p>
-
-```
-cp settings.ini ~/.config/gtk-3.0
-```
     
-## ZSH
-```
-sudo pacman -S zsh zsh-syntax-highlighting zsh-autosuggestions
-```
-Instala los siguientes plugins: 
-#### zsh-sudo
-```
-sudo mkdir /usr/share/zsh/plugins/zsh-sudo
-```
-
-[Descarga el plugin](https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/sudo/sudo.plugin.zsh) y muévelo al directorio creado anteriormente
-
-```
-sudo cp sudo.plugin.zsh /usr/share/zsh/plugins/zsh-sudo 
-```
-```
-cp .zshrc ~
-```
-
-#### [Starship](https://starship.rs/)
-```
-cp -rf starship ~/.config
-```
-
-#### Utilidades incluidas en el archivo de configuración:
-1. https://github.com/callmezatiel/extract
-
-## Bat-lsd-fzf
-```
-sudo pacman -S bat lsd fzf
-```
-
-<p align="left">
-Nota: Deberás instalarlos <b>porque</b> en el archivo de configuración de ZSH se usan como alias.
-</p>
-
-## [Translate-shell](https://github.com/soimort/translate-shell)
-```
-sudo pacman -S translate-shell
-```
-
 ## Pop-report
 ```
 git clone https://github.com/ikz87/pop_report
@@ -362,87 +310,21 @@ pip install PyQt5 argparse inotify
 ```
 [Mas información](https://www.reddit.com/r/unixporn/comments/wph3ef/oc_pop_report_a_simple_popup_notification_tool/)
 
-# Fondos-de-pantalla
-```
-cp -rf Walls ~
-```
-
-## GRUB
+## GTK
 <p align="left">
-Elige un tema de https://github.com/jacksaur/Gorgeous-GRUB, en este caso uso el tema https://github.com/vinceliuice/grub2-themes con la siguiente configuración:
-  </p>
-  
-```
-sudo ./install.sh -t vimix -i white -s 1080p
-```
-
-Nota: Para usar una imagen de fondo personalizada con el tema https://github.com/vinceliuice/grub2-themes mueve dentro del repositorio la imagen deseada con el nombre de `background.jpg` y ejecuta de nuevo el script `install.sh`.
- 
-## pacman-pb 
-```
-git clone https://aur.archlinux.org/pacman-pb.git
-```
-```
-make -si
-```
-[Mas información](https://www.reddit.com/r/unixporn/comments/z89thg/oc_i_modified_pacman_to_allow_customizing_the/)
-
-Nota: No recomendado aún por entrar en conflicto con pacman
-
-# komorebi
-```
-yay -S komorebi
-```
-```
-sudo pacman -S gnome-desktop-4 gst-plugins-base-libs gst-plugins-bad-libs webkit2gtk lightdm-webkit2-greeter gtk4 libportal-gtk4 libadwaita webkit2gtk font-manager tracker3-miners gupnp-dlna clutter-gst
-```
-```
-sudo pacman -S gst-libav gstreamer
-```
-La dependencia `gst-libav` es necesaria para poder usar videos como Wallpapers
-
-Nota: Instala antes komorebi que el tema para Lightdm **por que** sino existen conflictos por versiones de algunas dependencias.
-
-Nota: Al parecer después de ejecutar komorebi debo recargar bspwm para que se muestre su menú al dar click derecho; sin embargo, luego no se muestran las barras de polybar **por lo que** debes matar el proceso de komorebi.
-
-Nota: Al quitar `wm-restack` de la configuración de polybar se soluciona, sin embargo, al hacerlo existe el problema de que se muestran las barras de polybar en el modo de pantalla completa.
-
-**Conclusión:** No recomendado aún.
-
-# Lightdm
-```
-yay -S lightdm 
-```
-```
-yay -S  lightdm-webkit2-greeter
-```
-```
-systemctl enable lightdm
-```
-
-Edita `/etc/lightdm/lightdm.conf` en la linea `greeter-session`, estableciendo el recibidor instalado anteriormente; es decir: `greeter-session=lightdm-webkit2-greeter` 
-
-Edita `/etc/lightdm/lightdm-webkit2-greeter.conf`, habilíta `debug_mode` al establecerlo en `true` y establece `webkit_theme` a `glorious`
-
-[Enlace del tema para lightdm-webkit2-greeter de Lightdm](https://github.com/manilarome/lightdm-webkit2-theme-glorious)
-
-# Betterlockscreen
-```
-yay -S betterlockscreen-git
-```
+<a href="https://www.gnome-look.org/p/1681315/)">Enlace al tema para GTK</a>
 <p align="left">
-Mover el archivo de servicio al directorio apropiado, AUR hace esto por usted al instalar por ejemplo con yay
-</p>
-
-<p align="left">
-Habilita el systemd service
+<a href="https://www.gnome-look.org/p/1533590/">Enlace al tema de iconos para GTK</a>
 </p>
 
 ```
-sudo systemctl enable betterlockscreen@$(whoami)
+cp settings.ini ~/.config/gtk-3.0
 ```
 
-Nota: Puedes usar el comando: `systemctl suspend` para suspender su sistema y se activará el servicio betterlockscreen, de modo que cuando tu sistema se active, tu pantalla se bloqueará.
+## Thunar
+```
+sudo pacman -s thunar
+```
 
 # Firefox
 ```
@@ -538,6 +420,56 @@ yay -S cava
 ```
 [cava para Polybar](https://github.com/ray-pH/polybar-cava) ya esta incluido en la configuración: `polybar/modules.ini`
 
+## ZSH
+```
+sudo pacman -S zsh zsh-syntax-highlighting zsh-autosuggestions
+```
+Instala los siguientes plugins: 
+#### zsh-sudo
+```
+sudo mkdir /usr/share/zsh/plugins/zsh-sudo
+```
+
+[Descarga el plugin](https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/sudo/sudo.plugin.zsh) y muévelo al directorio creado anteriormente
+
+```
+sudo cp sudo.plugin.zsh /usr/share/zsh/plugins/zsh-sudo 
+```
+```
+cp .zshrc ~
+```
+
+Cambia el tipo de shell por defecto (bash) tanto para root como para el usuario con bajos privilegios:
+
+```
+usermod --shell /usr/bin/zsh (tu usuario)
+```
+```
+usermod --shell /usr/bin/zsh root
+```
+
+#### [Starship](https://starship.rs/)
+```
+cp -rf starship ~/.config
+```
+
+#### Utilidades incluidas en el archivo de configuración:
+1. https://github.com/callmezatiel/extract
+
+## Bat-lsd-fzf
+```
+sudo pacman -S bat lsd fzf
+```
+
+<p align="left">
+Nota: Deberás instalarlos <b>porque</b> en el archivo de configuración de ZSH se usan como alias.
+</p>
+
+## [Translate-shell](https://github.com/soimort/translate-shell)
+```
+sudo pacman -S translate-shell
+```
+
 ## Spicetify
 ```
 yay -S spotify
@@ -577,6 +509,87 @@ Nota: La forma de aplicar un tema puede variar por lo que debes revisar las inst
 ```
 yay -S spotify-adblock-git
 ```
+
+# Betterlockscreen
+```
+yay -S betterlockscreen-git
+```
+<p align="left">
+Mover el archivo de servicio al directorio apropiado, AUR hace esto por usted al instalar por ejemplo con yay
+</p>
+
+<p align="left">
+Habilita el systemd service
+</p>
+
+```
+sudo systemctl enable betterlockscreen@$(whoami)
+```
+
+Nota: Puedes usar el comando: `systemctl suspend` para suspender su sistema y se activará el servicio betterlockscreen, de modo que cuando tu sistema se active, tu pantalla se bloqueará.
+
+## GRUB
+<p align="left">
+Elige un tema de https://github.com/jacksaur/Gorgeous-GRUB, en este caso uso el tema https://github.com/vinceliuice/grub2-themes con la siguiente configuración:
+  </p>
+  
+```
+sudo ./install.sh -t vimix -i white -s 1080p
+```
+
+Nota: Para usar una imagen de fondo personalizada con el tema https://github.com/vinceliuice/grub2-themes mueve dentro del repositorio la imagen deseada con el nombre de `background.jpg` y ejecuta de nuevo el script `install.sh`.
+ 
+# Lightdm
+```
+sudo pacman -S lightdm 
+```
+```
+yay -S  lightdm-webkit2-greeter
+```
+```
+systemctl enable lightdm
+```
+#### Temas
+
+[Instala el tema glorious](https://github.com/manilarome/lightdm-webkit2-theme-glorious)
+
+```
+yay -Syu lightdm-webkit2-theme-glorious
+```
+
+Edita `/etc/lightdm/lightdm.conf` en la linea `greeter-session`, estableciendo el recibidor instalado anteriormente; es decir: `greeter-session=lightdm-webkit2-greeter` 
+
+Edita `/etc/lightdm/lightdm-webkit2-greeter.conf`, habilíta `debug_mode` al establecerlo en `true` y establece `webkit_theme` a `glorious`
+
+# No recomendados aún:
+
+#### pacman-pb 
+```
+git clone https://aur.archlinux.org/pacman-pb.git
+```
+```
+make -si
+```
+[Mas información](https://www.reddit.com/r/unixporn/comments/z89thg/oc_i_modified_pacman_to_allow_customizing_the/)
+
+#### komorebi
+```
+yay -S komorebi
+```
+```
+sudo pacman -S gnome-desktop-4 gst-plugins-base-libs gst-plugins-bad-libs webkit2gtk lightdm-webkit2-greeter gtk4 libportal-gtk4 libadwaita webkit2gtk font-manager tracker3-miners gupnp-dlna clutter-gst
+```
+```
+sudo pacman -S gst-libav gstreamer
+```
+La dependencia `gst-libav` es necesaria para poder usar videos como Wallpapers
+
+Nota: Instala antes komorebi que el tema para Lightdm **por que** sino existen conflictos por versiones de algunas dependencias.
+
+Nota: Al parecer después de ejecutar komorebi debo recargar bspwm para que se muestre su menú al dar click derecho; sin embargo, luego no se muestran las barras de polybar **por lo que** debes matar el proceso de komorebi.
+
+Nota: Al quitar `wm-restack` de la configuración de polybar se soluciona, sin embargo, al hacerlo existe el problema de que se muestran las barras de polybar en el modo de pantalla completa.
+
 
 ## Extras
 1. https://github.com/acxz/pokeshell
