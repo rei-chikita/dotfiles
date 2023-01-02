@@ -226,6 +226,8 @@ pip3 install --user colorz
 ```
 sudo pacman -S archlinux-wallpaper
 ```
+Nota: Los fondos de pantalla se guardan en `/usr/share/backgrounds/archlinux/`.
+
 ```
 cp -rf Walls ~
 ```
@@ -568,11 +570,24 @@ Nota: Evita hacer los cambios de configuración con los comentarios.
 
 #### Cambiar fondo de pantalla
 
-No puedes usar rutas en `/home` **por lo que** deberás copiar tus imágenes al directorio  `/usr/share/backgrounds`, luego al usar Lightdm con el tema escoge el fondo de pantlla en los ajustes del mismo, puedes revisar la configuración en `/etc/lightdm/lightdm-webkit2-greeter.conf`
+No puedes usar rutas en `/home` **por lo que** deberás copiar tus imágenes al directorio  `/usr/share/backgrounds`, luego al usar Lightdm con el tema escoge el fondo de pantalla en los ajustes del mismo
 
 #### Cambiar la imagen del avatar
 
+```
+sudo cp (imagen que deseas como avatar) /usr/share/lightdm-webkit/themes/glorious/assets/profiles/
+```
 
+En `/usr/share/lightdm-webkit/themes/glorious/index.html` cambia la ruta en el atributo `src` de **las etiquetas** `<img>`, puedes identificarla por su atributo `id='image-profile'` **y** borra lo siguiente (son lo mismo) de las etiquetas `<img>`: `onerror='this.src="assets/profiles/user.svg"'`
+
+Instala mugshot y allí selecciona la misma imagen para el avatar:
+```
+sudo pacman -S mugshot
+```
+
+Luego cierra tu sesión de bspwm y en los ajustes del tema de Lightdm vuelve a elegir tu usuario **para** ver los cambios.
+
+Nota: La imagen que eliges debe ser como las otras en `/usr/share/lightdm-webkit/themes/glorious/proassets/profiles/`, es decir: formato `.jpg` y con un tamaño de `200x200 px`
 
 #### Prueba antes de nada
 ```
@@ -586,6 +601,8 @@ lightdm --test-mode --debug
 ```
 systemctl enable lightdm
 ```
+
+Nota: Puedes revisar la configuración general en `/etc/lightdm/lightdm-webkit2-greeter.conf`
 
 # BlackArch
 
