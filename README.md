@@ -34,6 +34,7 @@ Archivos de configuración personales
 * [Betterlockscreen](#Betterlockscreen)
 * [GRUB](#GRUB)
 * [Lightdm](#Lightdm)
+*[BlackArch](#BlackArch)
 * [No recomendados aún](#No-recomendados-aún)
 * [Extras](#Extras)
 
@@ -576,6 +577,30 @@ lightdm --test-mode --debug
 ```
 systemctl enable lightdm
 ```
+
+# BlackArch
+
+```
+curl -O https://blackarch.org/strap.sh
+```
+
+Verificar la suma SHA1:
+```
+echo 5ea40d49ecd14c2e024deecf90605426db97ea0c strap.sh | sha1sum -c
+```
+```
+chmod +x strap.sh 
+```
+```
+sudo ./strap.sh
+```
+
+Edita `/etc/pacman.conf` al descomentar "[multilib]" e "Include = /etc/pacman.d/mirrorlist" (justo debajo del anterior), son un repositorio para correr aplicaciones de 32 bits, luego deberás actualizar por multilib:
+```
+sudo pacman -Sy
+```
+
+[Mas información](https://blackarch.org/downloads.html)
 
 # No-recomendados-aún
 
