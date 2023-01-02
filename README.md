@@ -546,9 +546,7 @@ sudo pacman -S lightdm
 ```
 yay -S  lightdm-webkit2-greeter
 ```
-```
-systemctl enable lightdm
-```
+
 #### Temas
 
 [Instala el tema glorious](https://github.com/manilarome/lightdm-webkit2-theme-glorious)
@@ -557,9 +555,28 @@ systemctl enable lightdm
 yay -Syu lightdm-webkit2-theme-glorious
 ```
 
-Edita `/etc/lightdm/lightdm.conf` en la linea `greeter-session`, estableciendo el recibidor instalado anteriormente; es decir: `greeter-session=lightdm-webkit2-greeter` 
+Edita `/etc/lightdm/lightdm.conf`, en la linea `greeter-session` establece el recibidor instalado anteriormente; es decir: `greeter-session=lightdm-webkit2-greeter` 
 
 Edita `/etc/lightdm/lightdm-webkit2-greeter.conf`, habilíta `debug_mode` al establecerlo en `true` y establece `webkit_theme` a `glorious`
+
+Nota: Evita hacer los cambios de configuración con los comentarios.
+
+#### Cambiar fondo de pantalla
+
+Para cambiar el fondo de pantalla del tema edita el archivo `/etc/lightdm/lightdm-webkit2-greeter.conf`; no puedes usar rutas en `/home` **por lo que** deberás copiar tus imágenes a  `/usr/share/backgrounds`
+
+#### Prueba antes de nada
+```
+sudo pacman -S xorg-server-xephyr
+```
+```
+lightdm --test-mode --debug 
+```
+
+#### Habilitar (si salió todo bien en la prueba)
+```
+systemctl enable lightdm
+```
 
 # No recomendados aún:
 
