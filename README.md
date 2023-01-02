@@ -577,7 +577,7 @@ lightdm --test-mode --debug
 systemctl enable lightdm
 ```
 
-#No-recomendados-aún
+# No-recomendados-aún
 
 #### pacman-pb 
 ```
