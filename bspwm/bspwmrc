@@ -2,7 +2,7 @@
 export PATH="$PATH:$HOME/.config/bspwm/scripts"
 
 # enviar parametro actualizado
-pgrep -x setup > /dev/null || setup ~/Walls/kobeni-01.jpg &
+pgrep -x setup > /dev/null || setup ~/Walls/arch-chan-01.jpg &
 
 # recargar despues de launch.sh por dual monitor (que se ejecuta en setup)
 pgrep -x sxhkd > /dev/null || sxhkd &
