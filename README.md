@@ -77,7 +77,9 @@ mkdir -p ~/.config/{ranger,picom,wal,flameshot,gtk-3.0}
 5. Si desconfiguras algo en Firefox solamente prueba eliminar el directorio `~/.mozilla` y al  reabrir Firefox se creará de nuevo.
 6. Puedes revisar los diferentes atajos de teclado en `sxhkd/sxhkdr`.
 7. La ejecución de `xrandr` esta establecida en `polybar/scripts/launch.sh`; deberías cambiarla según tus necesidades.
-8. Para la configuración de monitores duales **en VMware en Windows 11**  no es necesario usar los parametros `--left-of` ni `--right-of` para `xrandr` sino solo si usas Arch Linux en una partición de disco **porque** al parecer en el caso de VMware aquello lo haces en la configuración de pantalla de Windows 11.
+8. Si deseas cambiar el fondo de pantalla deberás hacerlo en `~/.config/bspwm/bspwmrc`, se define como parametro para el script `~/.config/bspwm/scripts/setup`. 
+9. Betterlockscreen usará la misma imagen que definas como fondo de pantalla para bspwm en `~/.config/bspwm/bspwmrc`. 
+10. Para la configuración de monitores duales **en VMware en Windows 11**  no es necesario usar los parametros `--left-of` ni `--right-of` para `xrandr` sino solo si usas Arch Linux en una partición de disco **porque** al parecer en el caso de VMware aquello lo haces en la configuración de pantalla de Windows 11.
 
 ## Xserver
 ```
