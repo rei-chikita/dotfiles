@@ -21,7 +21,6 @@ Archivos de configuración personales
 * [Font manager](#Font-manager)
 * [Feh](#Feh)
 * [Pop report](#Pop-report)
-* [GTK](#GTK)
 * [Thunar](#Thunar)
 * [Firefox](#Firefox)
 * [Polybar](#Polybar)
@@ -295,17 +294,6 @@ pip install PyQt5 argparse inotify
 ```
 [Mas información](https://www.reddit.com/r/unixporn/comments/wph3ef/oc_pop_report_a_simple_popup_notification_tool/)
 
-## GTK
-<p align="left">
-<a href="https://www.gnome-look.org/p/1681315/)">Enlace al tema para GTK</a>
-<p align="left">
-<a href="https://www.gnome-look.org/p/1533590/">Enlace al tema de iconos para GTK</a>
-</p>
-
-```
-cp settings.ini ~/.config/gtk-3.0
-```
-
 ## Thunar
 ```
 sudo pacman -s thunar
@@ -319,7 +307,7 @@ sudo pacman -S firefox
 [Enlace del tema para Firefox](https://github.com/3r3bu5x9/Prismatic-Night#userchrome)
 
 #### Instrucciones
-1. Mueve el directorio `chrome` del directorio `firefox` a `~/.mozilla/firefox/(directorio raíz)`. Puedes obtener la ubicación de tu directorio raíz en `about:profiles` al escribir eso en la barra de direcciones del navegador, usualmente el perfil es: `default-release` (el perfil que no esta usado actualmente se identifica por la siguiente opción disponible: "Establecer como perfil predeterminado").
+1. Mueve el directorio `firefox/chrome` a `~/.mozilla/firefox/(directorio raíz)`. Puedes obtener la ubicación de tu directorio raíz en `about:profiles` al escribir eso en la barra de direcciones del navegador, usualmente el perfil es: `default-release` (el perfil que no esta usado actualmente se identifica por la siguiente opción disponible: "Establecer como perfil predeterminado").
 2. Ve a `about:config` al escribir eso en la barra de direcciones del navegador y establece a <b>true</b> lo siguiente: 
 <p align="center">
 toolkit.legacyUserProfileCustomizations.stylesheets 
@@ -330,9 +318,16 @@ browser.compactmode.show
   
 3. Click derecho en la barra de herramientas ⇒ Personalizar la barra de herramientas ⇒ Densidad (parte inferior izquierda) ⇒ Compacto 
 4. Para aplicar el tema ve a `about:profiles` ⇒ "Reiniciar normalmente" 
-5. Mover el directorio `startpage` del directorio `firefox` a `~/.mozilla/firefox/(directorio raíz)/`. La idea es que tienes una pagina de inicio (startpage) alojada, la cual puedes ver al escribir su ruta en la barra de URL: `file:///home/rei_chikita/.mozilla/firefox/(directorio raíz)/startpage/index.html` y esa ruta la estableces en Ajustes ⇒ Inicio ⇒ Pagina de inicio y nuevas ventanas (nombre de usuario manual).
-6. Ve al directorio `firefox/newtab` y edita `mozilla.cfg` al cambiar en la linea 7  la dirección de tu página de inicio.
+5. Mueve el directorio `firefox/startpage` a `~/.mozilla/firefox/(directorio raíz)/`. La idea es que tienes una pagina de inicio (startpage) alojada, la cual puedes ver al escribir su ruta en la barra de URL: `file:///home/rei_chikita/.mozilla/firefox/(directorio raíz)/startpage/index.html` y esa ruta la estableces en Ajustes ⇒ Inicio ⇒ Pagina de inicio y nuevas ventanas (nombre de usuario manual).
+6. Edita el archivo `firefox/newtab/mozilla.cfg` al cambiar en la linea 7  la dirección de tu página de inicio.
+7. Mueve los siguientes archivos a las rutas indicadas: 
 
+```
+sudo cp firefox/newtab/mozilla.cfg /usr/lib/firefox/
+```
+```
+sudo cp firefox/newtab/local-settings.js /usr/lib/firefox/defaults/pref/
+```
 
 Notas: Con el tema de Firefox usa `Ctrl + l` para acceder a la barra de URL o al pasar el cursor por la parte superior. Descomenta la linea 8 de `firefox/chrome/userChrome.css` **para** poner las barras en la parte inferior.
 
@@ -609,6 +604,18 @@ sudo pacman -Sy
 
 # No-recomendados-aún
 
+## GTK
+<p align="left">
+<a href="https://www.gnome-look.org/p/1681315/)">Enlace al tema para GTK</a>
+<p align="left">
+<a href="https://www.gnome-look.org/p/1533590/">Enlace al tema de iconos para GTK</a>
+</p>
+
+```
+cp settings.ini ~/.config/gtk-3.0
+```
+No es recomendado aún **porque** no encuentro temas que me parezacan buenos con la personalización.
+
 #### pacman-pb 
 ```
 git clone https://aur.archlinux.org/pacman-pb.git
@@ -617,6 +624,8 @@ git clone https://aur.archlinux.org/pacman-pb.git
 make -si
 ```
 [Mas información](https://www.reddit.com/r/unixporn/comments/z89thg/oc_i_modified_pacman_to_allow_customizing_the/)
+
+No es recomendado aún **porque** entra en conflicto con pacman.
 
 #### komorebi
 ```
@@ -636,6 +645,7 @@ Nota: Al parecer después de ejecutar komorebi debo recargar bspwm para que se m
 
 Nota: Al quitar `wm-restack` de la configuración de polybar se soluciona, sin embargo, al hacerlo existe el problema de que se muestran las barras de polybar en el modo de pantalla completa.
 
+No es recomendado aún **porque** no logro reproducir videos y al usarlo no aparece el menú al dar click derecho a menos que recargue bspwm.
 
 ## Extras
 1. https://github.com/acxz/pokeshell
