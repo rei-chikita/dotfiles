@@ -9,8 +9,8 @@ if [ "$(xrandr -q | awk '/ connected / {print $1}' | wc -l)" -eq 2 ]; then
 # de forma que reemplaze solo si #parametros existe (es decir, solo si hubo 1 monitor conectado)
 	sed -i 's/#parametros/--display 1 --span/' ~/.config/sxhkd/sxhkdrc
 elif [ "$(xrandr -q | awk '/ connected / {print $1}' | wc -l)" -eq 1 ]; then
-#	xrandr -s 1152x864
-	xrandr -s 1920x1080
+	xrandr -s 1152x864
+#	xrandr -s 1920x1080
 	sd "bspc monitor $prin -n monitor0;bspc monitor $sec -n monitor1;bspc monitor monitor0 -d I II III IV V;bspc monitor monitor1 -d VI VII VIII IX X" "bspc monitor -d I II III IV V VI VII VII IX X"  ~/.config/bspwm/bspwmrc
 	sed -i 's/--display 1 --span/#parametros/' ~/.config/sxhkd/sxhkdrc 
 # eliminar monitor1, asi no aparece mas de 10 espacios de trabajo en la barra de polybar
