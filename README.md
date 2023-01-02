@@ -34,7 +34,7 @@ Archivos de configuración personales
 * [Betterlockscreen](#Betterlockscreen)
 * [GRUB](#GRUB)
 * [Lightdm](#Lightdm)
-*[BlackArch](#BlackArch)
+* [BlackArch](#BlackArch)
 * [No recomendados aún](#No-recomendados-aún)
 * [Extras](#Extras)
 
