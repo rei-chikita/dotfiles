@@ -35,6 +35,7 @@ Archivos de configuración personales
 * [pacman-pb](#pacman-pb)
 * [komorebi](#komorebi)
 * [Lightdm](#Lightdm)
+* [Fondos de pantalla](#Fondos-de-pantalla)
 * [Extras](#Extras)
 
 ## Galería
@@ -132,7 +133,7 @@ cp -rf bspwm  ~/.config
 cp sxhkdrc ~/.config/sxhkd
 ```
 ```
-chmod +x ~/.config/bspwm/scripts/*
+chmod +x ~/.config/bspwm/scripts/* -R
 ```
 
 <p align="left">
@@ -155,71 +156,6 @@ if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   exec startx
 fi
 ```
-
-## Polybar
-```
-yay -S polybar-git
-```
-```
-cp -rf polybar ~/.config
-```
-```
-chmod +x ~/.config/polybar/scripts/*
-```
-
-#### Descargar fuentes
-
-Terminus: `sudo pacman -S terminus-font`
-
-Font Awesome 6: `sudo pacman -S ttf-font-awesome`
-
-Material Icons: `yay -S ttf-material-icons-git`
-
-Font Awesome 5: `yay -S ttf-font-awesome-5`
-
-[Symbols Nerd Font](https://www.nerdfonts.com/font-downloads)
-
-[Iosevka Nerd Font](https://www.nerdfonts.com/font-downloads)
-
-[Hack Nerd Font](https://www.nerdfonts.com/font-downloads)
-
-Nota: También son necesarias para cargar los iconos del tema para neofetch de esta guía.
-
-#### Descomprimir fuentes
- 
-Para instalar fuentes en todo el sistema (disponible para todos los usuarios), mueve la carpeta al directorio: `/usr/share/fonts` (Si tu fuente tiene la extensión .ttf deveras moverla a la carpeta TTF...).
-
-Para instalar las fuentes para un único usuario, utilice la ruta: `~/.local/share/fonts/`. 
-
-```
-sudo pacman -S unzip
-```
-
-```
-cd /usr/share/fonts
-```
-
-```
-sudo cp ~/Descargas/*.zip .
-```
-
-```
-sudo unzip (nombre de cada zip).zip
-```
-
-```
-sudo rm *.zip
-```
-
-#### Utilidades para módulos de polybar
-
-[zscroll](https://github.com/noctuid/zscroll)
-```
-yay -S zscroll-git
-```
-
-[cava para Polybar](https://github.com/ray-pH/polybar-cava) ya esta incluido en la configuración: `polybar/modules.ini`
-
 
 ## Ranger
 ```
@@ -245,17 +181,19 @@ cp rofi/powermenu.sh ~/.config/rofi/powermenu/type-1/
 chmod +x ~/.config/rofi/powermenu/type-1/powermenu.sh 
 ```
 
-Agrega al archivo `~/.config/rofi/powermenu/type-1/shared/colors.rasi` la siguiente linea:
+Agrega a los archivos `~/.config/rofi/powermenu/type-1/shared/colors.rasi` y `~/.config/rofi/launchers/type-1/colors.rasi` la siguiente linea:
 
 ```
 @import "~/.cache/wal/colors-power.rasi"
 ```
 
-Luego comenta el otro `@import` con `/**` al inicio y con `**/` al final de la linea
+Luego comenta el otro `@import` con `/**` al inicio y con `**/` al final de la linea en cada archivo
 
-[Enlace del administrador de red con rofi para polybar](https://github.com/P3rf/rofi-network-manager) ya presente en `polybar/scripts`
+Para cambiar estilo del launcher edita el script `~/.config/rofi/launchers/type-1/launcher.sh` y establece `theme='style-5'`
 
 Nota: Se mostrará automáticamente tu nombre de usuario en el menú de encendido con rofi debido a la configuración en `rofi/powermenu.sh`.
+
+[Enlace del administrador de red con rofi para polybar](https://github.com/P3rf/rofi-network-manager) ya presente en `polybar/scripts`
 
 ## Picom
 
@@ -275,6 +213,11 @@ yay -S pywal-git
 ```
 ```
 cp -rf templates ~/.config/wal
+```
+
+Instala el backend `colorz`, si no deseas este cambia la configuración en: `~/.config/bspwm/scripts/setup`
+```
+pip3 install --user colorz
 ```
 
 ## Neofetch
@@ -365,79 +308,6 @@ sudo pacman -s thunar
 ```
 cp settings.ini ~/.config/gtk-3.0
 ```
-
-## Spicetify
-[Instalación](https://spicetify.app/docs/advanced-usage/installation#note-for-linux-users) (No olvides leer la nota para usuarios de Linux!)
-
-<p align="left">
-Aplicar un tema:
-</p>  
-  
-```
-spicetify config current_theme (tema)
-```
-```
-spicetify apply (para aplicar la nueva configuracion) 
-```
-<p align="left">
-Algunos temas tienen dos o más esquemas de color diferentes. Después de seleccionar el tema puedes cambiar entre ellos con lo siguiente:
-</p>  
-
-```
-spicetify config color_scheme (esquema de color)
-```
-
-<p align="left">
-Nota: La forma de aplicar un tema puede variar por lo que debes revisar las instrucciones del README de cada tema: https://github.com/spicetify/spicetify-themes
-</p>
-
-## [Spotify-Adblock](https://github.com/abba23/spotify-adblock)
-```
-yay -S spotify-adblock-git
-```
-
-# Betterlockscreen
-```
-yay -S betterlockscreen-git
-```
-<p align="left">
-Mover el archivo de servicio al directorio apropiado, AUR hace esto por usted al instalar por ejemplo con yay
-</p>
-
-<p align="left">
-Habilita el systemd service
-</p>
-
-```
-sudo systemctl enable betterlockscreen@$(whoami)
-```
-
-Nota: Puedes usar el comando: `systemctl suspend` para suspender su sistema y se activará el servicio betterlockscreen, de modo que cuando tu sistema se active, tu pantalla se bloqueará.
-
-# Firefox
-```
-sudo pacman -S firefox
-```
-
-[Enlace del tema para Firefox](https://github.com/3r3bu5x9/Prismatic-Night#userchrome)
-
-#### Instrucciones
-1. Mueve el directorio `chrome` del directorio `firefox` a `~/.mozilla/firefox/(directorio raíz)`. Puedes obtener la ubicación de tu directorio raíz en `about:profiles` al escribir eso en la barra de direcciones del navegador, usualmente el perfil es: `default-release` (el perfil que no esta usado actualmente se identifica por la siguiente opción disponible: "Establecer como perfil predeterminado").
-2. Ve a `about:config` al escribir eso en la barra de direcciones del navegador y establece a <b>true</b> lo siguiente: 
-<p align="center">
-toolkit.legacyUserProfileCustomizations.stylesheets 
-</p>
-<p align="center">
-browser.compactmode.show 
-  </p>
-  
-3. Click derecho en la barra de herramientas ⇒ Personalizar la barra de herramientas ⇒ Densidad (parte inferior izquierda) ⇒ Compacto 
-4. Para aplicar el tema ve a `about:profiles` ⇒ "Reiniciar normalmente" 
-5. Mover el directorio `startpage` del directorio `firefox` a `~/.mozilla/firefox/(directorio raíz)/`. La idea es que tienes una pagina de inicio (startpage) alojada, la cual puedes ver al escribir su ruta en la barra de URL: `file:///home/rei_chikita/.mozilla/firefox/(directorio raíz)/startpage/index.html` y esa ruta la estableces en Ajustes ⇒ Inicio ⇒ Pagina de inicio y nuevas ventanas (nombre de usuario manual).
-6. Ve al directorio `firefox/newtab` y edita `mozilla.cfg` al cambiar en la linea 7  la dirección de tu página de inicio.
-
-
-Notas: Con el tema de Firefox usa `Ctrl + l` para acceder a la barra de URL o al pasar el cursor por la parte superior. Descomenta la linea 8 de `firefox/chrome/userChrome.css` **para** poner las barras en la parte inferior.
     
 ## ZSH
 ```
@@ -448,9 +318,8 @@ Instala los siguientes plugins:
 ```
 sudo mkdir /usr/share/zsh/plugins/zsh-sudo
 ```
-<p align="left">
-Copia el siguiente archivo con el mismo nombre y muévelo al directorio creado anteriormente
-</p>
+
+[Descarga el plugin](https://github.com/ohmyzsh/ohmyzsh/blob/master/plugins/sudo/sudo.plugin.zsh) y muévelo al directorio creado anteriormente
 
 ```
 sudo cp sudo.plugin.zsh /usr/share/zsh/plugins/zsh-sudo 
@@ -492,6 +361,11 @@ sudo pacman -S python-pip
 pip install PyQt5 argparse inotify
 ```
 [Mas información](https://www.reddit.com/r/unixporn/comments/wph3ef/oc_pop_report_a_simple_popup_notification_tool/)
+
+# Fondos-de-pantalla
+```
+cp -rf Walls ~
+```
 
 ## GRUB
 <p align="left">
@@ -551,6 +425,158 @@ Edita `/etc/lightdm/lightdm.conf` en la linea `greeter-session`, estableciendo e
 Edita `/etc/lightdm/lightdm-webkit2-greeter.conf`, habilíta `debug_mode` al establecerlo en `true` y establece `webkit_theme` a `glorious`
 
 [Enlace del tema para lightdm-webkit2-greeter de Lightdm](https://github.com/manilarome/lightdm-webkit2-theme-glorious)
+
+# Betterlockscreen
+```
+yay -S betterlockscreen-git
+```
+<p align="left">
+Mover el archivo de servicio al directorio apropiado, AUR hace esto por usted al instalar por ejemplo con yay
+</p>
+
+<p align="left">
+Habilita el systemd service
+</p>
+
+```
+sudo systemctl enable betterlockscreen@$(whoami)
+```
+
+Nota: Puedes usar el comando: `systemctl suspend` para suspender su sistema y se activará el servicio betterlockscreen, de modo que cuando tu sistema se active, tu pantalla se bloqueará.
+
+# Firefox
+```
+sudo pacman -S firefox
+```
+
+[Enlace del tema para Firefox](https://github.com/3r3bu5x9/Prismatic-Night#userchrome)
+
+#### Instrucciones
+1. Mueve el directorio `chrome` del directorio `firefox` a `~/.mozilla/firefox/(directorio raíz)`. Puedes obtener la ubicación de tu directorio raíz en `about:profiles` al escribir eso en la barra de direcciones del navegador, usualmente el perfil es: `default-release` (el perfil que no esta usado actualmente se identifica por la siguiente opción disponible: "Establecer como perfil predeterminado").
+2. Ve a `about:config` al escribir eso en la barra de direcciones del navegador y establece a <b>true</b> lo siguiente: 
+<p align="center">
+toolkit.legacyUserProfileCustomizations.stylesheets 
+</p>
+<p align="center">
+browser.compactmode.show 
+  </p>
+  
+3. Click derecho en la barra de herramientas ⇒ Personalizar la barra de herramientas ⇒ Densidad (parte inferior izquierda) ⇒ Compacto 
+4. Para aplicar el tema ve a `about:profiles` ⇒ "Reiniciar normalmente" 
+5. Mover el directorio `startpage` del directorio `firefox` a `~/.mozilla/firefox/(directorio raíz)/`. La idea es que tienes una pagina de inicio (startpage) alojada, la cual puedes ver al escribir su ruta en la barra de URL: `file:///home/rei_chikita/.mozilla/firefox/(directorio raíz)/startpage/index.html` y esa ruta la estableces en Ajustes ⇒ Inicio ⇒ Pagina de inicio y nuevas ventanas (nombre de usuario manual).
+6. Ve al directorio `firefox/newtab` y edita `mozilla.cfg` al cambiar en la linea 7  la dirección de tu página de inicio.
+
+
+Notas: Con el tema de Firefox usa `Ctrl + l` para acceder a la barra de URL o al pasar el cursor por la parte superior. Descomenta la linea 8 de `firefox/chrome/userChrome.css` **para** poner las barras en la parte inferior.
+
+## Polybar
+```
+yay -S polybar-git
+```
+```
+cp -rf polybar ~/.config
+```
+```
+chmod +x ~/.config/polybar/scripts/* -R
+```
+
+#### Descargar fuentes
+
+Terminus: `sudo pacman -S terminus-font`
+
+Font Awesome 6: `sudo pacman -S ttf-font-awesome`
+
+Material Icons: `yay -S ttf-material-icons-git`
+
+Font Awesome 5: `yay -S ttf-font-awesome-5`
+
+[Symbols Nerd Font](https://www.nerdfonts.com/font-downloads)
+
+[Iosevka Nerd Font](https://www.nerdfonts.com/font-downloads)
+
+[Hack Nerd Font](https://www.nerdfonts.com/font-downloads)
+
+Nota: También son necesarias para cargar los iconos del tema para neofetch de esta guía.
+
+#### Descomprimir fuentes
+ 
+Para instalar fuentes en todo el sistema (disponible para todos los usuarios), mueve la carpeta al directorio: `/usr/share/fonts` (Si tu fuente tiene la extensión .ttf deveras moverla a la carpeta TTF...).
+
+Para instalar las fuentes para un único usuario, utilice la ruta: `~/.local/share/fonts/`. 
+
+```
+sudo pacman -S unzip
+```
+
+```
+cd /usr/share/fonts
+```
+
+```
+sudo cp ~/Descargas/*.zip .
+```
+
+```
+sudo unzip (nombre de cada zip).zip
+```
+
+```
+sudo rm *.zip
+```
+
+#### Utilidades para módulos de polybar
+
+[zscroll](https://github.com/noctuid/zscroll)
+```
+yay -S zscroll-git
+```
+```
+yay -S pulseaudio-control
+```
+```
+yay -S cava
+```
+[cava para Polybar](https://github.com/ray-pH/polybar-cava) ya esta incluido en la configuración: `polybar/modules.ini`
+
+## Spicetify
+```
+yay -S spotify
+```
+
+[Instalación](https://spicetify.app/docs/advanced-usage/installation#note-for-linux-users) (No olvides leer la nota para usuarios de Linux!)
+
+#### Instalar temas
+[Instalación](https://github.com/spicetify/spicetify-themes#installation-and-usage)
+
+<p align="left">
+Aplicar un tema:
+</p>  
+  
+```
+spicetify config current_theme (tema)
+```
+```
+spicetify apply (para aplicar la nueva configuracion) 
+```
+<p align="left">
+Algunos temas tienen dos o más esquemas de color diferentes. Después de seleccionar el tema puedes cambiar entre ellos con lo siguiente:
+</p>  
+
+```
+spicetify config color_scheme (esquema de color)
+```
+
+Nota: Al parecer debes abrir Spotify antes de instalar un tema con spicetify.
+
+Nota: Si instalas desde [AUR](https://aur.archlinux.org/packages/spicetify-themes-git) los temas se encuentran en: `/usr/share/spicetify-cli/Themes`.
+
+
+Nota: La forma de aplicar un tema puede variar por lo que debes revisar las instrucciones del README de cada tema.
+
+## [Spotify-Adblock](https://github.com/abba23/spotify-adblock)
+```
+yay -S spotify-adblock-git
+```
 
 ## Extras
 1. https://github.com/acxz/pokeshell
