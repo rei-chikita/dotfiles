@@ -224,6 +224,9 @@ pip3 install --user colorz
 
 # Fondos-de-pantalla
 ```
+sudo pacman -S archlinux-wallpaper
+```
+```
 cp -rf Walls ~
 ```
 
@@ -565,7 +568,11 @@ Nota: Evita hacer los cambios de configuración con los comentarios.
 
 #### Cambiar fondo de pantalla
 
-Para cambiar el fondo de pantalla del tema edita el archivo `/etc/lightdm/lightdm-webkit2-greeter.conf`; no puedes usar rutas en `/home` **por lo que** deberás copiar tus imágenes a  `/usr/share/backgrounds`
+No puedes usar rutas en `/home` **por lo que** deberás copiar tus imágenes al directorio  `/usr/share/backgrounds`, luego al usar Lightdm con el tema escoge el fondo de pantlla en los ajustes del mismo, puedes revisar la configuración en `/etc/lightdm/lightdm-webkit2-greeter.conf`
+
+#### Cambiar la imagen del avatar
+
+
 
 #### Prueba antes de nada
 ```
