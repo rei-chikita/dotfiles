@@ -12,30 +12,29 @@ Archivos de configuración personales
 * [Xserver](#Xserver)
 * [Controladores e interfaz de audio](#Controladores-e-interfaz-de-audio)
 * [Bspwm-Sxhkd](#Bspwm-Sxhkd)
-* [Polybar](#Polybar)
 * [Ranger](#Ranger)
 * [Rofi](#Rofi)
 * [Picom](#Picom)
 * [Pywal](#Pywal)
+* [Fondos de pantalla](#Fondos-de-pantalla)
 * [Neofetch](#Neofetch)
 * [Dunst](#Dunst)
 * [Font manager](#Font-manager)
 * [Feh](#Feh)
-* [Thunar](#Thunar)
+* [Pop report](#Pop-report)
 * [GTK](#GTK)
-* [Spicetify](#Spicetify)
-* [Spotify Adblock](#Spotify-Adblock)
-* [Betterlockscreen](#Betterlockscreen)
+* [Thunar](#Thunar)
 * [Firefox](#Firefox)
+* [Polybar](#Polybar)
 * [ZSH](#ZSH)
 * [Bat, lsd, fzf](#Bat-lsd-fzf)
 * [Translate Shell](#Translate-shell)
-* [Pop report](#Pop-report)
+* [Spicetify](#Spicetify)
+* [Spotify Adblock](#Spotify-Adblock)
+* [Betterlockscreen](#Betterlockscreen)
 * [GRUB](#GRUB)
-* [pacman-pb](#pacman-pb)
-* [komorebi](#komorebi)
 * [Lightdm](#Lightdm)
-* [Fondos de pantalla](#Fondos-de-pantalla)
+* [No recomendados aún](#No-recomendados-aún)
 * [Extras](#Extras)
 
 ## Galería
@@ -578,7 +577,7 @@ lightdm --test-mode --debug
 systemctl enable lightdm
 ```
 
-# No recomendados aún:
+#No-recomendados-aún
 
 #### pacman-pb 
 ```
