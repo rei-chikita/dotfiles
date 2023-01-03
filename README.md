@@ -23,6 +23,7 @@ Archivos de configuración personales
 * [Pop report](#Pop-report)
 * [Thunar](#Thunar)
 * [Firefox](#Firefox)
+* [Cava](#Cava) 
 * [Polybar](#Polybar)
 * [Bat, lsd, fzf](#Bat-lsd-fzf)
 * [ZSH](#ZSH)
@@ -71,7 +72,7 @@ mkdir -p ~/.config/{ranger,picom,wal,flameshot,gtk-3.0}
 5. Debes instalar `sd` **porque** es un sustituto para `sed` que se usa en algunos de los scripts de este repositorio. 
 
 ## Consideraciones
-1. Si deseas hacer un cambio en la configuración de dunst, betterlockscreen o en los colores del menú de encendido de rofi deberás hacerlo en las plantillas de usuario de Pywal en: `~/.config/wal/templates` **porque** Pywal genera archivos en `~/.cache/wal` en base a las plantillas de usuario **cada vez** que cambias tu fondo de pantalla, archivos que serán usados para crear enlaces simbólicos para ser archivos de configuración de cada utilidad, por ello en esta guía no hay necesidad de copiar archivos de configuración directamente.
+1. Si deseas hacer un cambio en la configuración de dunst, betterlockscreen, cava o en los colores del menú de encendido de rofi deberás hacerlo en las plantillas de usuario de Pywal en: `~/.config/wal/templates/` **porque** Pywal genera archivos en `~/.cache/wal/` en base a las plantillas de usuario **cada vez** que cambias tu fondo de pantalla, archivos que serán usados para crear enlaces simbólicos para ser archivos de configuración las aquellas utilidades, esto último está defino en `~/.config/bspwm/scripts/setup`, **por ello** en esta guía no hay necesidad de copiar archivos de configuración directamente.
 3. No es necesario recargar bspwm para recargar picom **ya que** lo hace al detectar una nueva configuración.
 4. Si Picom presenta algún problema deberías revisar el backend glx que esta establecido en `picom.conf` por si tu hardware no lo admite; **sin embargo**, es necesario **para** poder usar el desenfoque.
 5. Si desconfiguras algo en Firefox solamente prueba eliminar el directorio `~/.mozilla` y al  reabrir Firefox se creará de nuevo.
@@ -338,6 +339,13 @@ sudo cp firefox/newtab/local-settings.js /usr/lib/firefox/defaults/pref/
 
 Notas: Con el tema de Firefox usa `Ctrl + l` para acceder a la barra de URL o al pasar el cursor por la parte superior. Descomenta la linea 8 de `firefox/chrome/userChrome.css` **para** poner las barras en la parte inferior.
 
+# Cava
+```
+yay -S cava
+```
+
+Nota: El color cambiará en funcion del fondo de pantalla.
+
 ## Polybar
 ```
 yay -S polybar-git
@@ -401,9 +409,6 @@ yay -S zscroll-git
 ```
 ```
 yay -S pulseaudio-control
-```
-```
-yay -S cava
 ```
 ```
 sudo pacman -S playerctl
