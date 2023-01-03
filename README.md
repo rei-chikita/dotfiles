@@ -68,7 +68,7 @@ sudo pacman -Syu
 mkdir -p ~/.config/{ranger,picom,wal,flameshot,gtk-3.0}
 ```
 3. Instala yay del siguiente repositorio: https://github.com/Jguer/yay
-4. Debes crear un directorio llamado "screenshots" **para que** se guarden las diferentes capturas de pantalla; **si** deseas usar una ruta diferente simplemente edita: `bspwm/scripts/capture`. 
+4. Debes crear un directorio "~/screenshots" **para que** se guarden las diferentes capturas de pantalla; **si** deseas usar una ruta diferente simplemente edita: `bspwm/scripts/capture`. 
 5. Debes instalar `sd` **porque** es un sustituto para `sed` que se usa en algunos de los scripts de este repositorio. 
 
 ## Consideraciones
@@ -172,7 +172,7 @@ Nota: Ranger establece la previsualización de imágenes con el método "kitty" 
 
 ## Rofi
 ```
-yay -S rofi-git
+sudo pacman -S rofi
 ```
 
 [Instalar temas para rofi](https://github.com/adi1090x/rofi); una vez instalado: 
@@ -265,6 +265,8 @@ sudo pacman -S flameshot sxiv
 cp flameshot.ini ~/.config/flameshot
 ```
 
+Nota: Cambia el nombre de usuario del archivo `flameshot.ini`.
+
 [Instala flameshot-lens como en la opción 1](https://github.com/knight-byte/flameshot-lens) **para** buscar tus capturas de pantalla directamente con Google, es decir, es Google Lens)
 
 Nota: El script flameshot-lens no funciona si no detecta la imagen en la ruta establecida **por lo que** debes editarlo al borrar el parámetro `‒raw` o `-r` y revisa que use la misma ruta que el archivo `~/.config/flameshot/flameshot.ini` 
@@ -325,10 +327,9 @@ browser.compactmode.show
   </p>
   
 3. Click derecho en la barra de herramientas ⇒ Personalizar la barra de herramientas ⇒ Densidad (parte inferior izquierda) ⇒ Compacto 
-4. Para aplicar el tema ve a `about:profiles` ⇒ "Reiniciar normalmente" 
-5. Mueve el directorio `firefox/startpage` a `~/.mozilla/firefox/(directorio raíz)/`. La idea es que tienes una pagina de inicio (startpage) alojada, la cual puedes ver al escribir su ruta en la barra de URL: `file:///home/rei_chikita/.mozilla/firefox/(directorio raíz)/startpage/index.html` y esa ruta la estableces en Ajustes ⇒ Inicio ⇒ Pagina de inicio y nuevas ventanas (nombre de usuario manual).
-6. Edita el archivo `firefox/newtab/mozilla.cfg` al cambiar en la linea 7  la dirección de tu página de inicio.
-7. Mueve los siguientes archivos a las rutas indicadas: 
+4. Mueve el directorio `firefox/startpage` a `~/.mozilla/firefox/(directorio raíz)/`. La idea es que tienes una pagina de inicio (startpage) alojada, la cual puedes ver al escribir su ruta en la barra de URL: `file:///home/rei_chikita/.mozilla/firefox/(directorio raíz)/startpage/index.html` y esa ruta la estableces en Ajustes ⇒ Inicio ⇒ Pagina de inicio y nuevas ventanas (nombre de usuario manual).
+5. Edita el archivo `firefox/newtab/mozilla.cfg` al cambiar en la linea 7  la dirección de tu página de inicio.
+6. Mueve los siguientes archivos a las rutas indicadas: 
 
 ```
 sudo cp firefox/newtab/mozilla.cfg /usr/lib/firefox/
@@ -336,6 +337,7 @@ sudo cp firefox/newtab/mozilla.cfg /usr/lib/firefox/
 ```
 sudo cp firefox/newtab/local-settings.js /usr/lib/firefox/defaults/pref/
 ```
+7. Para aplicar el tema ve a `about:profiles` ⇒ "Reiniciar normalmente" 
 
 Notas: Con el tema de Firefox usa `Ctrl + l` para acceder a la barra de URL o al pasar el cursor por la parte superior. Descomenta la linea 8 de `firefox/chrome/userChrome.css` **para** poner las barras en la parte inferior.
 
@@ -348,7 +350,7 @@ Nota: El color cambiará en función del fondo de pantalla.
 
 ## Polybar
 ```
-yay -S polybar-git
+sudo pacman -S polybar
 ```
 ```
 cp -rf polybar ~/.config
