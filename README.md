@@ -344,7 +344,7 @@ Notas: Con el tema de Firefox usa `Ctrl + l` para acceder a la barra de URL o al
 yay -S cava
 ```
 
-Nota: El color cambiará en funcion del fondo de pantalla.
+Nota: El color cambiará en función del fondo de pantalla.
 
 ## Polybar
 ```
