@@ -354,20 +354,12 @@ yay -S polybar-git
 cp -rf polybar ~/.config
 ```
 ```
-chmod +x ~/.config/polybar/scripts/* -R
+chmod +x ~/.config/polybar/scripts/ -R
 ```
 
 #### Descargar fuentes
 
 Terminus: `sudo pacman -S terminus-font`
-
-Font Awesome 6: `sudo pacman -S ttf-font-awesome`
-
-Material Icons: `yay -S ttf-material-icons-git`
-
-Font Awesome 5: `yay -S ttf-font-awesome-5`
-
-[Symbols Nerd Font](https://www.nerdfonts.com/font-downloads)
 
 [Iosevka Nerd Font](https://www.nerdfonts.com/font-downloads)
 
