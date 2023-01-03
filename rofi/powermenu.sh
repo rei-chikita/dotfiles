@@ -59,8 +59,6 @@ run_rofi() {
 
 # Execute Command
 
-# descubrir el entorno de escritorio
-DESKTOP_SESSION=$(ps -a | grep -E "bspwm" | awk '{print $4}')
 run_cmd() {
 	selected="$(confirm_exit)"
 	if [[ "$selected" == "$yes" ]]; then
