@@ -686,3 +686,4 @@ No es recomendado aún **porque** no logro reproducir videos y al usarlo no apar
 1. https://github.com/acxz/pokeshell
 2. https://github.com/smikeya/shell-color-scripts
 3. https://github.com/AngelJumbo/lavat
+4. https://github.com/pipeseroni/pipes.sh
