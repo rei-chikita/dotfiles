@@ -405,6 +405,10 @@ yay -S pulseaudio-control
 ```
 yay -S cava
 ```
+```
+sudo pacman -S playerctl
+```
+
 [cava para Polybar](https://github.com/ray-pH/polybar-cava) ya esta incluido en la configuración: `polybar/modules.ini`
 
 ## Bat-lsd-fzf
