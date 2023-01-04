@@ -38,7 +38,7 @@ Archivos de configuración personales
 * [No recomendados aún](#No-recomendados-aún)
 * [Extras](#Extras)
 
-## Galería
+# Galería
 
 #### GRUB
 ![2023-01-04 (3)](https://user-images.githubusercontent.com/118377728/210616243-890cf55d-44fe-4569-854e-885d39f2b5d8.png)
@@ -51,9 +51,12 @@ Archivos de configuración personales
 
 #### Escritorio a un monitor
 
+![2023-01-04_115449_048869999](https://user-images.githubusercontent.com/118377728/210616725-b35d5efc-7223-4d5e-9cc1-76b9c9416e44.jpg)
+![2023-01-04_115700_324801613](https://user-images.githubusercontent.com/118377728/210616796-391730c2-24fe-49f5-ad7e-5faba8e3109c.jpg)
 
 #### Escritorio a dual monitor
-
+![2023-01-04_121144_075225797](https://user-images.githubusercontent.com/118377728/210616849-02d00a0e-69c7-4382-968c-6ddce10b6d09.jpg)
+![2023-01-04_122242_918483733](https://user-images.githubusercontent.com/118377728/210616855-541517dd-bac0-4ab6-9a40-25456e3a97b6.jpg)
 
 #### Barras de Polybar
 
