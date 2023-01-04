@@ -39,20 +39,24 @@ Archivos de configuración personales
 * [Extras](#Extras)
 
 ## Galería
-#### Escritorio
-![imagen](https://user-images.githubusercontent.com/118377728/205458745-882cd7d8-ce99-460e-8f9d-dff9b8102600.png)
 
-![imagen](https://user-images.githubusercontent.com/118377728/205467891-c4d65741-261d-4d3c-8d28-bf335acb71ab.png)
+#### GRUB
+![2023-01-04 (3)](https://user-images.githubusercontent.com/118377728/210616243-890cf55d-44fe-4569-854e-885d39f2b5d8.png)
 
-![2022-12-03_132926_148868337](https://user-images.githubusercontent.com/118377728/205457450-8c1e8200-d2bf-469d-a6bf-a8d50f3d5455.jpg)
-![2022-12-03_133349_401584321](https://user-images.githubusercontent.com/118377728/205457451-7d66a4ec-07b9-4d10-ae71-cf18ef0251c1.jpg)
+#### Lightdm
+![2023-01-04 (2)](https://user-images.githubusercontent.com/118377728/210616255-c8b91257-5e0b-468f-99b3-befade5a0101.png)
 
-![2022-12-03_133656_492434217](https://user-images.githubusercontent.com/118377728/205457453-dc9f4691-ade8-4f3e-b15c-839b5244ea2a.jpg)
-![2022-12-03_135711_183093129](https://user-images.githubusercontent.com/118377728/205457454-7d3f8161-ed04-4e25-9265-02f2f5ae064c.jpg)
+#### Betterlockscreen
+![2023-01-04](https://user-images.githubusercontent.com/118377728/210616270-e0702de9-e27c-4664-8184-e79a99c23d4c.png)
+
+#### Escritorio a un monitor
+
+
+#### Escritorio a dual monitor
+
 
 #### Barras de Polybar
-![barup](https://user-images.githubusercontent.com/118377728/205457442-dd78694b-ae58-4c30-a73b-f3b4e02293ad.png)
-![bardown](https://user-images.githubusercontent.com/118377728/205457444-b551b07e-3f13-42e8-b889-c9193e75a137.png)
+
 
 
 ## Ajustes-generales 
