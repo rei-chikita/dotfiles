@@ -68,7 +68,7 @@ sudo pacman -Syu
 mkdir -p ~/.config/{ranger,picom,wal,flameshot,gtk-3.0}
 ```
 3. Instala yay del siguiente repositorio: https://github.com/Jguer/yay
-4. Debes crear un directorio "~/screenshots" **para que** se guarden las diferentes capturas de pantalla; **si** deseas usar una ruta diferente simplemente edita: `bspwm/scripts/capture`. 
+4. Debes crear un directorio `~/screenshots` **para que** se guarden las diferentes capturas de pantalla; **si** deseas usar una ruta diferente simplemente edita: `bspwm/scripts/capture`. 
 5. Debes instalar `sd` **porque** es un sustituto para `sed` que se usa en algunos de los scripts de este repositorio. 
 
 ## Consideraciones
@@ -136,7 +136,7 @@ cp -rf bspwm  ~/.config
 cp sxhkdrc ~/.config/sxhkd
 ```
 ```
-chmod +x ~/.config/bspwm/scripts/* -R
+chmod +x ~/.config/bspwm/scripts/ -R
 ```
 
 <p align="left">
@@ -190,7 +190,7 @@ Agrega a los archivos `~/.config/rofi/powermenu/type-1/shared/colors.rasi` y `~/
 @import "~/.cache/wal/colors-power.rasi"
 ```
 
-Luego en cada archivo comenta el otro `@import` con `/**` al inicio y con `**/` al final de la linea
+Luego en cada archivo comenta el otro `@import` con `/*` al inicio y con `*/` al final de la linea
 
 Cambia el estilo del launcher al editar el script `~/.config/rofi/launchers/type-1/launcher.sh` y establece `theme='style-5'`
 
@@ -265,7 +265,7 @@ sudo pacman -S flameshot sxiv
 cp flameshot.ini ~/.config/flameshot
 ```
 
-Nota: Cambia el nombre de usuario del archivo `flameshot.ini`.
+Nota: Cambia a tu nombre de usuario en el archivo `flameshot.ini`.
 
 [Instala flameshot-lens como en la opción 1](https://github.com/knight-byte/flameshot-lens) **para** buscar tus capturas de pantalla directamente con Google, es decir, es Google Lens)
 
@@ -481,28 +481,32 @@ sudo pacman -S translate-shell
 ```
 
 ## Spicetify
+#### Instalar Spotify:
 ```
 yay -S spotify
 ```
+#### Instalar spicetify:
+```
+yay -S spicetify-cli
+```
+[Lee la nota para usuarios de Linux!](https://spicetify.app/docs/advanced-usage/installation#note-for-linux-users) 
 
-[Instalación](https://spicetify.app/docs/advanced-usage/installation#note-for-linux-users) (No olvides leer la nota para usuarios de Linux!)
+#### Instalar spicetify-themes
+```
+yay -S spicetify-themes-git 
+```
+Nota: Si instalas desde [AUR](https://aur.archlinux.org/packages/spicetify-themes-git) los temas se encuentran en: `/usr/share/spicetify-cli/Themes`.
 
-#### Instalar temas
-[Instalación](https://github.com/spicetify/spicetify-themes#installation-and-usage)
-
-<p align="left">
-Aplicar un tema:
-</p>  
-  
+[Elige un tema](https://github.com/spicetify/spicetify-themes/blob/master/THEMES.md ), para aplicarlo usa:
+ 
 ```
 spicetify config current_theme (tema)
 ```
 ```
 spicetify apply (para aplicar la nueva configuracion) 
 ```
-<p align="left">
-Algunos temas tienen dos o más esquemas de color diferentes. Después de seleccionar el tema puedes cambiar entre ellos con lo siguiente:
-</p>  
+
+Algunos temas tienen dos o más esquemas de color diferentes. **Después** de seleccionar el tema puedes cambiar entre ellos con lo siguiente: 
 
 ```
 spicetify config color_scheme (esquema de color)
@@ -510,10 +514,9 @@ spicetify config color_scheme (esquema de color)
 
 Nota: Al parecer debes abrir Spotify antes de instalar un tema con spicetify.
 
-Nota: Si instalas desde [AUR](https://aur.archlinux.org/packages/spicetify-themes-git) los temas se encuentran en: `/usr/share/spicetify-cli/Themes`.
-
-
 Nota: La forma de aplicar un tema puede variar por lo que debes revisar las instrucciones del README de cada tema.
+
+[Mas información](https://github.com/spicetify/spicetify-themes#installation-and-usage)
 
 ## [Spotify-Adblock](https://github.com/abba23/spotify-adblock)
 ```
@@ -576,6 +579,7 @@ Nota: Evita hacer los cambios de configuración con los comentarios.
 No puedes usar rutas en `/home` **por lo que** deberás copiar tus imágenes al directorio  `/usr/share/backgrounds`, luego al usar Lightdm con el tema escoge el fondo de pantalla en los ajustes del mismo
 
 #### Cambiar la imagen del avatar
+La imagen que eliges debe ser como las otras en `/usr/share/lightdm-webkit/themes/glorious/proassets/profiles/`, es decir: formato `.jpg` y con un tamaño de `200x200 px`
 
 ```
 sudo cp (imagen que deseas como avatar) /usr/share/lightdm-webkit/themes/glorious/assets/profiles/
@@ -583,14 +587,11 @@ sudo cp (imagen que deseas como avatar) /usr/share/lightdm-webkit/themes/gloriou
 
 En `/usr/share/lightdm-webkit/themes/glorious/index.html` cambia la ruta en el atributo `src` de **las etiquetas** `<img>`, puedes identificarla por su atributo `id='image-profile'` **y** borra lo siguiente (son lo mismo) de las etiquetas `<img>`: `onerror='this.src="assets/profiles/user.svg"'`
 
-Instala mugshot y allí selecciona la misma imagen para el avatar:
+Instala mugshot **y** allí selecciona la misma imagen para el avatar:
 ```
-sudo pacman -S mugshot
+yay -S mugshot
 ```
-
 Luego cierra tu sesión de bspwm y en los ajustes del tema de Lightdm vuelve a elegir tu usuario **para** ver los cambios.
-
-Nota: La imagen que eliges debe ser como las otras en `/usr/share/lightdm-webkit/themes/glorious/proassets/profiles/`, es decir: formato `.jpg` y con un tamaño de `200x200 px`
 
 #### Prueba antes de nada
 ```
