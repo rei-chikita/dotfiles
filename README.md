@@ -127,7 +127,7 @@ yay -S bspwm-git
 yay -S sxhkd-git
 ```
 ```
-mkdir -p ~/.config/{bspwm,sxhkd}
+mkdir ~/.config/sxhkd
 ```
 ```
 cp -rf bspwm  ~/.config
@@ -219,6 +219,9 @@ cp -rf templates ~/.config/wal
 ```
 
 Instala el backend `colorz`, si no deseas este cambia la configuración en: `~/.config/bspwm/scripts/setup`
+```
+sudo pacman -S python-pip
+```
 ```
 pip3 install --user colorz
 ```
@@ -562,7 +565,7 @@ yay -S  lightdm-webkit2-greeter
 
 #### Temas
 
-[Instala el tema glorious](https://github.com/manilarome/lightdm-webkit2-theme-glorious)
+[Instala el tema glorious](https://github.com/manilarome/lightdm-webkit2-theme-glorious):
 
 ```
 yay -Syu lightdm-webkit2-theme-glorious
@@ -585,13 +588,12 @@ La imagen que eliges debe ser como las otras en `/usr/share/lightdm-webkit/theme
 sudo cp (imagen que deseas como avatar) /usr/share/lightdm-webkit/themes/glorious/assets/profiles/
 ```
 
-En `/usr/share/lightdm-webkit/themes/glorious/index.html` cambia la ruta en el atributo `src` de **las etiquetas** `<img>`, puedes identificarla por su atributo `id='image-profile'` **y** borra lo siguiente (son lo mismo) de las etiquetas `<img>`: `onerror='this.src="assets/profiles/user.svg"'`
+Luego en `/usr/share/lightdm-webkit/themes/glorious/index.html` cambia la ruta en el atributo `src` de **la etiqueta** `<img>`, puedes identificarla por su atributo `id='image-profile'` **y** borra lo siguiente: `onerror='this.src="assets/profiles/user.svg"'`
 
 Instala mugshot **y** allí selecciona la misma imagen para el avatar:
 ```
 yay -S mugshot
 ```
-Luego cierra tu sesión de bspwm y en los ajustes del tema de Lightdm vuelve a elegir tu usuario **para** ver los cambios.
 
 #### Prueba antes de nada
 ```
@@ -605,6 +607,8 @@ lightdm --test-mode --debug
 ```
 systemctl enable lightdm
 ```
+
+Luego cierra tu sesión de bspwm y en los ajustes del tema de Lightdm vuelve a elegir tu usuario **para** ver los cambios.
 
 Nota: Puedes revisar la configuración general en `/etc/lightdm/lightdm-webkit2-greeter.conf`
 
