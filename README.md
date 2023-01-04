@@ -59,6 +59,11 @@ Archivos de configuración personales
 ![2023-01-04_122242_918483733](https://user-images.githubusercontent.com/118377728/210616855-541517dd-bac0-4ab6-9a40-25456e3a97b6.jpg)
 
 #### Barras de Polybar
+##### Barra superior:
+![barup](https://user-images.githubusercontent.com/118377728/210617486-2f75135e-f5b7-45f5-8834-44fd5a828675.png)
+
+##### Barra inferior:
+![bardown](https://user-images.githubusercontent.com/118377728/210617474-fca95c74-855a-4488-80c3-07c1fce6dc50.png)
 
 
 
