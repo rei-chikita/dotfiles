@@ -689,7 +689,7 @@ Nota: Instala antes komorebi que el tema para Lightdm **por que** sino existen c
 
 Nota: Al parecer después de ejecutar komorebi debo recargar bspwm para que se muestre su menú al dar click derecho; sin embargo, luego no se muestran las barras de polybar **por lo que** debes matar el proceso de komorebi.
 
-Nota: Al quitar `wm-restack` de la configuración de polybar se soluciona, sin embargo, al hacerlo existe el problema de que se muestran las barras de polybar en el modo de pantalla completa.
+Nota: Al quitar `wm-restack =  bspwm` de la configuración de polybar se soluciona lo anterior, sin embargo, al hacerlo existe el problema de que se muestran las barras de polybar en el modo de pantalla completa.
 
 No es recomendado aún **porque** no logro reproducir videos y al usarlo no aparece el menú al dar click derecho a menos que recargue bspwm.
 
