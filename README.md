@@ -84,15 +84,15 @@ mkdir -p ~/.config/{ranger,picom,wal,flameshot,gtk-3.0}
 5. Debes instalar `sd` **porque** es un sustituto para `sed` que se usa en algunos de los scripts de este repositorio. 
 
 ## Consideraciones
-1. Si deseas hacer un cambio en la configuración de dunst, betterlockscreen, cava o en los colores del menú de encendido de rofi deberás hacerlo en las plantillas de usuario de Pywal en: `~/.config/wal/templates/` **porque** Pywal genera archivos en `~/.cache/wal/` en base a las plantillas de usuario **cada vez** que cambias tu fondo de pantalla, archivos que serán usados para crear enlaces simbólicos para ser archivos de configuración las aquellas utilidades, esto último está defino en `~/.config/bspwm/scripts/setup`, **por ello** en esta guía no hay necesidad de copiar archivos de configuración directamente.
-3. No es necesario recargar bspwm para recargar picom **ya que** lo hace al detectar una nueva configuración.
-4. Si Picom presenta algún problema deberías revisar el backend glx que esta establecido en `picom.conf` por si tu hardware no lo admite; **sin embargo**, es necesario **para** poder usar el desenfoque.
-5. Si desconfiguras algo en Firefox solamente prueba eliminar el directorio `~/.mozilla` y al  reabrir Firefox se creará de nuevo.
-6. Puedes revisar los diferentes atajos de teclado en `sxhkd/sxhkdr`.
-7. La ejecución de `xrandr` esta establecida en `polybar/scripts/launch.sh`; deberías cambiarla según tus necesidades.
-8. Si deseas cambiar el fondo de pantalla deberás hacerlo en `~/.config/bspwm/bspwmrc`, se define como parametro para el script `~/.config/bspwm/scripts/setup`. 
-9. Betterlockscreen usará la misma imagen que definas como fondo de pantalla para bspwm en `~/.config/bspwm/bspwmrc`. 
-10. Para la configuración de monitores duales **en VMware en Windows 11**  no es necesario usar los parametros `--left-of` ni `--right-of` para `xrandr` sino solo si usas Arch Linux en una partición de disco **porque** al parecer en el caso de VMware aquello lo haces en la configuración de pantalla de Windows 11.
+1. Si deseas hacer algún cambio en la configuración de dunst, betterlockscreen, cava o en los colores del menú de encendido de rofi deberás hacerlo en las plantillas de usuario de Pywal en `~/.config/wal/templates/`. **Por qué he de hacerlo así?**, pues porque Pywal genera archivos en `~/.cache/wal/` en base a las plantillas de usuario cada vez que cambias tu fondo de pantalla y esos archivos serán usados para crear enlaces simbólicos que funcionarán como archivos de configuración de las utilidades antes mencionadas. Este comportamiento está definido en `~/.config/bspwm/scripts/setup`. **Por todo lo anterior es que en esta guía no hay necesidad de copiar archivos de configuración directamente.**
+2. No es necesario recargar bspwm para recargar picom **ya que** lo hace al detectar una nueva configuración.
+3. Si Picom presenta algún problema deberías revisar el backend glx que esta establecido en `picom.conf` por si tu hardware no lo admite; **sin embargo**, es necesario **para** poder usar el desenfoque.
+4. Si desconfiguras algo en Firefox solamente prueba eliminar el directorio `~/.mozilla` y al  reabrir Firefox se creará de nuevo.
+5. Puedes revisar los diferentes atajos de teclado en `sxhkd/sxhkdr`.
+6. La ejecución de `xrandr` esta establecida en `polybar/scripts/launch.sh`; deberías cambiarla según tus necesidades.
+7. Si deseas cambiar el fondo de pantalla deberás hacerlo en `~/.config/bspwm/bspwmrc`, se define como parametro para el script `~/.config/bspwm/scripts/setup`. 
+8. Betterlockscreen usará la misma imagen que definas como fondo de pantalla para bspwm en `~/.config/bspwm/bspwmrc`. 
+9. Para la configuración de monitores duales **en VMware en Windows 11**  no es necesario usar los parametros `--left-of` ni `--right-of` para `xrandr` sino solo si usas Arch Linux en una partición de disco **porque** al parecer en el caso de VMware aquello lo haces en la configuración de pantalla de Windows 11.
 
 ## Xserver
 ```
