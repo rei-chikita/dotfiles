@@ -385,30 +385,36 @@ Terminus: `sudo pacman -S terminus-font`
 Nota: También son necesarias para cargar los iconos del tema para neofetch de esta guía.
 
 #### Descomprimir fuentes
- 
-Para instalar fuentes en todo el sistema (disponible para todos los usuarios), mueve la carpeta al directorio: `/usr/share/fonts` (Si tu fuente tiene la extensión .ttf deveras moverla a la carpeta TTF...).
+
+<b>Nota:</b> Si tus fuentes tienen la extensión `.ttf` (como es el caso de Iosevka Nerd Fon y Hack Nerd Font) deberas moverlas al directorio `/usr/share/fonts/TTF`.
+
+
+Para instalar fuentes en todo el sistema (disponible para todos los usuarios), mueve la carpeta al directorio: `/usr/share/fonts` 
+
+
 
 Para instalar las fuentes para un único usuario, utilice la ruta: `~/.local/share/fonts/`. 
-
+ 
 ```
 sudo pacman -S unzip
 ```
 
 ```
-cd /usr/share/fonts
+cd /usr/share/fonts/TTF
 ```
 
 ```
-sudo cp ~/Descargas/*.zip .
+sudo cp ~/Descargas/(nombre de cada funete).zip .
 ```
 
 ```
-sudo unzip (nombre de cada zip).zip
+sudo unzip (nombre de cada fuente).zip
 ```
 
 ```
 sudo rm *.zip
 ```
+
 
 #### Utilidades para módulos de polybar
 
