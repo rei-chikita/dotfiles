@@ -583,11 +583,11 @@ yay -S  lightdm-webkit2-greeter
 yay -Syu lightdm-webkit2-theme-glorious
 ```
 
-Edita `/etc/lightdm/lightdm.conf`, en la linea `greeter-session` establece el recibidor instalado anteriormente; es decir: `greeter-session=lightdm-webkit2-greeter` 
+Edita `/etc/lightdm/lightdm.conf`, descomenta la linea `greeter-session` y establece el recibidor instalado anteriormente: `greeter-session=lightdm-webkit2-greeter` 
 
-Edita `/etc/lightdm/lightdm-webkit2-greeter.conf`, habilíta `debug_mode` al establecerlo en `true` y establece `webkit_theme` a `glorious`
+Edita `/etc/lightdm/lightdm-webkit2-greeter.conf`, habilíta `debug_mode` y establecelo en `true`. 
+Establece `webkit_theme` a `glorious`
 
-Nota: Evita hacer los cambios de configuración con los comentarios.
 
 #### Cambiar fondo de pantalla
 
@@ -693,7 +693,7 @@ Nota: Al quitar `wm-restack =  bspwm` de la configuración de polybar se solucio
 
 No es recomendado aún **porque** no logro reproducir videos y al usarlo no aparece el menú al dar click derecho a menos que recargue bspwm.
 
-## Extras
+## Decoraciones
 1. https://github.com/acxz/pokeshell
 2. https://github.com/smikeya/shell-color-scripts
 3. https://github.com/AngelJumbo/lavat
