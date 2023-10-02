@@ -431,6 +431,8 @@ sudo pacman -S playerctl
 
 [cava para Polybar](https://github.com/ray-pH/polybar-cava) ya esta incluido en la configuración: `polybar/modules.ini`
 
+https://github.com/drdeimos/polybar_another_battery
+
 ## Bat-lsd-fzf
 ```
 sudo pacman -S bat lsd fzf
