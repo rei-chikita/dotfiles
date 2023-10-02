@@ -418,7 +418,6 @@ sudo rm *.zip
 
 #### Utilidades para módulos de polybar
 
-[zscroll](https://github.com/noctuid/zscroll)
 ```
 yay -S zscroll-git
 ```
