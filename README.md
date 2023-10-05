@@ -159,6 +159,12 @@ Debes asignar permiso de ejecución de lo contrario Bspwm no lo reconoce y se us
 chmod +x ~/.config/bspwm/bspwmrc
 ```
 
+Necesitas instalar `dash` ya que esto lo usa el siguiente script: `~/.config/bspwm/scripts/bspwm_resize`
+
+
+```
+sudo pacman -S dash
+```
 Nota: Si no tienes los archivos que se ejecutan en el archivo `bspwmrc` de este repositorio no deberías configurar el [Inicio automático](#Inicio-automático) sino solo usar `startx` **porque** ocurrirá un estado de error y usará los archivos predeterminados de `sxhkd` y `bspwm`, **por lo que** sino editaste antes la terminal a abrir en el archivo predeterminado de `sxhkd`, al reiniciar o salir de `bspwm` no podrás abrir una terminal y tal vez tengas que formatear.
 
 #### Inicio-automático 
