@@ -508,11 +508,20 @@ Nota: Neofetch deberá imprimir la misma imagen que tu fondo de pantalla actual,
 sudo pacman -S translate-shell
 ```
 
+## Spotify 
+Si necesitas Spotify, no necesitas usar el AUR PORQUE ya existe spotify-launcher en los repositorios oficiales.
+
+```
+sudo pacman -S spotify-launcher
+```
+
+Debes asegurarte de instalar la siguiente biblioteca compartida sino no funcionara spotify-launcher:
+```
+sudo pacman -S libayatana-appindicator
+```
+
 ## Spicetify
-#### Instalar Spotify:
-```
-yay -S spotify
-```
+
 #### Instalar spicetify:
 ```
 yay -S spicetify-cli
