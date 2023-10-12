@@ -639,7 +639,7 @@ lightdm --test-mode --debug
 
 #### Habilitar (si salió todo bien en la prueba)
 ```
-systemctl enable lightdm
+sudo systemctl enable lightdm
 ```
 
 Luego cierra tu sesión de bspwm y en los ajustes del tema de Lightdm vuelve a elegir tu usuario **para** ver los cambios.
