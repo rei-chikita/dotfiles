@@ -616,7 +616,7 @@ Establece `webkit_theme` a `glorious`
 No puedes usar rutas en `/home` **por lo que** deberás copiar tus imágenes al directorio  `/usr/share/backgrounds`, luego al usar Lightdm con el tema escoge el fondo de pantalla en los ajustes del mismo
 
 #### Cambiar la imagen del avatar
-La imagen que eliges debe ser como las otras en `/usr/share/lightdm-webkit/themes/glorious/proassets/profiles/`, es decir: formato `.jpg` y con un tamaño de `200x200 px`
+La imagen que eliges debe ser como las otras en `/usr/share/lightdm-webkit/themes/glorious/proassets/profiles/`, es decir: formato `.jpg` y con un tamaño de `200x200 px`, aunque tambien he probado establecer con Mugshot 735x736 px y no hay problema.
 
 ```
 sudo cp (imagen que deseas como avatar) /usr/share/lightdm-webkit/themes/glorious/assets/profiles/
