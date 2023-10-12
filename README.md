@@ -410,7 +410,7 @@ cd /usr/share/fonts/TTF
 ```
 
 ```
-sudo cp ~/Descargas/(nombre de cada funete).zip .
+sudo cp ~/Descargas/(nombre de cada fuente).zip .
 ```
 
 ```
@@ -421,6 +421,9 @@ sudo unzip (nombre de cada fuente).zip
 sudo rm *.zip
 ```
 
+```
+fc-cache --verbose
+```
 
 #### Utilidades para módulos de polybar
 
