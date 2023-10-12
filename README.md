@@ -381,12 +381,13 @@ chmod +x ~/.config/polybar/scripts/ -R
 ```
 
 #### Descargar fuentes
+Ocupamos la version v2.2.1 de Hack Nerd Font, esto debido a que el icono del modulo volume se ha reemplazado por otro en versiones posteriores.
 
 Terminus: `sudo pacman -S terminus-font`
 
-[Iosevka Nerd Font](https://www.nerdfonts.com/font-downloads)
+[Iosevka Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/tag/v2.2.1)
 
-[Hack Nerd Font](https://www.nerdfonts.com/font-downloads)
+[Hack Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/tag/v2.2.1)
 
 Nota: También son necesarias para cargar los iconos del tema para neofetch de esta guía.
 
