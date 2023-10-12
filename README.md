@@ -40,10 +40,10 @@ Archivos de configuración personales
 
 # Galería
 
-#### GRUB
+#### GRUB screenshot
 ![2023-01-04 (3)](https://user-images.githubusercontent.com/118377728/210616243-890cf55d-44fe-4569-854e-885d39f2b5d8.png)
 
-#### Lightdm
+#### Lightdm screenshot
 ![2023-01-04 (2)](https://user-images.githubusercontent.com/118377728/210616255-c8b91257-5e0b-468f-99b3-befade5a0101.png)
 
 #### Betterlockscreen
